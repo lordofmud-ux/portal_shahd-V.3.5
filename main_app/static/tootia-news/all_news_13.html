@@ -1,0 +1,66 @@
+<style>
+  #backBtn {
+    top: 0;
+    left: 5%;
+    direction: rtl;
+    z-index: 10000;
+    background-color: #2a6076;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 300ms;
+  }
+</style>
+
+<div class="row mt-5">
+  <div class="heading animate__animated animate__fadeIn">
+    <button id="backBtn" class="main-btn" onclick="goBack()">بازگشت</button>
+
+    <h2>اخبار شرکت توتیا</h2>
+  </div>
+</div>
+<div class="container animate__animated animate__fadeIn">
+  <div class="row mt-5">
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/tootia.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          style="height: 166px"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column justify-content-evenly">
+          <h5 class="card-title w-100 h-100">طراحی محصولات جدید در توتیا</h5>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/tootia-news-1/all_news_14.html'); return false;"
+            >مشاهده خبر</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/tootia-1.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          style="height: 166px"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column justify-content-evenly">
+          <h5 class="card-title w-100 h-100">خط تولید جدید ویفر</h5>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/tootia-news-2/all_news_15.html'); return false;"
+            >مشاهده خبر</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

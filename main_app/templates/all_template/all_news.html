@@ -1,0 +1,529 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+
+{% block content %}
+<style>
+  
+  .card-img-top {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .card-body {
+    height: 140px;
+    text-align: center;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    justify-content: flex-end;
+  }
+
+  .card-title {
+
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  .card {
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    box-shadow: 0px 0px 5px #415a77;
+  }
+
+  .card-text {
+    font-size: 12px;
+    color: black;
+  }
+
+  .heading-1 {
+    text-align: center;
+
+  }
+
+  .btn-primary:hover {
+    background-color: #415a77;
+  }
+
+  .main-btn {
+    position: absolute;
+    left: 17%;
+    top: 33%;
+    display: inline-block;
+    padding: 12px 24px;
+    background: #2A6076;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.90rem;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 500ms;
+  }
+
+  .main-btn:hover {
+    transform: scale(1.1);
+  }
+
+  .ul-1 {
+    font-size: 20px;
+    color: #0c5460;
+    line-height: 30px;
+
+    li {
+      font-weight: bold;
+    }
+  }
+
+  .container-1 {
+    position: relative;
+    margin-top: 30px;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      padding: 10px 15px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      display: none;
+      z-index: 9999;
+    }
+
+
+
+    .intro {
+
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-flow: column wrap;
+      border-radius: 10px;
+    }
+  }
+
+  .logo {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4000;
+
+    img {
+      object-fit: cover;
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  .head {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+
+    hr {
+      margin-top: 40px;
+    }
+
+    .animate__animated.animate__fadeInDown {
+      --animate-duration: 2s;
+
+    }
+
+    h1 {
+      padding-top: 20px;
+      word-spacing: 3px;
+    }
+
+  }
+
+
+
+  .default-content {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+  }
+
+
+  .animate__animated.animate__fadeIn {
+    --animate-duration: 2s;
+
+  }
+
+  .animate__animated.animate__fadeInDown {
+    --animate-duration: 3s;
+
+  }
+
+  .animate__animated.animate__zoomIn {
+    --animate-duration: 1.5s;
+
+  }
+
+  .mf {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heading {
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+
+    img {
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      top: -25%;
+      left: 67%;
+    }
+
+    .shafazhen-logo {
+      width: 45px;
+      height: 45px;
+      position: absolute;
+      top: -5%;
+      left: 69%;
+    }
+  }
+
+
+
+  .main-news {
+    width: 80%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    .carousel {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 15px;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+
+
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .right-side-news {
+    position: absolute;
+    top: 5.5%;
+    left: 3%;
+    height: 5%;
+    width: 80%;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: row;
+    align-items: flex-end;
+    color: white;
+    background-color: #2A6076;
+
+    .companies {
+      position: absolute;
+      right: 45%;
+      width: fit-content;
+      height: 100%;
+      font-size: 25px;
+
+
+      h3 {
+        padding-top: 5px;
+        font-weight: normal;
+        font-size: 20px;
+      }
+
+    }
+
+    .news {
+      &:hover {
+        background-color: #518297;
+        border-radius: 10px;
+      }
+
+      width: 100%;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      transition: 500ms;
+
+      a {
+
+        text-align: center;
+        display: block;
+        text-decoration: none;
+        color: white;
+
+      }
+    }
+  }
+
+  .company-link {
+    font-size: 17px;
+    display: block;
+    padding: 10px 0px;
+    text-align: center;
+    font-weight: normal;
+    text-decoration: none;
+    color: #0c5460;
+    transition: all 0.3s;
+
+  }
+
+  .company-link:hover {
+    color: #004085;
+
+
+  }
+</style>
+
+<link rel="stylesheet" href="../../static/plugins/bootstrap/dist/css/bootstrap.min.css">
+
+
+<main>
+
+  <div class="container bg-white rounded-4 ">
+
+
+    <!-- companies header -->
+    <h3 class="text-center animate__animated animate__fadeIn animate__delay-1s pt-5">اخبار شرکت‌ها</h3>
+    <div id="sticky-header"
+      style="position: sticky; top: 0; z-index: 1000; background-color:white; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); padding: 10px 0;margin-top: 50px;">
+      <div class="row justify-content-center animate__animated animate__fadeIn animate__delay-1s g-3 ;">
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1 ">
+          <a href="#" class="company-link" onclick="loadPage('/static/urmia-main/all_news_81.html'); return false;">قند
+            ارومیه</a>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1" style="width: 7%;">
+          <a href="#" class="company-link" onclick="loadPage('/static/urmia-news/all_news_54.html'); return false;">قند
+            خوی</a>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1" style="width: 8%;">
+          <a href="#" class="company-link"
+            onclick="loadPage('/static/piranshahr-news/all_news_24.html'); return false;">قند پیرانشهر</a>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1" style="width: 8%;">
+          <a href="#" class="company-link"
+            onclick="loadPage('/static/shafazhen-news/all_news_6.html'); return false;">ساوا شفاژن</a>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1" style="width: 7%;">
+          <a href="#" class="company-link"
+            onclick="loadPage('/static/Golfam-news/all_news_12.html'); return false;">گلفام
+            دارو</a>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1" style="width:5%;">
+          <a href="#" class="company-link"
+            onclick="loadPage('/static/tootia-news/all_news_13.html'); return false;">توتیا</a>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1">
+          <a href="#" class="company-link"
+            onclick="loadPage('/static/Golfam-urm/all_news_16.html'); return false;">گلفام
+            ارومیه</a>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1" style="width: 14%;">
+          <a href="#" class="company-link"
+            onclick="loadPage('/static/choghondar-urm-news/all_news_82.html'); return false;">شرکت تحقیقات چغندر</a>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1" style="width: 16%;">
+          <a href="#" class="company-link"
+            onclick="loadPage('/static/agriculture/all_news_83.html'); return false;">شرکت خدمات بهزراعی</a>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1" style="width: 17%;">
+          <a href="#" class="company-link" onclick="loadPage('/static/steel company/all_news_84.html'); return false;">
+            ذوب آهن شمال غرب</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- end of header -->
+
+    <!-- main wrapper -->
+    <div class="container-1">
+
+
+      <!-- news menu -->
+      <div class="intro" dir="rtl">
+
+        <div class="default-content flex-column animate__animated animate__fadeIn">
+          <div class="holding-news  animate__animated animate__fadeIn animate__delay-2s">
+            <h2 class="h-1 mb-3">اخبار هلدینگ توسعه صنایع شهد آذربایجان</h2>
+          </div>
+          <div
+            class="cards-section animate__animated animate__fadeIn animate__delay-2s row w-100 mt-5 pe-3 d-flex justify-content-center align-items-center ">
+            <div class="col-md-4 mb-4">
+              <div class="card w-100">
+                <img src="../../static/media/public/img/iron.webp" class="card-img-top" style="height: 170px;"
+                  alt="iron">
+                <div class="card-body">
+                  <h5 class="card-title">صنعت فولاد</h5>
+                  <p class="card-text">31 اردیبهشت 1403</p>
+                  <a href="#" class="btn btn-primary"
+                    onclick="loadPage('/static/news-2/all_news_2.html'); return false;">مشاهده
+                    خبر</a>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card w-100">
+                <img src="../../static/media/public/img/factory-1.webp" class="card-img-top" style="height: 170px;"
+                  alt="factory">
+                <div class="card-body">
+                  <h5 class="card-title">طرح های پتروشیمی</h5>
+                  <p class="card-text">30 اردیبهشت 1403</p>
+                  <a href="#" class="btn btn-primary"
+                    onclick="loadPage('/static/news-1/all_news_1.html'); return false;">مشاهده خبر
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card w-100">
+                <img src="../../static/media/public/img/factory-2.webp" class="card-img-top" style="height: 170px;"
+                  alt="factory-1">
+                <div class="card-body">
+                  <h5 class="card-title">عرضه محصولات پی‌وی‌سی پتروشیمی اروند ۲ برابر می‌شود</h5>
+                  <p class="card-text">30 اردیبهشت 1403</p>
+                  <a href="#" class="btn btn-primary"
+                    onclick="loadPage('/static/news-3/all_news_3.html'); return false;">مشاهده
+                    خبر</a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="cards-section animate__animated animate__fadeIn animate__delay-2s row w-100 mt-3 pe-3 d-flex justify-content-center align-items-center">
+            <div class="col-md-6 mb-4">
+              <div class="card w-100">
+                <img src="../../static/media/public/img/tomato.webp" class="card-img-top" style="height: 300px;"
+                  alt="tomato">
+                <div class="card-body">
+                  <h5 class="card-title">از گوجه فرنگی تا رب گوجه فرنگی صنعتی ترقی</h5>
+                  <p class="card-text">30 اردیبهشت 1403</p>
+
+                  <a href="#" class="btn btn-primary"
+                    onclick="loadPage('/static/news-4/all_news_4.html'); return false;">مشاهده
+                    خبر</a>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <div class="card w-100">
+                <img src="../../static/media/public/img/crops.webp" class="card-img-top" style="height: 300px;"
+                  alt="crops">
+                <div class="card-body">
+                  <h5 class="card-title">تولید از چغندر به قند</h5>
+                  <p class="card-text">30 اردیبهشت 1403</p>
+                  <a href="#" class="btn btn-primary"
+                    onclick="loadPage('/static/news-5/all_news_5.html'); return false;">مشاهده
+                    خبر</a>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="content" class="flex-grow-1 px-3 mt-3 w-100">
+        </div>
+        <button id="scrollTopBtn" onclick="scrollToTop()"><svg xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; fill: var(--color-icon-low-emphasis);"
+            width="24" height="24">
+            <defs>
+              <symbol id="expandLess" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M7.707 14.707l-1.414-1.414 5-5a1 1 0 011.414 0l5 5-1.414 1.414L12 10.414l-4.293 4.293z"></path>
+              </symbol>
+            </defs>
+            <g>
+              <path d="M7.707 14.707l-1.414-1.414 5-5a1 1 0 011.414 0l5 5-1.414 1.414L12 10.414l-4.293 4.293z"></path>
+            </g>
+          </svg></button>
+
+        <script>
+          window.onscroll = function () {
+            const btn = document.getElementById("scrollTopBtn");
+            const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+            const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+            if (scrollPosition > pageHeight / 2) {
+              btn.style.display = "block";
+            } else {
+              btn.style.display = "none";
+            }
+          };
+
+          function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        </script>
+        <script>
+          function goBack() {
+            history.back(); // به صفحه قبلی بازگرد
+          }
+          window.addEventListener('popstate', function (event) {
+            const url = document.location.pathname;
+            fetch(url)
+              .then(response => response.text())
+              .then(html => {
+                document.getElementById('content').innerHTML = html;
+              });
+          });
+
+
+        </script>
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+</main>
+
+
+
+{% endblock content %}

@@ -1,0 +1,27 @@
+<form role="form" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="card-body">
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.errors }}
+                <!--<h1>{{ field.field.widget.input_type }}</h1>-->
+                {% if field.field.widget.input_type == 'file' %}
+                    <h4>عکس</h4>
+                    {{ field }}
+                {% else %}
+                    <p hidden>{{ field }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer">
+        <button type="submit" class="btn btn-success btn-block">
+            {% if button_text %}
+                {{ button_text }}
+            {% else %}
+                Submit
+            {% endif %}
+        </button>
+    </div>
+</form>

@@ -1,0 +1,293 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+
+{% block content %}
+    <style>
+        .news_page {
+            background-color: #FBFBFB;
+        }
+
+        .news_all_of_page {
+            margin-top: 50px;
+        }
+
+        .news_top_header {
+            background-color: #124E66;
+            color: white;
+        }
+
+        .news_div {
+            border: 3px solid #124E66;
+            border-radius: 3%;
+            margin-right: 2.5%;
+            margin-bottom: 15px;
+            width: 22%;
+            display: inline-block;
+            text-align: center;
+
+
+        }
+
+        .news_image_top_header {
+            width: 25%;
+            height: 300px;
+            border-radius: 4%;
+            margin-bottom: 30px;
+        }
+
+        .news_image {
+            width: 60%;
+            height: 200px;
+            border-radius: 4%;
+            margin-bottom: 30px;
+        }
+
+        .news_header {
+            color: #0c5460;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 15px;
+        }
+
+        @media only screen and (max-width: 800px) {
+
+            .button_box {
+                width: 95% !important;
+            }
+        }
+    </style>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="news_page">
+                        <div class="card-header news_top_header">
+                            <h4 style="text-align: center">شبکه های اجتماعی (اینستاگرام های شرکت ها)</h4>
+                            <h6 style="text-align: center">به علت فیلتر بودن بعضی از شبکه های اجتماعی برای ورود به آن ها
+                                مجبور به استفاده از فیلتر شکن هستید و باید در اکانت شبکه اجتماعی خود وارد شوید</h6>
+                            <!--<meta http-equiv="refresh" content="30;url=http://127.0.0.1:8000/holding/news"/>-->
+                            <!--<h5 style="color: darkgreen">قیمت دلار: {{ prices.price }} تومان </h5>
+                            <h5>{{ ss.s }}</h5>-->
+                        </div>
+
+                        <div class="news_all_of_page ">
+                            <a href="https://www.instagram.com/shahdgroup.ir/" target="_blank">
+                                <div class="card-body news_div button_box">
+
+                                    <img src="../../static/media/website_shahd.png"
+                                         class="img-circle elevation-2 news_image"
+                                         alt="User Image">
+                                    <img style="width: 200px;" src="../../static/media/shahdgroup.ir.png" alt="">
+                                    <table id="example2" class="table table-bordered table-hover">
+
+                                        <h5 class="news_header">
+                                            گروه توسعه صنایع شهد آذربایجان</h5>
+                                    </table>
+                                </div>
+
+                            </a>
+                            <a href="https://www.instagram.com/khoysugar/" target="_blank">
+                                <div class="card-body news_div button_box">
+
+                                    <img src="../../static/media/website_khoy.png"
+                                         class="img-circle elevation-2 news_image"
+                                         alt="User Image">
+                                    <img style="width: 200px" src="../../static/media/khoysugar.png" alt="">
+                                    <table id="example2" class="table table-bordered table-hover">
+
+                                        <h5 class="news_header">شرکت شهد قند خوی (سهامی عام)</h5>
+                                    </table>
+                                </div>
+
+                            </a>
+                            <a href="https://www.instagram.com/urmiasugar.co.ir/" target="_blank">
+                                <div class="card-body news_div button_box">
+
+                                    <img src="../../static/media/website_orumiye.png"
+                                         class="img-circle elevation-2 news_image"
+                                         alt="User Image">
+                                    <img style="width: 200px;" src="../../static/media/urmiasugar.co.ir.png" alt="">
+
+                                    <table id="example2" class="table table-bordered table-hover">
+
+                                        <h5 class="news_header">شرکت قند ارومیه (سهامی عام)</h5>
+                                    </table>
+                                </div>
+
+                            </a>
+                            <a href="https://www.instagram.com/pirasugarco/" target="_blank">
+                                <div class="card-body news_div button_box">
+
+                                    <img src="../../static/media/website_piranshahr.png"
+                                         class="img-circle elevation-2 news_image"
+                                         alt="User Image">
+                                    <img style="width: 200px;" src="../../static/media/pirasugarco.png" alt="">
+                                    <table id="example2" class="table table-bordered table-hover">
+
+                                        <h5 class="news_header">شرکت فرآورده های غذائی قند پیرانشهر(سهامی عام)</h5>
+                                    </table>
+                                </div>
+
+                            </a>
+                            <a href="https://www.instagram.com/golfamfood/" target="_blank">
+                                <div class="card-body news_div button_box">
+
+                                    <img src="../../static/media/website_golfam.png"
+                                         class="img-circle elevation-2 news_image"
+                                         alt="User Image">
+                                    <img style="width: 200px;" src="../../static/media/golfamfood.png" alt="">
+                                    <table id="example2" class="table table-bordered table-hover">
+
+                                        <h5 class="news_header">شرکت گلفام ارومیه</h5>
+                                    </table>
+                                </div>
+
+                            </a>
+                            <a href="https://www.instagram.com/shahdgroup.ir/" target="_blank">
+                                <div class="card-body news_div button_box">
+
+                                    <img src="../../static/media/website_tootia.png"
+                                         class="img-circle elevation-2 news_image"
+                                         alt="User Image">
+                                    <img style="width: 200px;" src="../../static/media/shahdtootia.co.png" alt="">
+
+                                    <table id="example2" class="table table-bordered table-hover">
+
+                                        <h5 class="news_header">شرکت صنایع توسعه شهد توتیا</h5>
+                                    </table>
+                                </div>
+
+                            </a>
+                            <a href="https://www.instagram.com/taraghishop/" target="_blank">
+                                <div class="card-body news_div button_box">
+
+                                    <img src="../../static/media/website_taraghi.png"
+                                         class="img-circle elevation-2 news_image"
+                                         alt="User Image">
+                                    <img style="width: 200px;" src="../../static/media/taraghishop.png" alt="">
+                                    <table id="example2" class="table table-bordered table-hover">
+
+                                        <h5 class="news_header">فروشگاه های زنجیره ای ترقی</h5>
+                                    </table>
+                                </div>
+
+                            </a>
+                            <a href="https://www.instagram.com/shahdgroup.ir/" target="_blank">
+                                <div class="card-body news_div button_box">
+
+                                    <img src="../../static/media/website_khoy.png"
+                                         class="img-circle elevation-2 news_image"
+                                         alt="User Image">
+                                    <img style="width: 200px;" src="../../static/media/shahdgroup.ir.png" alt="">
+
+
+                                    <table id="example2" class="table table-bordered table-hover">
+
+                                        <h5 class="news_header">شرکت آوین خوی</h5>
+                                    </table>
+                                </div>
+
+                            </a>
+                            <a href="https://www.instagram.com/golfamdarou/" target="_blank">
+                                <div class="card-body news_div button_box">
+
+                                    <img src="../../static/media/website_golfam_daroo.png"
+                                         class="img-circle elevation-2 news_image"
+                                         alt="User Image">
+                                    <img style="width: 200px;" src="../../static/media/golfamdarou.png" alt="">
+                                    <table id="example2" class="table table-bordered table-hover">
+
+                                        <h5 class="news_header">شرکت گلفام دارو</h5>
+                                    </table>
+                                </div>
+
+                            </a>
+                            <a href="https://www.instagram.com/savashafagen/" target="_blank">
+                                <div class="card-body news_div button_box">
+
+                                    <img src="../../static/media/website_shafazhen.png"
+                                         class="img-circle elevation-2 news_image"
+                                         alt="User Image">
+                                    <img style="width: 200px;" src="../../static/media/savashafagen.png" alt="">
+
+                                    <table id="example2" class="table table-bordered table-hover">
+
+                                        <h5 class="news_header">شرکت ساواشفاژن</h5>
+                                    </table>
+                                </div>
+
+                            </a>
+                            <a href="https://www.instagram.com/shahdgroup.ir/" target="_blank">
+                                <div class="card-body news_div button_box">
+
+                                    <img src="../../static/media/website_zobahan.PNG"
+                                         class="img-circle elevation-2 news_image"
+                                         alt="User Image">
+                                    <img style="width: 200px;" src="../../static/media/shahdgroup.ir.png" alt="">
+
+                                    <table id="example2" class="table table-bordered table-hover">
+
+                                        <h5 class="news_header">شرکت ذوب آهن شمال غرب</h5>
+                                    </table>
+                                </div>
+
+                            </a>
+                            <a href="https://www.instagram.com/shahdgroup.ir/" target="_blank">
+                                <div class="card-body news_div button_box">
+
+                                    <img src="../../static/media/website_petroshimi_pardis.png"
+                                         class="img-circle elevation-2 news_image"
+                                         alt="User Image">
+                                    <img style="width: 200px;" src="../../static/media/shahdgroup.ir.png" alt="">
+
+                                    <table id="example2" class="table table-bordered table-hover">
+
+                                        <h5 class="news_header">
+                                            پتروشیمی پردیس آذربایجان</h5>
+                                    </table>
+                                </div>
+
+                            </a>
+                                                       <a href="https://www.instagram.com/urmiaagriculture/" target="_blank">
+                                <div class="card-body news_div button_box">
+
+                                    <img src="../../static/media/website_behzerae.png"
+                                         class="img-circle elevation-2 news_image"
+                                         alt="User Image">
+                                    <img style="width: 200px;" src="../../static/media/urmiaagriculture.png" alt="">
+                                    <table id="example2" class="table table-bordered table-hover">
+
+                                        <h5 class="news_header">شرکت تحقیقات و خدمات بهزراعی آذربایجان غربی</h5>
+                                    </table>
+                                </div>
+
+                            </a>
+                            <a href="https://www.instagram.com/urmiaresearch/" target="_blank">
+                                <div class="card-body news_div button_box">
+
+                                    <img src="../../static/media/website_choghondar_ghand_orumieye.png"
+                                         class="img-circle elevation-2 news_image"
+                                         alt="User Image">
+                                    <img style="width: 200px;" src="../../static/media/urmiaresearch.png" alt="">
+                                    <table id="example2" class="table table-bordered table-hover">
+
+                                        <h5 class="news_header">شرکت تحقیقات چغندر قند ارومیه</h5>
+                                    </table>
+                                </div>
+
+                            </a>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock content %}

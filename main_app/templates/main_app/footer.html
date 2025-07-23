@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @media only screen and (max-width: 800px) {
+            .div_style{
+
+            }
+
+            .h6_style{
+               font-size: 10px;
+            }
+        }
+
+        .login-logo {
+            animation: effect 10s linear infinite;
+        }
+
+        @keyframes effect {
+            0% {
+                background: linear-gradient(#008000, #00FF00);
+                -webkit-background-clip: text;
+            }
+
+            100% {
+                background: linear-gradient(#3CE7D7, #000FFF);
+                -webkit-background-clip: text;
+            }
+        }
+
+        .header {
+            display: inline;
+            font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<footer class="main-footer footer_style" style="background-color: gainsboro !important; height: 90px !important;">
+    <div class="login-logo div_style" style="text-align:center;">
+
+        <h6 class="header h6_style">
+            <div style="display:inline;" id="time">
+            </div>
+            DEVELOPED BY
+            ShahdGroup,s Programmers -
+            Version.3.4.2
+            <div style="display:inline;font-size: 20px;">&copy;</div>
+            <p id="demo"></p>
+        </h6>
+    </div>
+
+    <script>
+        function updateTime() {
+            const date = new Date();
+            const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+            const time = date.toLocaleTimeString();
+            const day = date.toLocaleDateString(undefined, options);
+            document.getElementById('time').innerHTML =
+                `Today is: ${day}, Current Time: ${time}`;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+
+    </script>
+
+</footer>
+</body>
+</html>
+

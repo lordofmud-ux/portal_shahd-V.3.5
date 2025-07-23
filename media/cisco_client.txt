@@ -1,0 +1,30 @@
+en
+conf t
+hostname Tavoni
+ip domain-name Urmiasugar.local
+crypto key generate rsa
+2048
+username admin privilege 15 secret cisco1346
+enable secret cisco1346
+interface vlan1
+ip address 192.168.30.61 255.255.255.0
+no shut
+exit
+
+ip ssh version 2
+line vty 0 4
+transport input ssh
+login local
+exit
+exit
+
+sw mo tr
+exit
+
+vtp mode client
+vtp domain UrmiaSugar.Local
+vtp pass cisco1346
+exit
+exit
+wr
+ 

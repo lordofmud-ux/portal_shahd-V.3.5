@@ -1,0 +1,513 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+{% block content %}
+    <style>
+        <!--
+        .tool {
+            position: relative;
+            display: inline-block;
+        }
+
+        -->
+        .tooltiptext {
+            visibility: hidden;
+            width: 240px;
+            background-color: white;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+
+            display: block;
+            margin-right: 50px;
+            margin-top: -50px;
+            opacity: 80%;
+            font-size: 10px;
+        }
+
+        .tool:hover .tooltiptext {
+            visibility: visible;
+        }
+
+
+        .content .container-fluid .col-lg-4 {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted darkgray;
+        }
+
+        .col-lg-4 .tooltiptext {
+            visibility: hidden;
+            width: 240px;
+            background-color: darkgray;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            font-weight: bold;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+
+            display: block;
+            margin-right: 125px;
+            margin-top: -150px;
+            opacity: 80%;
+        }
+
+        .col-lg-4:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        @media only screen and (max-width: 800px) {
+            /* For tablets: */
+            .tooltiptext {
+                width: 50px;
+                display: none;
+            }
+
+            .tool {
+                width: 50px;
+            }
+
+            .button_box {
+                width: 100% !important;
+            }
+        }
+
+        .rotated:hover {
+            transition-delay: 1s;
+            transform: rotate(30deg);
+        }
+
+
+        .box:hover {
+            animation-name: rotate;
+            animation-duration: 0.7s;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+    </style>
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+
+            <div class="row">
+                <!-- ./col -->
+                <div class="col-lg-3 col-6 tool" id="x">
+                    <a href="" target="_blank">
+                        <!-- small box -->
+                        <div class="small-box bg-success button_box"
+                             style="background-color: royalblue !important;border-top-left-radius: 15%;border-bottom-right-radius: 15%;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    وب سایت صنایع شهد آذربایجان</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img class="box" src="{% static 'media/shahd_logo.png' %}" alt="" width="75px"
+                                         height="75px"
+                                         style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">هلدینگ توسعه صنایع شهد آذربایجان با بیش از ۶۰ سال سابقه در حوزه صنایع غذایی، فولاد و پتروشیمی با مدیریت شرکت‌های گلفام،قند خوی، قند ارومیه، قند پیرانشهر، فروشگاه‌های زنجیره‌ای ترقی، صنایع ذوب‌آهن شمالغرب و پتروشیمی ارومیه به عنوان یکی از واحدهای تاثیرگذار در غرب آسیا و اروپا شناخته می‌شود.</span>
+
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6 tool" id="c">
+                    <!-- small box -->
+                    <a href="http://192.168.11.207:8200" target="_blank">
+                        <div class="small-box bg-primary button_box"
+                             style="background-color: #e0a800 !important;border-top-left-radius: 15%;border-bottom-right-radius: 15%;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    سیستم تنخواه</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img class="box" src="{% static 'media/tankhah_logo.png' %}" alt="" width="75px"
+                                         height="75px"
+                                         style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">هلدینگ توسعه صنایع شهد آذربایجان با بیش از ۶۰ سال سابقه در حوزه صنایع غذایی، فولاد و پتروشیمی با مدیریت شرکت‌های گلفام،قند خوی، قند ارومیه، قند پیرانشهر، فروشگاه‌های زنجیره‌ای ترقی، صنایع ذوب‌آهن شمالغرب و پتروشیمی ارومیه به عنوان یکی از واحدهای تاثیرگذار در غرب آسیا و اروپا شناخته می‌شود.</span>
+
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.11.50" target="_blank">
+                        <div class="small-box bg-primary button_box"
+                             style="background-color: purple !important;border-top-left-radius: 15%;border-bottom-right-radius: 15%;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    اتوماسیون اداری فراگستر</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img class="box" src="{% static 'media/faragostar_logo.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">اتوماسیون یا خودکارسازی معمولاً به فرایند قادر ساختن ماشین‌ها به انجام عملیات‌های ترتیبی از پیش تعیین شده بدون دخالت انسان یا دخالت کم و هم چنین استفاده از تجهیزات خاص که عملیات‌های صنعتی را اجرا و کنترل می‌کنند، گفته می‌شود.</span>
+
+                </div>
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.11.22:8080/" target="_blank">
+                        <div class="small-box bg-primary button_box"
+                             style="background-color: yellowgreen !important;border-top-left-radius: 15%;border-bottom-right-radius: 15%;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    سیستم حضور غیاب تحت وب</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img class="box" src="{% static 'media/capture.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">یکی از نیازهای مدیران هر کسب و کاری کنترل و نظارت بر کارکرد پرسنل و بهره‌وری آن هاست. یکی از این موارد کنترل و نظارت بر زمان ورود و خروج کارمندان و همچنین محاسبه حقوق آنها بر اساس این اطلاعات است. امروزه با پیشرفت تکنولوژی و ورود دستگاه‌های پیشرفته به بازار این امکان به راحتی و با مناسب ترین هزینه‌ در اختیار مدیران قرار گرفته‌است.</span>
+
+                </div>
+
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.11.27/" target="_blank">
+                        <div class="small-box bg-primary button_box"
+                             style="background-color: #b41650 !important;border-top-left-radius: 15%;border-bottom-right-radius: 15%;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    سامانه مدیریت خدمات هلدینگ</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img class="box" src="{% static 'media/manage.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">این سامانه فقط برای کاربران هلدینگ توسعه صنایع شهد آذربایجان بوده و کلیه‌ی خدمات پشتیبانی از این طریق و به‌صورت تیکتی ارایه می‌شود!</span>
+                </div>
+
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.25.20/rahkaran" target="_blank">
+                        <div class="small-box bg-primary button_box"
+                             style="background-color: rgb(222, 202, 58) !important;border-top-left-radius: 15%;border-bottom-right-radius: 15%;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    راهکاران قند ارومیه
+                                </h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img class="box" src="{% static 'media/rahkaran.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">راهکاران، یک نرم افزار ERP جامع و منطبق با تعاریف روز دنیاست که با پوشش وجوه مختلف کسب‌وکار و ارائه اطلاعات درست و به‌موقع، سازمان‌ها را در تصمیم‌گیری صحیح برای بالا بردن بهره‌وری، کارایی و در نتیجه سودآوری یاری می‌کند. راهکاران تصویر شفافی از عملیات کسب‌وکارتان را پیش روی شما قرار می‌دهد و به شما این توانایی را می‌دهد که روی موارد مهم متمرکز شوید، ریسک‌های کسب‌وکارتان را به‌دقت ارزیابی کنید و سریع‌تر تصمیم بگیرید.</span>
+
+                </div>
+
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.45.17/shahd" target="_blank">
+                        <div class="small-box bg-primary button_box"
+                             style="background-color: olive !important;border-top-left-radius: 15%;border-bottom-right-radius: 15%;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    راهکاران قند خوی
+                                </h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img class="box" src="{% static 'media/rahkaran.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">راهکاران، یک نرم افزار ERP جامع و منطبق با تعاریف روز دنیاست که با پوشش وجوه مختلف کسب‌وکار و ارائه اطلاعات درست و به‌موقع، سازمان‌ها را در تصمیم‌گیری صحیح برای بالا بردن بهره‌وری، کارایی و در نتیجه سودآوری یاری می‌کند. راهکاران تصویر شفافی از عملیات کسب‌وکارتان را پیش روی شما قرار می‌دهد و به شما این توانایی را می‌دهد که روی موارد مهم متمرکز شوید، ریسک‌های کسب‌وکارتان را به‌دقت ارزیابی کنید و سریع‌تر تصمیم بگیرید.</span>
+
+                </div>
+
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="">
+
+                        <div class="small-box bg-primary button_box"
+                             style="background-color: green !important;border-top-left-radius: 15%;border-bottom-right-radius: 15%;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    نرم افزار مالی آراز<p style="font-size: 10px;padding-top: 12px">(قند ارومیه
+                                    قدیمی)</p>
+                                </h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img class="box" src="{% static 'media/Araz.jpg' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">شرکت آراز کنترل سيستم به مدیريت آقای مهندس ياشار رضازاده با تجربه بيش از 25 سال در خصوص توليد نرم افزار ، يکی از بزرگترین شرکتهای توليد کننده نرم افزار در منطقه شمالغرب کشور می باشد. اين شرکت در زمیته توليد نرم افزارهای مالی ، اداری ، صنعتی و بیمارستانی و کلینیک درمانگاهی فعاليت داشته و طرف قرارداد با ادارات ، سازمان ها و شرکت های بزرگ برای اجرای نرم افزار های اختصاصی مي باشد.</span>
+
+                </div>
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://141.11.123.127:8000/">
+
+                        <div class="small-box bg-primary button_box"
+                             style="background-color: yellowgreen !important;border-top-left-radius: 15%;border-bottom-right-radius: 15%;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    خانه چت هلدینگ
+                                </h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img class="box" src="{% static 'media/shahd_logo.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">شرکت آراز کنترل سيستم به مدیريت آقای مهندس ياشار رضازاده با تجربه بيش از 25 سال در خصوص توليد نرم افزار ، يکی از بزرگترین شرکتهای توليد کننده نرم افزار در منطقه شمالغرب کشور می باشد. اين شرکت در زمیته توليد نرم افزارهای مالی ، اداری ، صنعتی و بیمارستانی و کلینیک درمانگاهی فعاليت داشته و طرف قرارداد با ادارات ، سازمان ها و شرکت های بزرگ برای اجرای نرم افزار های اختصاصی مي باشد.</span>
+
+                </div>
+
+
+            </div>
+            <h1 id="target" style="color: lightblue;">فیش حقوقی شما موجود نیست یا هنوز ثبت نشده یا نام آن به اشتباه ثبت شده</h1>
+
+        </div>
+    </section>
+{% endblock content %}
+
+{% block custom_js %}
+    <script>
+        $(document).ready(function () {
+
+            //Dataset
+            var subjects = {{data_name|safe}}
+            var data_present = {{data_present}}
+            var data_absent = {{data_absent}}
+
+            //-------------
+            //- DONUT CHART -
+            var attendanceDataCanvas = $('#attendanceData').get(0).getContext('2d')
+            var donutData = {
+                labels: [
+                    'Present', 'Absent'
+                ],
+                datasets: [
+                    {
+                        data: [{{percent_present}}, {{percent_absent}}],
+                        backgroundColor: ['#00a65a', '#f56954'],
+                    }
+                ]
+            }
+            var donutOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+            var attendanceData = new Chart(attendanceDataCanvas, {
+                type: 'doughnut',
+                data: donutData,
+                options: donutOptions
+            });
+
+            //attendanceStatistics
+//Bar Chart
+            var areaChartData = {
+                labels: subjects,
+                datasets: [
+                    {
+                        label: 'Present In Class',
+                        backgroundColor: 'rgba(60,141,188,0.9)',
+                        borderColor: 'rgba(60,141,188,0.8)',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: 'rgba(60,141,188,1)',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(60,141,188,1)',
+                        data: data_present
+                    },
+
+                    {
+                        label: 'Absent In Class',
+                        backgroundColor: 'rgba(210, 214, 222, 1)',
+                        borderColor: 'rgba(210, 214, 222, 1)',
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: data_absent
+                    },
+                ]
+            }
+            var barChartCanvas = $('#attendanceStatistics').get(0).getContext('2d')
+            var barChartData = jQuery.extend(true, {}, areaChartData)
+            var temp = areaChartData.datasets[0]
+            barChartData.datasets[0] = temp
+            var barChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                datasetFill: false
+            }
+
+            var barChart = new Chart(barChartCanvas, {
+                type: 'bar',
+                data: barChartData,
+                options: barChartOptions
+            })
+
+
+        })
+
+    </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-messaging.js"></script>
+
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBarDWWHTfTMSrtc5Lj3Cdw5dEvjAkFwtM",
+            authDomain: "sms-with-django.firebaseapp.com",
+            databaseURL: "https://sms-with-django.firebaseio.com",
+            projectId: "sms-with-django",
+            storageBucket: "sms-with-django.appspot.com",
+            messagingSenderId: "945324593139",
+            appId: "1:945324593139:web:03fa99a8854bbd38420c86",
+            measurementId: "G-2F2RXTL9GT"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig)
+        const messaging = firebase.messaging();
+
+        function InitializeFireBaseMessaging() {
+            messaging
+                .requestPermission()
+                .then(function () {
+                    console.log("Notification Permission");
+                    return messaging.getToken();
+                })
+                .then(function (token) {
+                    console.log("Token : " + token);
+                    sendToServer(token);
+                })
+                .catch(function (reason) {
+                    console.log(reason)
+                })
+        }
+
+        messaging.onMessage(function (payload) {
+            const notificationOption = {
+                body: payload.notification.body,
+                icon: payload.notification.icon,
+
+            }
+            if (Notification.permission == 'granted') {
+                var notification = new Notification(payload.notification.title, notificationOption);
+                notification.onclick = function (event) {
+                    event.preventDefault();
+                    window.open(payload.notification.click_action, "_blank");
+                    notification.close();
+                }
+            }
+            console.log(payload);
+        });
+        messaging.onTokenRefresh(function () {
+            messaging.getToken()
+                .then(function (newToken) {
+                    console.log("New Token : " + newToken);
+                    sendToServer(newToken);
+
+                })
+                .catch(function (reason) {
+                    console.log(reason)
+                })
+        })
+
+        function sendToServer(token) {
+            $.ajax({
+                url: "{% url 'person_fcmtoken' %}",
+                type: 'POST',
+                data: {
+                    token: token,
+                }
+            }).done(function (response) {
+
+
+            }).fail(function (response) {
+            })
+
+        }
+
+        InitializeFireBaseMessaging();
+
+        setTimeout(function () {
+            myFunction();
+        }, 8000);
+
+        function hide(elements) {
+            elements = elements.length ? elements : [elements];
+            for (var index = 0; index < elements.length; index++) {
+                elements[index].style.display = 'none';
+            }
+        }
+
+        function myFunction() {
+            hide(document.getElementById('target'));
+        }
+    </script>
+
+{% endblock custom_js %}
+

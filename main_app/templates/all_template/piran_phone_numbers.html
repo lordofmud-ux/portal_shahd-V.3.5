@@ -1,0 +1,477 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+{% block content %}
+    <style>
+        <!--
+        .tool {
+            position: relative;
+            display: inline-block;
+        }
+
+        -->
+        .tooltiptext {
+            visibility: hidden;
+            width: 240px;
+            background-color: white;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+
+            display: block;
+            margin-right: 50px;
+            margin-top: -50px;
+            opacity: 80%;
+            font-size: 10px;
+        }
+
+        .tool:hover .tooltiptext {
+            visibility: visible;
+        }
+
+
+        .content .container-fluid .col-lg-4 {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted darkgray;
+        }
+
+        .col-lg-4 .tooltiptext {
+            visibility: hidden;
+            width: 240px;
+            background-color: darkgray;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            font-weight: bold;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+
+            display: block;
+            margin-right: 125px;
+            margin-top: -150px;
+            opacity: 80%;
+        }
+
+        .col-lg-4:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        @media only screen and (max-width: 800px) {
+            /* For tablets: */
+            .tooltiptext {
+                width: 50px;
+                display: none;
+            }
+
+            .tool {
+                width: 50px;
+            }
+
+            .button_box {
+                width: 100% !important;
+            }
+        }
+
+        .rotated:hover {
+            transition-delay: 1s;
+            transform: rotate(30deg);
+        }
+
+
+        .box:hover {
+            animation-name: rotate;
+            animation-duration: 0.7s;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        table {
+            width: 1125px;
+            border-collapse: collapse;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid #2E3944 !important;
+
+        }
+
+        th,
+        td {
+            padding: 15px;
+            background-color: rgba(45, 169, 194, 0.8);
+            color: #fff;
+            text-align: center;
+            border: 2px solid #2E3944 !important;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        thead th {
+            background-color: dodgerblue;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        tbody td {
+            position: relative;
+        }
+
+        tbody td:hover:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -9999px;
+            bottom: -9999px;
+            background-color: rgba(255, 255, 255, 0.2);
+            z-index: -1;
+        }
+
+        .row {
+            margin: auto;
+        }
+
+        .a_href {
+            color: white;
+            font-size: 25px;
+
+        }
+
+        .table_style {
+            width: 100%;
+            height: 700px;
+            overflow-x: scroll;
+            overflow-y: scroll;
+            white-space: nowrap;
+        }
+
+
+    </style>
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="container table_style" style="background-color: rgb(191, 191, 191) !important;">
+                    <h5 style="color:white;">
+                    </h5>
+
+                    <table class="docx_tablegrid first-col first-row no-vband"
+                           style="margin-left:9pt; margin-right:9pt; width:auto;">
+                        <colgroup>
+
+                        </colgroup>
+                        <tbody>
+                        <tr style="height: 27.9pt;">
+                            <td style="width: 100%; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;font-size: 30px;"><span>اطلاعات و داخلی پرسنل</span>
+                                </p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="docx_tablegrid first-col first-row no-vband"
+                           style=" margin-left:9pt; margin-right:9pt; width:auto;">
+                        <tbody>
+                        <tr>
+                            <td style="width: 167.65pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">نام</span>
+                                </p>
+                            </td>
+                            <td style="width: 167.65pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">نام خانوادگی</span>
+                                </p>
+                            </td>
+                            <td style="width: 167.65pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">ایمیل</span>
+                                </p>
+                            </td>
+                            <td style="width: 167.65pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">شرکت</span>
+                                </p>
+                            </td>
+                            <td style="width: 167.65pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">شماره شرکت</span>
+                                </p>
+                            </td>
+                            <td style="width: 167.65pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">شماره داخلی</span>
+                                </p>
+                            </td>
+
+                        </tr>
+                        {% for i in data %}
+                            <tr>
+                                <td style="width: 167.65pt; background-color: rgb(191, 191, 191);">
+                                    <p style="text-align: center;"><span
+                                            style="font-family:تیتر; font-size:14pt; min-height:14pt">
+                                        {% if i.first_name != none %}
+                                            {{ i.first_name }}</span>
+                                        {% endif %}
+                                    </p>
+                                </td>
+                                <td style="width: 167.65pt; background-color: rgb(191, 191, 191);">
+                                    <p style="text-align: center;"><span
+                                            style="font-family:تیتر; font-size:14pt; min-height:14pt">
+                                        {% if i.last_name != none %}
+                                            {{ i.last_name }}</span>
+                                        {% endif %}
+                                    </p>
+                                </td>
+                                <td style="width: 167.65pt; background-color: rgb(191, 191, 191);">
+                                    <p style="text-align: center;"><span
+                                            style="font-family:تیتر; font-size:14pt; min-height:14pt">
+                                    {% if i.email != none %}
+                                        {{ i.email }}</span>
+                                    {% endif %}
+                                        </span>
+                                    </p>
+                                </td>
+                                <td style="width: 167.65pt; background-color: rgb(191, 191, 191);">
+                                    <p style="text-align: center;"><span
+                                            style="font-family:تیتر; font-size:14pt; min-height:14pt">
+                                    {% if i.company != none %}
+                                        {{ i.company }}</span>
+                                    {% endif %}
+                                        </span>
+                                    </p>
+                                </td>
+                                <td style="width: 167.65pt; background-color: rgb(191, 191, 191);">
+                                    <p style="text-align: center;"><span
+                                            style="font-family:تیتر; font-size:14pt; min-height:14pt">
+                                    {% if i.company_phone_number != none %}
+                                        {{ i.company_phone_number }}</span>
+                                    {% endif %}
+                                        </span>
+                                    </p>
+                                </td>
+                                <td style="width: 167.65pt; background-color: rgb(191, 191, 191);">
+                                    <p style="text-align: center;"><span
+                                            style="font-family:تیتر; font-size:14pt; min-height:14pt">
+                                    {% if i.internal_company_phone_number != none %}
+                                        {{ i.internal_company_phone_number }}</span>
+                                    {% endif %}
+                                        </span>
+                                    </p>
+                                </td>
+
+
+                            </tr>
+                            </tbody>
+                        {% endfor %}
+                    </table>
+                    <p style="margin-bottom: 5pt;"> 
+                    </p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+
+{% block custom_js %}
+    <script>
+        $(document).ready(function () {
+
+            //Dataset
+            var subjects = {{data_name|safe}}
+            var data_present = {{data_present}}
+            var data_absent = {{data_absent}}
+
+            //-------------
+            //- DONUT CHART -
+            var attendanceDataCanvas = $('#attendanceData').get(0).getContext('2d')
+            var donutData = {
+                labels: [
+                    'Present', 'Absent'
+                ],
+                datasets: [
+                    {
+                        data: [{{percent_present}}, {{percent_absent}}],
+                        backgroundColor: ['#00a65a', '#f56954'],
+                    }
+                ]
+            }
+            var donutOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+            var attendanceData = new Chart(attendanceDataCanvas, {
+                type: 'doughnut',
+                data: donutData,
+                options: donutOptions
+            });
+
+            //attendanceStatistics
+//Bar Chart
+            var areaChartData = {
+                labels: subjects,
+                datasets: [
+                    {
+                        label: 'Present In Class',
+                        backgroundColor: 'rgba(60,141,188,0.9)',
+                        borderColor: 'rgba(60,141,188,0.8)',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: 'rgba(60,141,188,1)',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(60,141,188,1)',
+                        data: data_present
+                    },
+
+                    {
+                        label: 'Absent In Class',
+                        backgroundColor: 'rgba(210, 214, 222, 1)',
+                        borderColor: 'rgba(210, 214, 222, 1)',
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: data_absent
+                    },
+                ]
+            }
+            var barChartCanvas = $('#attendanceStatistics').get(0).getContext('2d')
+            var barChartData = jQuery.extend(true, {}, areaChartData)
+            var temp = areaChartData.datasets[0]
+            barChartData.datasets[0] = temp
+            var barChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                datasetFill: false
+            }
+
+            var barChart = new Chart(barChartCanvas, {
+                type: 'bar',
+                data: barChartData,
+                options: barChartOptions
+            })
+
+
+        })
+
+    </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-messaging.js"></script>
+
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBarDWWHTfTMSrtc5Lj3Cdw5dEvjAkFwtM",
+            authDomain: "sms-with-django.firebaseapp.com",
+            databaseURL: "https://sms-with-django.firebaseio.com",
+            projectId: "sms-with-django",
+            storageBucket: "sms-with-django.appspot.com",
+            messagingSenderId: "945324593139",
+            appId: "1:945324593139:web:03fa99a8854bbd38420c86",
+            measurementId: "G-2F2RXTL9GT"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig)
+        const messaging = firebase.messaging();
+
+        function InitializeFireBaseMessaging() {
+            messaging
+                .requestPermission()
+                .then(function () {
+                    console.log("Notification Permission");
+                    return messaging.getToken();
+                })
+                .then(function (token) {
+                    console.log("Token : " + token);
+                    sendToServer(token);
+                })
+                .catch(function (reason) {
+                    console.log(reason)
+                })
+        }
+
+        messaging.onMessage(function (payload) {
+            const notificationOption = {
+                body: payload.notification.body,
+                icon: payload.notification.icon,
+
+            }
+            if (Notification.permission == 'granted') {
+                var notification = new Notification(payload.notification.title, notificationOption);
+                notification.onclick = function (event) {
+                    event.preventDefault();
+                    window.open(payload.notification.click_action, "_blank");
+                    notification.close();
+                }
+            }
+            console.log(payload);
+        });
+        messaging.onTokenRefresh(function () {
+            messaging.getToken()
+                .then(function (newToken) {
+                    console.log("New Token : " + newToken);
+                    sendToServer(newToken);
+
+                })
+                .catch(function (reason) {
+                    console.log(reason)
+                })
+        })
+
+        function sendToServer(token) {
+            $.ajax({
+                url: "{% url 'all_fcmtoken' %}",
+                type: 'POST',
+                data: {
+                    token: token,
+                }
+            }).done(function (response) {
+
+
+            }).fail(function (response) {
+            })
+
+        }
+
+        InitializeFireBaseMessaging();
+    </script>
+
+{% endblock custom_js %}
+

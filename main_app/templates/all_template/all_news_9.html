@@ -1,0 +1,109 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+
+{% block content %}
+ <style>
+        .news_page {
+        }
+
+        .news_all_of_page {
+            background-color: white;
+            margin-top: 50px;
+            width: 60%;
+            margin: auto;
+            border: 5px solid #124E66;
+            border-radius: 3%;
+        }
+
+        .news_top_header {
+            background-color: #124E66;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .news_phragraph {
+            font-size: 20px;
+            line-height: 2.3;
+        }
+
+        .back_button {
+            color: white;
+            background-color: #2E3944;
+            border: 2px solid white;
+            padding: 8px 25px;
+            border-radius: 8%;
+            float: left;
+            margin-left: 15px;
+            display: inline-block;
+        }
+        .back_button:hover{
+            color: skyblue;
+            border: 2px solid skyblue;
+        }
+    </style>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card_holding_news news_page">
+                        <div class="card-header news_top_header">
+                            {% url 'all_news' as all_news %}
+                            <a href="{{ all_news }}" class="back_button">بازگشت</a>
+                            <h4 style="text-align: center;margin-right: 115px;">اخبار</h4>
+                        </div>
+                        <div class="card-body news_all_of_page">
+
+                            <img src="{% static 'media/news_image_golfam_2.jpg' %}" class="img-circle elevation-2"
+                                 style="width:70%;border-radius: 4%;margin-bottom: 30px;margin-right: 15%"
+                                 alt="User Image">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <h3 style="color:darkgreen;margin-bottom: 20px;">سرکه بالزامیک یکی از سرکه‌های پرطرفدار
+                                    و ویژه‌ای است که اصالتش به مناطق مودنا و رجیو امیلیا در ایتالیا بازمی‌گردد. این سرکه
+                                    از آب انگور سیاه که به مدت طولانی رسیده و سپس برای مدت‌ها در بشکه‌های چوبی مختلف
+                                    تخمیر شده، تهیه می‌شود. به مرور زمان، سرکه طعمی متمایز، کمی شیرین و با بافتی لطیف به
+                                    دست می‌آورد که از خصوصیات بارز آن است.</h3>
+                                <p class="news_phragraph" style="color:#0c5460;">خواص سرکه بالزامیک:
+
+                                    1. تقویت سیستم ایمنی بدن: سرکه بالزامیک حاوی آنتی‌اکسیدان‌هایی است که می‌توانند به
+                                    محافظت از بدن در برابر رادیکال‌های آزاد و تقویت سیستم ایمنی کمک کنند.
+
+                                    2. کاهش فشار خون: بعضی تحقیقات نشان می‌دهند که مصرف متعادل سرکه بالزامیک ممکن است به
+                                    کاهش فشار خون کمک کند.
+
+                                    3. کاهش کلسترول: سرکه بالزامیک ممکن است به کاهش سطح کلسترول بد و افزایش کلسترول خوب
+                                    در خون کمک کند.
+
+                                    4. کمک به هضم غذا: این سرکه حاوی اسید استیک است که ترشح اسید معده را تحریک و به هضم
+                                    غذا کمک می‌کند.
+
+                                    5. کنترل قند خون: مطالعات نشان می‌دهند که سرکه بالزامیک ممکن است در کنترل سطح قند
+                                    خون پس از وعده‌های غذایی نقش داشته باشد.
+
+                                    کاربردهای آشپزی سرکه بالزامیک:
+
+                                    – در سالادها: رایج‌ترین استفاده از سرکه بالزامیک در ترکیب با روغن زیتون به عنوان سس
+                                    سالاد است.
+
+                                    – مارینادها و تندوری‌ها: برای اضافه کردن طعم و نرم کردن گوشت‌ها قبل از پخت.
+
+                                    – کاهش و تغلیظ: زمانی که سرکه بالزامیک کاهش پیدا کند، به یک سس غلیظ و شیرین تبدیل
+                                    می‌شود که برای نشان دادن حسن ظاهری و افزودن طعم به غذاها استفاده می‌شود.
+
+                                    – در دسرها: افزودن به میوه‌جات و دسرها برای ارتقا طعم آنها.
+
+                                    که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود
+                                    ابزارهای کاربردی می باشد.
+
+                                    سرکه بالزامیک به دلیل طعم و عطر متمایز خود مورد علاقه بسیاری از آشپزها و دوستداران
+                                    غذا قرار گرفته است. با این حال، استفاده متعادل از آن به دلیل داشتن قند و کالری توصیه
+                                    می‌شود. اضافه کردن این مایع گرانبها به طیف وسیعی از غذاها می‌تواند لذت غذا خوردن را
+                                    دوچندان کند.</table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

@@ -1,0 +1,95 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+
+{% block content %}
+    <style>
+        .news_page {
+            background-color: #FBFBFB;
+        }
+
+        .news_all_of_page {
+            margin-top: 50px;
+            padding-bottom: 50px;
+            width: 80%;
+            margin-right: 10%;
+            margin-left: 10%;
+        }
+
+        .news_top_header {
+            background-color: #124E66;
+            color: white;
+        }
+
+        .news_div {
+            border: 3px solid #124E66;
+            border-radius: 3%;
+            margin-right: 1.5%;
+            margin-bottom: 100px;
+            width: 31%;
+            display: inline-block;
+            text-align: center;
+
+        }
+
+        .news_image_top_header {
+            width: 25%;
+            height: 300px;
+            border-radius: 4%;
+            margin-bottom: 30px;
+        }
+
+        .news_image {
+            width: 80%;
+            height: 300px;
+            border-radius: 4%;
+            margin-bottom: 30px;
+        }
+
+        .news_header {
+            color: #0c5460;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 20px;
+        }
+
+        @media only screen and (max-width: 800px) {
+
+            .button_box {
+                width: 95% !important;
+            }
+        }
+    </style>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="news_page">
+                        <div class="card-header news_top_header">
+                            <h4 style="text-align: center">اخبار</h4>
+                            <!--<meta http-equiv="refresh" content="30;url=http://127.0.0.1:8000/holding/news"/>-->
+                            <!--<h5 style="color: darkgreen">قیمت دلار: {{ prices.price }} تومان </h5>
+                            <h5>{{ ss.s }}</h5>-->
+                        </div>
+
+                        <div class="news_all_of_page">
+
+                                <div class="card-body news_div"
+                                     style="display: block;width: 80%;margin: auto;margin-bottom: 20px;">
+                                    <img style="height: 800px;width: 100%;" src="../../static/media/related_organizations.jpeg" alt="">
+                                </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock content %}

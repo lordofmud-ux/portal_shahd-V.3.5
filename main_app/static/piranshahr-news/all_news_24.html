@@ -1,0 +1,632 @@
+<style>
+  .card {
+    img {
+      height: 170px;
+    }
+  }
+   #backBtn {
+    top: 0;
+    left: 5%;
+   direction: rtl;
+    z-index: 10000;
+    background-color: #2A6076;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition:300ms;
+  }
+
+ 
+</style>
+<div class="row mt-3">
+ 
+
+  <div class="heading animate__animated animate__fadeIn d-flex justify-content-center align-items-center">
+     <button id="backBtn" class="main-btn" onclick="goBack()"> بازگشت</button>
+
+    <h2>اخبار شرکت قند پیرانشهر</h2>
+  </div>
+</div>
+<div class="container animate__animated animate__fadeIn">
+  <div class="row mt-5">
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-1.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">
+            حضور مدیرکل سازمان حفاظت محیط زیست استان در قند پیرانشهر
+          </h5>
+          <p class="card-text">22 اردیبهشت 1404</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_25.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-7.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="..."
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">هفته کارگر وروز جهانی کارگر</h5>
+          <p class="card-text">1 اردیبهشت 1404</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_26.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-10.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt=" ..."
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">جلسه اداره کار با حضور سرپرست اداری</h5>
+          <p class="card-text">21 خرداد 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_27.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-11.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">
+            توزیع علف کش بهار 1404 در کارخانه قند پیرانشهر
+          </h5>
+          <p class="card-text">27 فروردین 1404</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_28.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-12.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">
+            حضور مدیر عامل بانک تجارت استان آذربایجان غربی در قند پیرانشهر
+          </h5>
+          <p class="card-text">25 فروردین 1404</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_29.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-14.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          style="object-position: center top;"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">
+            تقدیر ریاست فنی حرفه ای از مدیر عامل قند پیرانشهر
+          </h5>
+          <p class="card-text">25 فروردین 1404</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_30.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-18.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">معرفی فرمانده پایگاه نصر سپاه پیرانشهر</h5>
+          <p class="card-text">25 فروردین 1404</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_31.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-19.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">
+            زمان توزیع بذر چغندر قند برای کشت بهار 1404
+          </h5>
+          <p class="card-text">21 اسفند 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_32.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-22.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">مراسم بزرگ داشت شهيدان جبهه مقاومت</h5>
+          <p class="card-text">5 اسفند 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_33.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-26.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">عقد قرارداد برای سال زراعی 1404-1403</h5>
+          <p class="card-text">27 بهمن 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_34.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-29.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">
+            تبریک به مناسبت فرماندار جدید شهرستان پیرانشهر
+          </h5>
+          <p class="card-text">27 بهمن 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_35.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-32.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">برگزاري جام كارمندان شهرستان پيرانشهر</h5>
+          <p class="card-text">22 بهمن 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_36.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-33.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">حضور در راهمپیمایی 22 بهمن</h5>
+          <p class="card-text">22 بهمن 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_37.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-39.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">
+            برگزاری گرامیداشت دهه مبارک فجر قند پیرانشهر
+          </h5>
+          <p class="card-text">16 بهمن 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_38.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-43.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">مسابقات تنیس روی میز قند پیرانشهر</h5>
+          <p class="card-text">15 بهمن 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_39.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-47.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">
+            مراسم تکریم و معارفه فرماندار جدید پیرانشهر
+          </h5>
+          <p class="card-text">13 بهمن 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_40.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-51.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">حضور مسئولان تامین اجتماعی</h5>
+          <p class="card-text">4 بهمن 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_41.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-54.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">قیمت چغندر قند برای سال 1404-1403</h5>
+          <p class="card-text">1 بهمن 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_42.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-58.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">پایان بهره برداری سال 1403</h5>
+          <p class="card-text">6 دی 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_43.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-59.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">
+            گزارش عملکرد مسئولیت اجتماعی، بهداشتی، ایمنی، رفاهی و آموزشی
+          </h5>
+          <p class="card-text">1 آبان 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_44.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-61.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">
+            گزارش تصویری بازدید نماینده و فرماندار شهرستان از مسیر تحویل چغندر
+          </h5>
+          <p class="card-text">1 آبان 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_45.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-63.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">زمان شروع بهره برداری سال 1403</h5>
+          <p class="card-text">29 شهریور 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_46.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-66.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">
+            برگزاری مسابقات فوتسال بین کارگاهی در کارخانه قند پیرانشهر
+          </h5>
+          <p class="card-text">23 خرداد 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_47.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-71.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          style="object-position: center top;"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">
+            زمان برگزاری مسابقات فوتسال بین کارگاهی قند پیرانشهر
+          </h5>
+          <p class="card-text">1 خرداد 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_48.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-72.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">زمان توزیع کودهای ریز مغذی چغندرقند</h5>
+          <p class="card-text">16 اردیبهشت 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_49.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-73.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">تشویق و خلاقیت</h5>
+          <p class="card-text">12 اردیبهشت 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_50.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-77.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">مسابقات تنیس روی میز</h5>
+          <p class="card-text">9 اردیبهشت 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_51.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-79.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          style="object-position: center bottom;"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">زمان توزیع بذر چغندر قند برای کشت 1403</h5>
+          <p class="card-text">20 اسفند 1402</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_52.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="card w-100">
+        <img
+          src="../../static/media/public/img/pir-81.webp"
+          class="card-img-top img-fluid object-fit-cover"
+          alt="tips"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">زمان توزیع علف کش و حشره کش شرکت قند پیرانشهر</h5>
+          <p class="card-text">16 فروردین 1403</p>
+          <a
+            href="#"
+            class="btn btn-primary"
+            onclick="loadPage('/static/piranshahr-news/all_news_53.html'); return false;"
+            >مشاهده خبر
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

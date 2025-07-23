@@ -1,0 +1,59 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+
+{% block content %}
+
+    
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card" style="background-color: #FBFBFB">
+                        <div class="card-header">
+                            <h4 style="text-align: center">آپلود فایل</h4>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body" style="width: 70%;margin: auto;">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead class="thead-dark">
+                                <form method="POST" class="post-form" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% for field in form %}
+                                        <div class="form-group">
+                                            {{ field.errors }}
+                                            {{ field.label_tag }}
+                                            {{ field }}
+                                        </div>
+                                    {% endfor %}
+                                    <button type="submit" class="save btn btn-default"
+                                            style="background-color: green;color: white">Save
+                                    </button>
+                                </form>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <h1 id="target2" style="color: lightblue;">نام شرکت یا ایمیل اشتباه وارد شده است</h1>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        setTimeout(function () {
+            myFunction2();
+        }, 8000);
+
+        function hide2(elements2) {
+            elements2 = elements2.length ? elements2 : [elements2];
+            for (var index = 0; index < elements2.length; index++) {
+                elements2[index].style.display = 'none';
+            }
+        }
+
+        function myFunction2() {
+            hide2(document.getElementById('target2'));
+        }
+    </script>
+{% endblock content %}

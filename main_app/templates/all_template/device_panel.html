@@ -1,0 +1,668 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+{% block content %}
+
+
+
+    <!-- before change
+    <style>
+        .tool {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltiptext {
+            visibility: hidden;
+            width: 240px;
+            background-color: white;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+
+            display: block;
+            margin-right: 50px;
+            margin-top: -50px;
+            opacity: 80%;
+            font-size: 10px;
+        }
+
+        .tool:hover .tooltiptext {
+            visibility: visible;
+        }
+
+
+        .content .container-fluid .col-lg-4 {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted darkgray;
+        }
+
+        .col-lg-4 .tooltiptext {
+            visibility: hidden;
+            width: 240px;
+            background-color: darkgray;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            font-weight: bold;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+
+            display: block;
+            margin-right: 125px;
+            margin-top: -150px;
+            opacity: 80%;
+        }
+
+        .col-lg-4:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        @media only screen and (max-width: 800px) {
+            /* For tablets: */
+            .tooltiptext {
+                width: 50px;
+                display: none;
+            }
+
+            .tool {
+                width: 50px;
+            }
+
+            .button_box {
+                width: 100% !important;
+            }
+        }
+
+        .rotated:hover {
+            transition-delay: 1s;
+            transform: rotate(30deg);
+        }
+
+
+        .box:hover {
+            animation-name: rotate;
+            animation-duration: 0.7s;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        table {
+            width: 1125px;
+            border-collapse: collapse;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid #2E3944;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            background-color: rgba(45, 169, 194, 0.8);
+            color: #fff;
+            text-align: center;
+            border: 2px solid #2E3944 !important;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        thead th {
+            background-color: dodgerblue;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        tbody td {
+            position: relative;
+            background-color: rgb(191, 191, 191);
+        }
+
+        tbody td:hover:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -9999px;
+            bottom: -9999px;
+            background-color: rgba(255, 255, 255, 0.2);
+            z-index: -1;
+        }
+
+        .row {
+            margin: auto;
+        }
+
+        .a_href {
+            color: white;
+            font-size: 25px;
+
+        }
+
+        .table_style {
+            width: 100%;
+            height: 700px;
+            overflow-x: scroll;
+            overflow-y: scroll;
+            white-space: nowrap;
+        }
+
+        .table_p {
+            color: #2E3944 !important;
+        }
+
+        tbody {
+            tr {
+                &:hover {
+                    background-color: purple !important;
+                }
+            }
+
+            td {
+                position: relative;
+
+                &:hover {
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: -9999px;
+                        bottom: -9999px;
+                        background-color: rebeccapurple !important;
+                        z-index: -1;
+                    }
+                }
+            }
+        }
+
+    </style>
+    -->
+
+    <!-- after change -->
+
+    <style>
+        .table_style {
+            background-color: #2A6076;
+        }
+
+        td, th {
+            border: 2px solid white;
+            padding-top: 12px;
+            padding-bottom: 3px;
+            padding-left: 2px;
+            padding-right: 2px;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 800px) {
+
+            .table_style {
+                width: 100%;
+                height: 700px;
+                overflow-x: scroll;
+                overflow-y: scroll;
+                white-space: nowrap;
+            }
+        }
+
+        tbody tr:hover {
+            background-color: rgba(46, 57, 68, 0.6) !important;
+            background-color: rgba(46, 57, 68, 0.6) !important;
+        }
+
+        .div-a-href {
+            margin-bottom: 15px;
+        }
+
+        .a-href {
+            border: 2px solid white;
+            padding: 10px;
+            font-size: 15px;
+            color: #212A31;
+            background-color: #D3D9D4;
+            border-radius: 10px;
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .a-href:hover {
+            color: white;
+            background-color: #748D92;
+        }
+
+        .description-class {
+            width: 14% !important;
+        }
+
+        .td-class{
+            width: 5px !important;
+        }
+    </style>
+
+
+
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="container table_style " style="margin-right: 15px !important;">
+
+                    <div class="div-a-href" style="display: block !important;">
+                        <a href="{% url 'device_panel_create' %}" class="a-href">پنل ایجاد کالا</a>
+                        <a href="{% url 'device_panel_source_destination' %}" class="a-href">پنل مبدا و مقصد کالا</a>
+                    </div>
+                    <table class="docx_tablegrid first-col first-row no-vband"
+                           style="width:auto;width: 100% !important;">
+                        <tbody>
+                        <tr>
+                            <td class="td-class">نام</td>
+                            <td class="td-class">شرکت</td>
+                            <td class="td-class">موجود</td>
+                            <td class="td-class">توضیحات</td>
+                            <td class="td-class">شماره</td>
+                            <td class="td-class">مکان</td>
+
+                            <td class="td-class">نام مصرف کننده</td>
+                            <td class="td-class">نام خانوادگی مصرف کننده</td>
+                            <td class="td-class">ایمیل مصرف کننده</td>
+                            <td class="td-class">امضا مصرف کننده</td>
+                            <td class="td-class">دپارتمان</td>
+                            <td class="td-class">اتاق</td>
+                            <td class="td-class">طبقه</td>
+                            <td class="td-class">ساختمان</td>
+                            <td class="td-class">قیمت</td>
+                        </tr>
+                        {% for device in devices %}
+                            <tr>
+
+                                {% if device.name != none %}
+                                    <td class="td-class">{{ device.name }}</td>
+                                {% elif device.name == none %}
+                                    <td class="td-class"></td>
+                                {% endif %}
+
+
+                                {% if device.company != none %}
+                                    <td class="td-class">{{ device.company }}</td>
+                                {% elif device.company == none %}
+                                    <td class="td-class"></td>
+                                {% endif %}
+
+
+                                {% if device.exist != none %}
+                                    {% if device.exist == True %}
+                                        <td class="td-class">موجود</td>
+                                    {% elif device.exist == False %}
+                                        <td class="td-class">ناموجود</td>
+                                    {% endif %}
+                                {% elif device.exist == none %}
+                                    <td class="td-class"></td>
+                                {% endif %}
+
+
+                                {% if device.description != none %}
+                                    <td class="description-class">{{ device.description }}</td>
+                                {% elif device.description == none %}
+                                    <td class="description-class"></td>
+                                {% endif %}
+
+
+                                {% if device.number != none %}
+                                    <td class="td-class">{{ device.number }}</td>
+                                {% elif device.number == none %}
+                                    <td class="td-class"></td>
+                                {% endif %}
+
+
+                                {% if device.place != none %}
+                                    <td class="td-class">{{ device.place }}</td>
+                                {% elif device.place == none %}
+                                    <td class="td-class"></td>
+                                {% endif %}
+
+
+
+
+                                {% if device.user_firstname != none %}
+                                    <td class="td-class">{{ device.user_firstname }}</td>
+                                {% elif device.user_firstname == none %}
+                                    <td class="td-class"></td>
+                                {% endif %}
+
+
+                                {% if device.user_lastname != none %}
+                                    <td class="td-class">{{ device.user_lastname }}</td>
+                                {% elif device.user_lastname == none %}
+                                    <td class="td-class"></td>
+                                {% endif %}
+
+
+                                {% if device.user_email != none %}
+                                    <td class="td-class">{{ device.user_email }}</td>
+                                {% elif device.user_email == none %}
+                                    <td class="td-class"></td>
+                                {% endif %}
+
+
+                                {% if device.signature != none %}
+                                    <td class="td-class">{{ device.signature }}</td>
+                                {% elif device.signature == none %}
+                                    <td class="td-class"></td>
+                                {% endif %}
+
+
+                                {% if device.department != none %}
+                                    <td class="td-class">{{ device.department }}</td>
+                                {% elif device.department == none %}
+                                    <td class="td-class"></td>
+                                {% endif %}
+
+
+                                {% if device.room != none %}
+                                    <td class="td-class">{{ device.room }}</td>
+                                {% elif device.room == none %}
+                                    <td class="td-class"></td>
+                                {% endif %}
+
+
+                                {% if device.floor != none %}
+                                    <td class="td-class">{{ device.floor }}</td>
+                                {% elif device.floor == none %}
+                                    <td class="td-class"></td>
+                                {% endif %}
+
+
+                                {% if device.building_name != none %}
+                                    <td class="td-class">{{ device.building_name }}</td>
+                                {% elif device.building_name == none %}
+                                    <td class="td-class"></td>
+                                {% endif %}
+
+
+                                {% if device.price != none %}
+                                    <td class="td-class">{{ device.price }}</td>
+                                {% elif device.price == none %}
+                                    <td class="td-class"></td>
+                                {% endif %}
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+
+{% block custom_js %}
+    <script>
+        $(document).ready(function () {
+
+            //Dataset
+            var subjects = {{data_name|safe}}
+            var data_present = {{data_present}}
+            var data_absent = {{data_absent}}
+
+            //-------------
+            //- DONUT CHART -
+            var attendanceDataCanvas = $('#attendanceData').get(0).getContext('2d')
+            var donutData = {
+                labels: [
+                    'Present', 'Absent'
+                ],
+                datasets: [
+                    {
+                        data: [{{percent_present}}, {{percent_absent}}],
+                        backgroundColor: ['#00a65a', '#f56954'],
+                    }
+                ]
+            }
+            var donutOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+            var attendanceData = new Chart(attendanceDataCanvas, {
+                type: 'doughnut',
+                data: donutData,
+                options: donutOptions
+            });
+
+            //attendanceStatistics
+//Bar Chart
+            var areaChartData = {
+                labels: subjects,
+                datasets: [
+                    {
+                        label: 'Present In Class',
+                        backgroundColor: 'rgba(60,141,188,0.9)',
+                        borderColor: 'rgba(60,141,188,0.8)',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: 'rgba(60,141,188,1)',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(60,141,188,1)',
+                        data: data_present
+                    },
+
+                    {
+                        label: 'Absent In Class',
+                        backgroundColor: 'rgba(210, 214, 222, 1)',
+                        borderColor: 'rgba(210, 214, 222, 1)',
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: data_absent
+                    },
+                ]
+            }
+            var barChartCanvas = $('#attendanceStatistics').get(0).getContext('2d')
+            var barChartData = jQuery.extend(true, {}, areaChartData)
+            var temp = areaChartData.datasets[0]
+            barChartData.datasets[0] = temp
+            var barChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                datasetFill: false
+            }
+
+            var barChart = new Chart(barChartCanvas, {
+                type: 'bar',
+                data: barChartData,
+                options: barChartOptions
+            })
+
+
+        })
+
+    </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-messaging.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $("tr:even").css({
+                "background-color": "#376a80",
+            });
+        });
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBarDWWHTfTMSrtc5Lj3Cdw5dEvjAkFwtM",
+            authDomain: "sms-with-django.firebaseapp.com",
+            databaseURL: "https://sms-with-django.firebaseio.com",
+            projectId: "sms-with-django",
+            storageBucket: "sms-with-django.appspot.com",
+            messagingSenderId: "945324593139",
+            appId: "1:945324593139:web:03fa99a8854bbd38420c86",
+            measurementId: "G-2F2RXTL9GT"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig)
+        const messaging = firebase.messaging();
+
+        function InitializeFireBaseMessaging() {
+            messaging
+                .requestPermission()
+                .then(function () {
+                    console.log("Notification Permission");
+                    return messaging.getToken();
+                })
+                .then(function (token) {
+                    console.log("Token : " + token);
+                    sendToServer(token);
+                })
+                .catch(function (reason) {
+                    console.log(reason)
+                })
+        }
+
+        messaging.onMessage(function (payload) {
+            const notificationOption = {
+                body: payload.notification.body,
+                icon: payload.notification.icon,
+
+            }
+            if (Notification.permission == 'granted') {
+                var notification = new Notification(payload.notification.title, notificationOption);
+                notification.onclick = function (event) {
+                    event.preventDefault();
+                    window.open(payload.notification.click_action, "_blank");
+                    notification.close();
+                }
+            }
+            console.log(payload);
+        });
+        messaging.onTokenRefresh(function () {
+            messaging.getToken()
+                .then(function (newToken) {
+                    console.log("New Token : " + newToken);
+                    sendToServer(newToken);
+
+                })
+                .catch(function (reason) {
+                    console.log(reason)
+                })
+        })
+
+        function sendToServer(token) {
+            $.ajax({
+                url: "{% url 'all_fcmtoken' %}",
+                type: 'POST',
+                data: {
+                    token: token,
+                }
+            }).done(function (response) {
+
+
+            }).fail(function (response) {
+            })
+
+        }
+
+        InitializeFireBaseMessaging();
+    </script>
+
+{% endblock custom_js %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

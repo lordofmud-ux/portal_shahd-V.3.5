@@ -1,0 +1,660 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+{% block content %}
+    <style>
+        <!--
+        .tool {
+            position: relative;
+            display: inline-block;
+        }
+
+        -->
+        .tooltiptext {
+            visibility: hidden;
+            width: 240px;
+            background-color: white;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+
+            display: block;
+            margin-right: 50px;
+            margin-top: -50px;
+            opacity: 80%;
+            font-size: 10px;
+        }
+
+        .tool:hover .tooltiptext {
+            visibility: visible;
+        }
+
+
+        .content .container-fluid .col-lg-4 {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted darkgray;
+        }
+
+        .col-lg-4 .tooltiptext {
+            visibility: hidden;
+            width: 240px;
+            background-color: darkgray;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            font-weight: bold;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+
+            display: block;
+            margin-right: 125px;
+            margin-top: -150px;
+            opacity: 80%;
+        }
+
+        .col-lg-4:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        @media only screen and (max-width: 800px) {
+            /* For tablets: */
+            .tooltiptext {
+                width: 50px;
+                display: none;
+            }
+
+            .tool {
+                width: 50px;
+            }
+
+            .button_box {
+                width: 100% !important;
+            }
+        }
+
+    </style>
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+
+
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://141.11.123.127:8000/" target="_blank">
+                        <div class="small-box bg-info button_box" style="background-color: #748D92 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    خانه چت هلدینگ</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/shahd_logo.png' %}" alt="" width="75px" height="75px"
+                                         style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">گفت‌وگو نوعی برهم‌کنش بین دو یا چند نفر و ارتباطی بداهه بین دو یا چند نفر از مردم در راستای رسوم است. تحلیل گفت‌وگو شاخه‌ای از جامعه‌شناسی است که به مطالعهٔ بافت و ساختار رفتارهای انسانی با نگاهی عمیق‌تر به رفتارهای گفت‌وگو می‌پردازد.</span>
+
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6 tool">
+                    <a href="http://shahdgroup.ir" target="_blank">
+                        <!-- small box -->
+                        <div class="small-box bg-success button_box" style="background-color: #D3D9D4 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    وب سایت صنایع شهد آذربایجان</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/shahd_logo.png' %}" alt="" width="75px" height="75px"
+                                         style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">هلدینگ توسعه صنایع شهد آذربایجان با بیش از ۶۰ سال سابقه در حوزه صنایع غذایی، فولاد و پتروشیمی با مدیریت شرکت‌های گلفام،قند خوی، قند ارومیه، قند پیرانشهر، فروشگاه‌های زنجیره‌ای ترقی، صنایع ذوب‌آهن شمالغرب و پتروشیمی ارومیه به عنوان یکی از واحدهای تاثیرگذار در غرب آسیا و اروپا شناخته می‌شود.</span>
+
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.11.207:8200" target="_blank">
+                        <div class="small-box bg-danger button_box" style="background-color: #748D92 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    سیستم تنخواه</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/tankhah_logo.png' %}" alt="" width="75px" height="75px"
+                                         style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">هلدینگ توسعه صنایع شهد آذربایجان با بیش از ۶۰ سال سابقه در حوزه صنایع غذایی، فولاد و پتروشیمی با مدیریت شرکت‌های گلفام،قند خوی، قند ارومیه، قند پیرانشهر، فروشگاه‌های زنجیره‌ای ترقی، صنایع ذوب‌آهن شمالغرب و پتروشیمی ارومیه به عنوان یکی از واحدهای تاثیرگذار در غرب آسیا و اروپا شناخته می‌شود.</span>
+
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.11.50" target="_blank">
+                        <div class="small-box bg-primary button_box" style="background-color: #D3D9D4 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    اتوماسیون اداری فراگستر</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/faragostar_logo.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">اتوماسیون یا خودکارسازی معمولاً به فرایند قادر ساختن ماشین‌ها به انجام عملیات‌های ترتیبی از پیش تعیین شده بدون دخالت انسان یا دخالت کم و هم چنین استفاده از تجهیزات خاص که عملیات‌های صنعتی را اجرا و کنترل می‌کنند، گفته می‌شود.</span>
+
+                </div>
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.11.22:8080/" target="_blank">
+                        <div class="small-box bg-primary button_box" style="background-color: #D3D9D4 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    سیستم حضور غیاب تحت وب</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/capture.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">یکی از نیازهای مدیران هر کسب و کاری کنترل و نظارت بر کارکرد پرسنل و بهره‌وری آن هاست. یکی از این موارد کنترل و نظارت بر زمان ورود و خروج کارمندان و همچنین محاسبه حقوق آنها بر اساس این اطلاعات است. امروزه با پیشرفت تکنولوژی و ورود دستگاه‌های پیشرفته به بازار این امکان به راحتی و با مناسب ترین هزینه‌ در اختیار مدیران قرار گرفته‌است.</span>
+
+                </div>
+
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.11.27/" target="_blank">
+                        <div class="small-box bg-primary button_box" style="background-color: #748D92 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    سامانه مدیریت خدمات هلدینگ</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/manage.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">این سامانه فقط برای کاربران هلدینگ توسعه صنایع شهد آذربایجان بوده و کلیه‌ی خدمات پشتیبانی از این طریق و به‌صورت تیکتی ارایه می‌شود!</span>
+                </div>
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="">
+                        <div class="small-box bg-primary button_box"
+                             style="background-color: #D3D9D4  !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    نرم افزار فروشگاهی کیان
+                                </h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/kiyan_logo.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">پس از تجهیز فروشگاه زنجیره‌ای یا هایپرمارکت شما به نرم‌افزار جامع مدیریت فروشگاهی کیان هرگز شمارا تنها نخواهیم گذاشت. نیروهای مجرب پشتیبانی کیان در تمامی ایام سال حتی روزهای تعطیل رسمی (به غیر از روز عاشورا)  از ساعت نه صبح تا نه شب آماده پاسخگویی به تمامی سوالات شما هستند و مسائل پیش آمده را به صورت تماس تلفنی، ریموتی یا در صورت نیاز اعزام کارشناس به فروشگاه،برطرف خواهند کرد. نیروهای پشتیبان به شما کمک می‌کنند بیشترین بهره را ازامکانات نرم‌افزار فروشگاهی ببرید.</span>
+
+                </div>
+
+
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="">
+                        <div class="small-box bg-primary button_box" style="background-color: #748D92 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    داشبورد مدیریت Power BI
+                                </h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/Power-BI.jpg' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">مایکروسافت پاور بی آی  (‏Microsoft Power BI) یک بستر هوش تجاری و مدیریت اطلاعات کسب و کار است که ابزارهایی برای جمع آوری، تجزیه و تحلیل، تجسم و به اشتراک گذاری داده‌ها برای کاربران غیر فنی کسب و کار فراهم می‌کند. رابط کاربری Power BI برای کاربرانی که با Excel آشنا هستند کاملاً آشنا بوده و ادغام آن با سایر محصولات مایکروسافت، آن را به یک ابزار سرویس دهی بسیار متنوع تبدیل می‌کند.</span>
+                </div>
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.25.20/rahkaran" target="_blank">
+                        <div class="small-box bg-primary button_box"
+                             style="background-color: #748D92 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    راهکاران قند ارومیه
+                                </h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/rahkaran.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">راهکاران، یک نرم افزار ERP جامع و منطبق با تعاریف روز دنیاست که با پوشش وجوه مختلف کسب‌وکار و ارائه اطلاعات درست و به‌موقع، سازمان‌ها را در تصمیم‌گیری صحیح برای بالا بردن بهره‌وری، کارایی و در نتیجه سودآوری یاری می‌کند. راهکاران تصویر شفافی از عملیات کسب‌وکارتان را پیش روی شما قرار می‌دهد و به شما این توانایی را می‌دهد که روی موارد مهم متمرکز شوید، ریسک‌های کسب‌وکارتان را به‌دقت ارزیابی کنید و سریع‌تر تصمیم بگیرید.</span>
+
+                </div>
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.30.36/sg" target="_blank">
+                        <div class="small-box bg-primary button_box" style="background-color: #D3D9D4 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    راهکاران گلفام
+                                </h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/rahkaran.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">راهکاران، یک نرم افزار ERP جامع و منطبق با تعاریف روز دنیاست که با پوشش وجوه مختلف کسب‌وکار و ارائه اطلاعات درست و به‌موقع، سازمان‌ها را در تصمیم‌گیری صحیح برای بالا بردن بهره‌وری، کارایی و در نتیجه سودآوری یاری می‌کند. راهکاران تصویر شفافی از عملیات کسب‌وکارتان را پیش روی شما قرار می‌دهد و به شما این توانایی را می‌دهد که روی موارد مهم متمرکز شوید، ریسک‌های کسب‌وکارتان را به‌دقت ارزیابی کنید و سریع‌تر تصمیم بگیرید.</span>
+
+                </div>
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.45.17/shahd" target="_blank">
+                        <div class="small-box bg-primary button_box" style="background-color: #748D92 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    راهکاران قند خوی
+                                </h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/rahkaran.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">راهکاران، یک نرم افزار ERP جامع و منطبق با تعاریف روز دنیاست که با پوشش وجوه مختلف کسب‌وکار و ارائه اطلاعات درست و به‌موقع، سازمان‌ها را در تصمیم‌گیری صحیح برای بالا بردن بهره‌وری، کارایی و در نتیجه سودآوری یاری می‌کند. راهکاران تصویر شفافی از عملیات کسب‌وکارتان را پیش روی شما قرار می‌دهد و به شما این توانایی را می‌دهد که روی موارد مهم متمرکز شوید، ریسک‌های کسب‌وکارتان را به‌دقت ارزیابی کنید و سریع‌تر تصمیم بگیرید.</span>
+
+                </div>
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.11.37/Pardis3g/x50341ce6/Authentication/Login.aspx?ReturnUrl=%2fPardis3g%2fx50341ce6%2f"
+                       target="_blank">
+                        <div class="small-box bg-primary button_box" style="background-color: #D3D9D4 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    راهکاران پتروشیمی
+                                </h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/rahkaran.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">راهکاران، یک نرم افزار ERP جامع و منطبق با تعاریف روز دنیاست که با پوشش وجوه مختلف کسب‌وکار و ارائه اطلاعات درست و به‌موقع، سازمان‌ها را در تصمیم‌گیری صحیح برای بالا بردن بهره‌وری، کارایی و در نتیجه سودآوری یاری می‌کند. راهکاران تصویر شفافی از عملیات کسب‌وکارتان را پیش روی شما قرار می‌دهد و به شما این توانایی را می‌دهد که روی موارد مهم متمرکز شوید، ریسک‌های کسب‌وکارتان را به‌دقت ارزیابی کنید و سریع‌تر تصمیم بگیرید.</span>
+                </div>
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="">
+
+                        <div class="small-box bg-primary button_box"
+                             style='background-color: #D3D9D4  !important;'>
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    نرم افزار مالی آراز<p style="font-size: 10px;padding-top: 12px">(قند ارومیه
+                                    قدیمی)</p>
+                                </h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/Araz.jpg' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">شرکت آراز کنترل سيستم به مدیريت آقای مهندس ياشار رضازاده با تجربه بيش از 25 سال در خصوص توليد نرم افزار ، يکی از بزرگترین شرکتهای توليد کننده نرم افزار در منطقه شمالغرب کشور می باشد. اين شرکت در زمیته توليد نرم افزارهای مالی ، اداری ، صنعتی و بیمارستانی و کلینیک درمانگاهی فعاليت داشته و طرف قرارداد با ادارات ، سازمان ها و شرکت های بزرگ برای اجرای نرم افزار های اختصاصی مي باشد.</span>
+
+                </div>
+
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="">
+
+                        <div class="small-box bg-primary button_box"
+                             style='background-color: #748D92 !important;'>
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    نرم افزار عالی فراگستر<p style="font-size: 10px;padding-top: 12px">(قند خوی
+                                    قدیمی)</p>
+                                </h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/faragostar_logo.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">اتوماسیون اداری به کاربرد فناوری کامپیوتر و نرم‌ افزار ها برای اتوماتیک کردن وظایف روزمره دفتری و بهبود فرآیند های تجاری اشاره دارد. این مفهوم شامل ادغام ابزار ها و سیستم ‌های دیجیتال مختلف است که در بهبود بهره ‌وری، کارایی، و دقت در عملیات اداری مانند مدیریت اسناد، زمان ‌بندی، ارتباطات، و پردازش داده ‌ها مؤثر هستند. سیستم ‌های اتوماسیون اداری عموماً شامل ویژگی‌ هایی مانند مدیریت ایمیل، ذخیره ‌سازی الکترونیکی اسناد، اتوماسیون جریان کار، و ابزار های همکاری هستند که به تسهیل تعامل بی ‌درنگ و به اشتراک‌ گذاری اطلاعات درون یک سازمان کمک می‌ کنند.</span>
+
+                </div>
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="">
+
+                        <div class="small-box bg-primary button_box"
+                             style='background-color: #D3D9D4 !important;'>
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    راهکاران گلفام
+                                </h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/rahkaran.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">راهکاران، یک نرم افزار ERP جامع و منطبق با تعاریف روز دنیاست که با پوشش وجوه مختلف کسب‌وکار و ارائه اطلاعات درست و به‌موقع، سازمان‌ها را در تصمیم‌گیری صحیح برای بالا بردن بهره‌وری، کارایی و در نتیجه سودآوری یاری می‌کند. راهکاران تصویر شفافی از عملیات کسب‌وکارتان را پیش روی شما قرار می‌دهد و به شما این توانایی را می‌دهد که روی موارد مهم متمرکز شوید، ریسک‌های کسب‌وکارتان را به‌دقت ارزیابی کنید و سریع‌تر تصمیم بگیرید.</span>
+
+                </div>
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://217.219.150.226:1188/pira_sg3" target="_blank">
+
+                        <div class="small-box bg-primary button_box"
+                             style='background-color: #748D92 !important;'>
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    راهکاران قند پیرانشهر
+                                </h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/rahkaran.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">راهکاران، یک نرم افزار ERP جامع و منطبق با تعاریف روز دنیاست که با پوشش وجوه مختلف کسب‌وکار و ارائه اطلاعات درست و به‌موقع، سازمان‌ها را در تصمیم‌گیری صحیح برای بالا بردن بهره‌وری، کارایی و در نتیجه سودآوری یاری می‌کند. راهکاران تصویر شفافی از عملیات کسب‌وکارتان را پیش روی شما قرار می‌دهد و به شما این توانایی را می‌دهد که روی موارد مهم متمرکز شوید، ریسک‌های کسب‌وکارتان را به‌دقت ارزیابی کنید و سریع‌تر تصمیم بگیرید.</span>
+
+                </div>
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="">
+
+                        <div class="small-box bg-primary button_box"
+                             style='background-color: #748D92 !important;'>
+                            <div class="inner" style="height: 120px;">
+                                <h1 style="font-size: 18px;  margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                    نرم افزار آزمایشگاه عیارسنجی<p style="font-size: 10px;padding-top: 12px">(کارخانجات
+                                    قند)</p>
+                                </h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img src="{% static 'media/lib.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">نرم افزار آزمایشگاه عیارسنجی زرنگار امکانات بیشماری جهت بهبود و تسریع امور آزمایشگاه عیارسنجی در اختیار کاربران قرار می دهد. از جمله این امکانات می توان به انجام عملیات کامل آزمایشگاه ری گیری ثبت اطلاعات پاکت ( طلا و مشتریان) دسترسی سریع به آن ها، تهیه گزارشات مختلف آزمایشگاه ، ارسال جواب ری به طور ههمزمان از تلفن گویا و یا از طریق پیامک ، ربات تلگرام، اپلیکیشن اندروید و … اشاره کرد. از مزایای دیگر نرم افزار محیط ساده و کاربرپسند و قیمت مناسب بدون نیاز به شارژ سالیانه نرم افزار اشاره کرد.</span>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+{% endblock content %}
+
+{% block custom_js %}
+    <script>
+        $(document).ready(function () {
+            var donutData = {
+                labels: ['Sugars', 'Staff'],
+                datasets: [
+                    {
+                        data: [{{total_sugars}}, {{total_staff}}],
+                        backgroundColor: ['#00a65a', '#f39c12',],
+                    }
+                ]
+            }
+            var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+            var pieData = donutData;
+            var pieOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+            //Create pie or douhnut chart
+            // You can switch between pie and douhnut using the method below.
+            var pieChart = new Chart(pieChartCanvas, {
+                type: 'pie',
+                data: pieData,
+                options: pieOptions
+            });
+
+            var subject_list = {{ subject_list|safe|escape }};
+            var attendance_list = {{ attendance_list }};
+
+            var barChartData = {
+                labels: subject_list,
+                datasets: [
+                    {
+                        label: 'Attendance Per Subject',
+                        backgroundColor: '#17A2B8',
+                        borderColor: 'rgba(60,141,188,0.8)',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: 'rgba(60,141,188,1)',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(60,141,188,1)',
+                        data: attendance_list
+                    },
+
+                ]
+            }
+            var barChartCanvas = $('#barChart').get(0).getContext('2d')
+            var temp0 = barChartData.datasets[0]
+            //var temp1 = areaChartData.datasets[1]
+            barChartData.datasets[0] = temp0
+            // barChartData.datasets[1] = temp0
+
+            var stackedBarChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    xAxes: [{
+                        stacked: true,
+                    }],
+                    yAxes: [{
+                        stacked: true
+                    }]
+                }
+            }
+
+            var barChart = new Chart(barChartCanvas, {
+                type: 'bar',
+                data: barChartData,
+                options: stackedBarChartOptions
+            })
+
+
+            // Total sugars in Each Subject
+            var sugar_count_list_in_subject = {{ sugar_count_list_in_subject }}
+            var subject_list = {{ subject_list|safe }}
+            var pieData3 = {
+                labels: subject_list,
+                datasets: [
+                    {
+                        data: sugar_count_list_in_subject,
+                        backgroundColor: ['#8f251f', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#894e9c', '#0b523a', '#a1156d', '#9e4603'],
+                    }
+                ]
+            }
+
+            //-------------
+            //- PIE CHART -
+            //-------------
+            // Get context with jQuery - using jQuery's .get() method.
+            var pieChartCanvas3 = $('#pieChart3').get(0).getContext('2d')
+            var pieData3 = pieData3;
+            var pieOptions3 = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+
+            var pieChart3 = new Chart(pieChartCanvas3, {
+                type: 'pie',
+                data: pieData3,
+                options: pieOptions3
+            })
+
+
+            //- BAR CHART - sugar Attendance & Leave Overview //
+            var sugar_attendance_present_list = {{ sugar_attendance_present_list }};
+            var sugar_attendance_leave_list = {{ sugar_attendance_leave_list }};
+            var sugar_name_list = {{ sugar_name_list|safe }};
+
+            var areaChartData2 = {
+                labels: sugar_name_list,
+                datasets: [
+                    {
+                        label: 'Absent/Leave',
+                        backgroundColor: '#b50a04',
+                        borderColor: '#b50a04',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: 'rgba(60,141,188,1)',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(60,141,188,1)',
+                        data: sugar_attendance_leave_list
+                    },
+                    {
+                        label: 'Attendance',
+                        backgroundColor: '#5a615c',
+                        borderColor: 'rgba(210, 214, 222, 1)',
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: sugar_attendance_present_list
+                    },
+                ]
+            }
+
+
+            var barChartCanvas2 = $('#barChart2').get(0).getContext('2d')
+            var barChartData2 = jQuery.extend(true, {}, areaChartData2)
+            var temp02 = areaChartData2.datasets[0]
+            var temp12 = areaChartData2.datasets[1]
+            barChartData2.datasets[0] = temp12
+            barChartData2.datasets[1] = temp02
+
+            var barChartOptions2 = {
+                responsive: true,
+                maintainAspectRatio: false,
+                datasetFill: false
+            }
+
+            var barChart2 = new Chart(barChartCanvas2, {
+                type: 'bar',
+                data: barChartData2,
+                options: barChartOptions2
+            })
+
+
+            // Total sugar in Each Organ
+            //var donutChartCanvas = $('#pieChart2').get(0).getContext('2d')
+            var organ_name_list = {{ organ_name_list|safe }}
+            var sugar_count_list_in_organ = {{ sugar_count_list_in_organ }}
+            var pieData2 = {
+                labels: organ_name_list,
+                datasets: [
+                    {
+                        data: sugar_count_list_in_organ,
+                        backgroundColor: ['#cc0404', '#00a65a', '#f39c12', '#00A4BD', '#045c8f', '#894e9c', '#9e4603', '#71bfb2'],
+                    }
+                ]
+            }
+
+            //-------------
+            //- PIE CHART -
+            //-------------
+            // Get context with jQuery - using jQuery's .get() method.
+            var pieChartCanvas2 = $('#pieChart2').get(0).getContext('2d')
+            var pieData2 = pieData2;
+            var pieOptions2 = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+
+            var pieChart2 = new Chart(pieChartCanvas2, {
+                type: 'pie',
+                data: pieData2,
+                options: pieOptions2
+            })
+
+
+        })
+    </script>
+{% endblock custom_js %}

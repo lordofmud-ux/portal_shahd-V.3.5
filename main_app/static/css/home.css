@@ -1,0 +1,111 @@
+.tool {
+    position: relative;
+    display: inline-block;
+}
+
+-->
+.tooltiptext {
+    visibility: hidden;
+    width: 240px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+
+    display: block;
+    margin-right: 50px;
+    margin-top: -50px;
+    opacity: 80%;
+    font-size: 10px;
+}
+
+.tool:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+.content .container-fluid .col-lg-4 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted darkgray;
+}
+
+.col-lg-4 .tooltiptext {
+    visibility: hidden;
+    width: 240px;
+    background-color: darkgray;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-weight: bold;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+
+    display: block;
+    margin-right: 125px;
+    margin-top: -150px;
+    opacity: 80%;
+}
+
+.col-lg-4:hover .tooltiptext {
+    visibility: visible;
+}
+
+@media only screen and (max-width: 800px) {
+    /* For tablets: */
+    .tooltiptext {
+        width: 50px;
+        display: none;
+    }
+
+    .tool {
+        width: 50px;
+    }
+
+    .button_box {
+        width: 100% !important;
+    }
+}
+
+.rotated:hover {
+    transition-delay: 1s;
+    transform: rotate(30deg);
+}
+
+
+.box:hover {
+    animation-name: rotate;
+    animation-duration: 0.7s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.box_style {
+    border-top-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+}
+
+.h1_style {
+    font-size: 18px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

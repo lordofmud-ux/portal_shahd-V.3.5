@@ -1,0 +1,47 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static "css/device_panel_create.css" %}">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <a class="return-a-href" href="{% url 'device_panel' %}">صفحه قبل</a>
+                
+                    <div class="card" style="background-color: #FBFBFB">
+
+                        <div class="card-header">
+                            <h4 style="text-align: center">فرم انتقال کالا</h4>
+                        </div>
+
+                        <!-- /.card-header -->
+                        <div class="ddd card-body" style="width: 70%;margin: auto" ;>
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead class="thead-dark">
+
+
+                                <form method="POST" class="two-column-form post-form" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% for field in form %}
+                                        <div class="form-row form-group">
+                                            <div class="error">
+                                                {{ field.errors }}
+                                            </div>
+                                            {{ field.label_tag }}
+                                            {{ field }}
+                                        </div>
+                                    {% endfor %}
+                                    <button type="submit" class="submit_button save btn btn-default">ذخیره و ثبت
+                                    </button>
+                                </form>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

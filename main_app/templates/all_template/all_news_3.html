@@ -1,0 +1,93 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+
+{% block content %}
+ <style>
+        .news_page {
+        }
+
+        .news_all_of_page {
+            background-color: white;
+            margin-top: 50px;
+            width: 60%;
+            margin: auto;
+            border: 5px solid #124E66;
+            border-radius: 3%;
+        }
+
+        .news_top_header {
+            background-color: #124E66;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .news_phragraph {
+            font-size: 20px;
+            line-height: 2.3;
+        }
+
+        .back_button {
+            color: white;
+            background-color: #2E3944;
+            border: 2px solid white;
+            padding: 8px 25px;
+            border-radius: 8%;
+            float: left;
+            margin-left: 15px;
+            display: inline-block;
+        }
+        .back_button:hover{
+            color: skyblue;
+            border: 2px solid skyblue;
+        }
+
+    </style>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card_holding_news news_page">
+                        <div class="card-header news_top_header">
+                            {% url 'all_news' as all_news %}
+                            <a href="{{ all_news }}" class="back_button">بازگشت</a>
+                            <h4 style="text-align: center;margin-right: 115px;">اخبار</h4>
+                        </div>
+                        <div class="card-body news_all_of_page">
+
+                            <img src="{% static 'media/news_image_choghondar_ghand_orumiye.jpg' %}"
+                                 class="img-circle elevation-2"
+                                 style="width:70%;border-radius: 4%;margin-bottom: 30px;margin-right: 15%"
+                                 alt="User Image">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <h3 style="color:darkgreen;margin-bottom: 20px;">ساختمان چغندر قند</h3>
+                                <p class="news_phragraph" style="color:#0c5460;">گیاه چغندر قند از گونه ی بتاولگاریس
+                                    بوده و گیاهی دو ساله می
+                                    باشد.این گیاه در سال اول غده تشکیل داده، در سال دوم تولید بند، گل و بذر می نماید.از
+                                    نظر ظاهری، چغندر قند رسیده و آماده ی مصرف در کارخانه مخروطی شکل می باشد.ریشه یا دم:
+                                    ریشه ی آن باریک و تا ۱/۵ متر نیز ممکن است طولش باشد.قسمت فوقانی یا تنه.قسمت انتهایی
+                                    دم: از قسمت انتهایی دم قطری حدود ۱ سانتیمتر دارد را قطع نموده و جزء ضایعات است.سطح
+                                    خارجی: شیارهایی با ریشه های ضعیف دارد که مقدارش بستگی به رقم انتخابی چغندر قند
+                                    دارد.گردن: قسمت بالای تنه که ریشه ی جانبی ندارد.سر: قسمتی که روی آن تاج برگ قرار
+                                    دارد.
+
+                                    از کاشت تا برداشت
+                                    چغندر قند در سال اول کاشت پس از ۲۴۰-۱۷۰ روز برداشت شده و پس از جداسازی برگ و سر به
+                                    کارخانه حمل می شود.
+                                    نسبت قطر غده به طول غده بستگی به وضعیت مزرعه و آبیاری آن دارد، اگر آب کافی به مزرعه
+                                    برسد این نسبت بیشتر می شود
+                                    مارگاف، رئیس آکادمی علوم در برلین (۱۷۴۷ میلادی) مقداری قند در این گیاه یافت.او
+                                    دریافت که حدود ۷ درصد قند در آن وجود دارد که به عنوان یک منبع قندی می تواند حائز
+                                    اهمیت باشد.آخارد شاگرد مارگارف در زمینه اصلاح نژاد چغندر قند و تولید صنعتی شکر از
+                                    آن، آزمایشات مختلفی بر روی این گیاه انجام داد.بالاخره او در سال ۱۸۰۱ موفق می شود
+                                    اولین کارخانه ی قند چغندری را در آلمان احداث نماید.گسترش کشف چغندر از اواسط قرن ۱۸
+                                    میلادی به بعد معلول رقابتهای سیاسی و جنگ های دولتی مختلفی بود.آلمان و فرانسه در این
+                                    رقابت موفق تر بودند و به همین دلیل رقابت در زمینه ی این صنعت بوجود آمد.</table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

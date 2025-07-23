@@ -1,0 +1,38 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+
+{% block content %}
+    <style>
+        .back_button {
+            text-align: left;
+            margin-left: 20px;
+            border: 2px solid white;
+            padding: 5px 12px;
+            display: inline !important;
+            float: left;
+            color: black !important;
+            background-color: white;
+            border-radius: 5%;
+        }
+    </style>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-dark">
+                        <div class="card-header" style="border-radius: 0%">
+                            {% url 'manage_drug_change_password_picture' as manage_drug_change_password_picture %}
+                            <a href="{{ manage_drug_change_password_picture }}"
+                               class="back_button">بازگشت</a>
+                        </div>
+                        {% include "main_app/form_template_users_picture.html" with messages=messages  form=form button_text="تایید" %}
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

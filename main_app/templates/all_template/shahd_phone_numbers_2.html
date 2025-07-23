@@ -1,0 +1,1165 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+{% block content %}
+    <style>
+        <!--
+        .tool {
+            position: relative;
+            display: inline-block;
+        }
+
+        -->
+        .tooltiptext {
+            visibility: hidden;
+            width: 240px;
+            background-color: white;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+
+            display: block;
+            margin-right: 50px;
+            margin-top: -50px;
+            opacity: 80%;
+            font-size: 10px;
+        }
+
+        .tool:hover .tooltiptext {
+            visibility: visible;
+        }
+
+
+        .content .container-fluid .col-lg-4 {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted darkgray;
+        }
+
+        .col-lg-4 .tooltiptext {
+            visibility: hidden;
+            width: 240px;
+            background-color: darkgray;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            font-weight: bold;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+
+            display: block;
+            margin-right: 125px;
+            margin-top: -150px;
+            opacity: 80%;
+        }
+
+        .col-lg-4:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        @media only screen and (max-width: 800px) {
+            /* For tablets: */
+            .tooltiptext {
+                width: 50px;
+                display: none;
+            }
+
+            .tool {
+                width: 50px;
+            }
+
+            .button_box {
+                width: 100% !important;
+            }
+        }
+
+        .rotated:hover {
+            transition-delay: 1s;
+            transform: rotate(30deg);
+        }
+
+
+        .box:hover {
+            animation-name: rotate;
+            animation-duration: 0.7s;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        table {
+            width: 1125px;
+            border-collapse: collapse;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 15px;
+            background-color: rgba(45, 169, 194, 0.8);
+            color: #fff;
+            text-align: center;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        thead th {
+            background-color: dodgerblue;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        tbody td {
+            position: relative;
+        }
+
+        tbody td:hover:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -9999px;
+            bottom: -9999px;
+            background-color: rgba(255, 255, 255, 0.2);
+            z-index: -1;
+        }
+
+        .row {
+            margin: auto;
+        }
+
+        .a_href {
+            color: white;
+            font-size: 25px;
+
+        }
+
+        .table_style {
+            width: 100%;
+            height: 780px;
+            overflow: scroll;
+        }
+
+    </style>
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="container table_style">
+                    <h5 style="color: white"></h5>
+
+                    <table class="docx_tablegrid first-col first-row no-vband"
+                           style="float:left; margin-left:9pt; margin-right:9pt; width:auto">
+                        <colgroup>
+                            <col style="width: 450.8pt;"/>
+                        </colgroup>
+                        <tbody>
+                        <tr style="height: 27.9pt;">
+                            <td style="width: 450.8pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;font-size: 30px;"><span>داخلی پرسنل</span>
+                                </p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="docx_tablegrid first-col first-row no-vband"
+                           style="float:left; margin-left:9pt; margin-right:9pt; width:auto">
+                        <colgroup>
+                            <col style="width: 167.65pt;"/>
+                            <col style="width: 148.8pt;"/>
+                            <col style="width: 134.35pt;"/>
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <td style="width: 167.65pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">کارکنان</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">داخلی</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">طبقه</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="width: 450.8pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">طبقه دوم جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">خانم عامری</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">0-269-200</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">آقای بهروز زنجانی </span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">265</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">سرور</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">100</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">آقای حیدری</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">261</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">آقای ایزدی</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">262</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 جنوبی </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">خانم عالمی</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt"> </span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">263</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 جنوبی </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">264</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">آقای </span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">جبلی</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">26</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">6</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">آقای عرضاوی</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">267</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">268</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">274</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">275</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">36</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">8</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="width: 450.8pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">طبقه دوم شمالی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">آقای بادامچی</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">25</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">1</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 شمالی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">آقای مبرهن</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">252</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 شمالی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">آقای اسماعیلی</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">25</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 شمالی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">25</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">5</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 شمالی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">25</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">4</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 شمالی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">خانم </span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">سپیده </span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">موسوی </span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">25</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">9</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2 شمالی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="width: 450.8pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">طبقه سوم جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">01</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">آقای کارگشا</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">41</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">34</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">2</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">43</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">خانم سرخی</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">345</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">خانم هادی زاده</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">346</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">آقای حمزه</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">344</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">348</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="width: 450.8pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">طبقه سوم شمالی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">33</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3 شمالی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">33</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">9</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3 شمالی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">آقای ممقانی </span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">38</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">5</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3 شمالی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">آقای </span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">حسن زنجانی</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">38</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">7</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">3 شمالی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="width: 450.8pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">طبقه چهارم جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">آقای ربانی اصفهانی</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">425</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">4 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="width: 450.8pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;"> 
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">حراست آقای علیزاده </span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">171</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">همکف</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">سرایداری</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">173</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">منفی 1</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">منفی 2</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">1</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">96</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">منفی 2</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">آشپزخانه روف آقای رحیمی</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">681</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">6 شمالی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">بار روف</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">682</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">5 جنوبی</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="width: 450.8pt; background-color: rgb(191, 191, 191);">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">فاکس</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">فاکس</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">88199350</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">طبقه دوم</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 167.65pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">فاکس</span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">88199355</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">طبقه سوم</span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height: 3.5pt;">
+                            <td style="width: 167.65pt;">
+                                <p><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt"><span> </span></span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">تلفن</span><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt"><span> </span></span>
+                                </p>
+                            </td>
+                            <td style="width: 148.8pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">88199340-50</span>
+                                </p>
+                            </td>
+                            <td style="width: 134.35pt;">
+                                <p style="text-align: center;"><span
+                                        style="font-family:تیتر; font-size:14pt; min-height:14pt">88809078-9</span>
+                                </p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-bottom: 5pt;"> 
+                    </p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+
+{% block custom_js %}
+    <script>
+        $(document).ready(function () {
+
+            //Dataset
+            var subjects = {{data_name|safe}}
+            var data_present = {{data_present}}
+            var data_absent = {{data_absent}}
+
+            //-------------
+            //- DONUT CHART -
+            var attendanceDataCanvas = $('#attendanceData').get(0).getContext('2d')
+            var donutData = {
+                labels: [
+                    'Present', 'Absent'
+                ],
+                datasets: [
+                    {
+                        data: [{{percent_present}}, {{percent_absent}}],
+                        backgroundColor: ['#00a65a', '#f56954'],
+                    }
+                ]
+            }
+            var donutOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+            var attendanceData = new Chart(attendanceDataCanvas, {
+                type: 'doughnut',
+                data: donutData,
+                options: donutOptions
+            });
+
+            //attendanceStatistics
+//Bar Chart
+            var areaChartData = {
+                labels: subjects,
+                datasets: [
+                    {
+                        label: 'Present In Class',
+                        backgroundColor: 'rgba(60,141,188,0.9)',
+                        borderColor: 'rgba(60,141,188,0.8)',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: 'rgba(60,141,188,1)',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(60,141,188,1)',
+                        data: data_present
+                    },
+
+                    {
+                        label: 'Absent In Class',
+                        backgroundColor: 'rgba(210, 214, 222, 1)',
+                        borderColor: 'rgba(210, 214, 222, 1)',
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: data_absent
+                    },
+                ]
+            }
+            var barChartCanvas = $('#attendanceStatistics').get(0).getContext('2d')
+            var barChartData = jQuery.extend(true, {}, areaChartData)
+            var temp = areaChartData.datasets[0]
+            barChartData.datasets[0] = temp
+            var barChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                datasetFill: false
+            }
+
+            var barChart = new Chart(barChartCanvas, {
+                type: 'bar',
+                data: barChartData,
+                options: barChartOptions
+            })
+
+
+        })
+
+    </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-messaging.js"></script>
+
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBarDWWHTfTMSrtc5Lj3Cdw5dEvjAkFwtM",
+            authDomain: "sms-with-django.firebaseapp.com",
+            databaseURL: "https://sms-with-django.firebaseio.com",
+            projectId: "sms-with-django",
+            storageBucket: "sms-with-django.appspot.com",
+            messagingSenderId: "945324593139",
+            appId: "1:945324593139:web:03fa99a8854bbd38420c86",
+            measurementId: "G-2F2RXTL9GT"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig)
+        const messaging = firebase.messaging();
+
+        function InitializeFireBaseMessaging() {
+            messaging
+                .requestPermission()
+                .then(function () {
+                    console.log("Notification Permission");
+                    return messaging.getToken();
+                })
+                .then(function (token) {
+                    console.log("Token : " + token);
+                    sendToServer(token);
+                })
+                .catch(function (reason) {
+                    console.log(reason)
+                })
+        }
+
+        messaging.onMessage(function (payload) {
+            const notificationOption = {
+                body: payload.notification.body,
+                icon: payload.notification.icon,
+
+            }
+            if (Notification.permission == 'granted') {
+                var notification = new Notification(payload.notification.title, notificationOption);
+                notification.onclick = function (event) {
+                    event.preventDefault();
+                    window.open(payload.notification.click_action, "_blank");
+                    notification.close();
+                }
+            }
+            console.log(payload);
+        });
+        messaging.onTokenRefresh(function () {
+            messaging.getToken()
+                .then(function (newToken) {
+                    console.log("New Token : " + newToken);
+                    sendToServer(newToken);
+
+                })
+                .catch(function (reason) {
+                    console.log(reason)
+                })
+        })
+
+        function sendToServer(token) {
+            $.ajax({
+                url: "{% url 'all_fcmtoken' %}",
+                type: 'POST',
+                data: {
+                    token: token,
+                }
+            }).done(function (response) {
+
+
+            }).fail(function (response) {
+            })
+
+        }
+
+        InitializeFireBaseMessaging();
+    </script>
+
+{% endblock custom_js %}
+
+
+
+
+
+
+
+
+
+
+
+
+

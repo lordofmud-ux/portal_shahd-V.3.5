@@ -1,0 +1,102 @@
+.two-column-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Label column | Input column */
+    gap: 1rem; /* Spacing between rows */
+}
+
+.form-row {
+    display: contents; /* Makes children align with grid */
+}
+
+.two-column-form label {
+    text-align: right;
+    padding-right: 10px;
+    align-self: center; /* Vertically center labels */
+}
+
+.two-column-form input,
+.two-column-form textarea,
+.two-column-form select {
+    width: 100%; /* Full width of the grid cell */
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.two-column-form .error {
+    grid-column: 2; /* Errors appear below inputs */
+    color: red;
+    font-size: 0.9em;
+}
+
+button {
+    grid-column: 2; /* Submit button in input column */
+    width: fit-content;
+}
+
+.submit_button {
+    background-color: green;
+    color: white;
+    display: block;
+    width: 306px;
+    margin-top: 25px;
+    margin-right: 180px;
+    padding: 10px 0px 10px 0px;
+    font-size: 22px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.submit_button:hover {
+    background-color: darkgreen !important;
+    color: white;
+}
+
+.return-a-href {
+    background-color: #FBFBFB;
+    color: #212A31;
+    display: block;
+    width: 8%;
+    margin-top: 25px;
+    padding: 8px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.return-a-href :hover {
+    color: #212A31 !important;
+}
+
+.lable_tag-class {
+    display: inline-block;
+    width: 180px !important;
+}
+
+.field_class {
+    display: inline-block;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+
+    body {
+        .field_class {
+            width: 50% !important;
+        }
+
+        input[type="text"] {
+            width: 200px !important;
+        }
+        button[type="submit"]{
+            margin-right: 0px;
+            width: 200px;
+        }
+        a[href]
+        {
+            width: 100%;
+        }
+    }
+}

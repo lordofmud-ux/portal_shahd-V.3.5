@@ -1,0 +1,332 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+
+                <!-- ./col -->
+                <div class="col-lg-3 col-6 tool">
+                    <a href="http://shahdgroup.ir" target="_blank">
+                        <!-- small box -->
+                        <div class="small-box bg-success button_box box_style" style="background-color: #748D92 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 class="h1_style">
+                                    وب سایت صنایع شهد آذربایجان</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img class="box" src="{% static 'media/shahd_logo.png' %}" alt="" width="75px" height="75px"
+                                         style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">هلدینگ توسعه صنایع شهد آذربایجان با بیش از ۶۰ سال سابقه در حوزه صنایع غذایی، فولاد و پتروشیمی با مدیریت شرکت‌های گلفام،قند خوی، قند ارومیه، قند پیرانشهر، فروشگاه‌های زنجیره‌ای ترقی، صنایع ذوب‌آهن شمالغرب و پتروشیمی ارومیه به عنوان یکی از واحدهای تاثیرگذار در غرب آسیا و اروپا شناخته می‌شود.</span>
+
+                </div>
+                <!-- ./col -->
+                <!-- ./col -->
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.11.50" target="_blank">
+                        <div class="small-box bg-primary button_box box_style" style="background-color: #D3D9D4 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 class="h1_style">
+                                    اتوماسیون اداری فراگستر</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img class="box" src="{% static 'media/faragostar_logo.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">اتوماسیون یا خودکارسازی معمولاً به فرایند قادر ساختن ماشین‌ها به انجام عملیات‌های ترتیبی از پیش تعیین شده بدون دخالت انسان یا دخالت کم و هم چنین استفاده از تجهیزات خاص که عملیات‌های صنعتی را اجرا و کنترل می‌کنند، گفته می‌شود.</span>
+
+                </div>
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.25.22:8091/" target="_blank">
+                        <div class="small-box bg-primary button_box box_style" style="background-color: #748D92 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 class="h1_style">
+                                    سیستم حضور غیاب تحت وب</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img class="box" src="{% static 'media/capture.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">یکی از نیازهای مدیران هر کسب و کاری کنترل و نظارت بر کارکرد پرسنل و بهره‌وری آن هاست. یکی از این موارد کنترل و نظارت بر زمان ورود و خروج کارمندان و همچنین محاسبه حقوق آنها بر اساس این اطلاعات است. امروزه با پیشرفت تکنولوژی و ورود دستگاه‌های پیشرفته به بازار این امکان به راحتی و با مناسب ترین هزینه‌ در اختیار مدیران قرار گرفته‌است.</span>
+
+                </div>
+
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.11.27/" target="_blank">
+                        <div class="small-box bg-primary button_box box_style" style="background-color: #D3D9D4 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 class="h1_style">
+                                    سامانه مدیریت خدمات هلدینگ</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img class="box" src="{% static 'media/manage.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">این سامانه فقط برای کاربران هلدینگ توسعه صنایع شهد آذربایجان بوده و کلیه‌ی خدمات پشتیبانی از این طریق و به‌صورت تیکتی ارایه می‌شود!</span>
+                </div>
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="http://192.168.25.20/rahkaran" target="_blank">
+                        <div class="small-box bg-primary button_box box_style" style="background-color: #D3D9D4 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 class="h1_style">
+                                    راهکاران گلفام
+                                </h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img class="box" src="{% static 'media/rahkaran.png' %}" alt="" width="75px"
+                                         height="75px" style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">راهکاران، یک نرم افزار ERP جامع و منطبق با تعاریف روز دنیاست که با پوشش وجوه مختلف کسب‌وکار و ارائه اطلاعات درست و به‌موقع، سازمان‌ها را در تصمیم‌گیری صحیح برای بالا بردن بهره‌وری، کارایی و در نتیجه سودآوری یاری می‌کند. راهکاران تصویر شفافی از عملیات کسب‌وکارتان را پیش روی شما قرار می‌دهد و به شما این توانایی را می‌دهد که روی موارد مهم متمرکز شوید، ریسک‌های کسب‌وکارتان را به‌دقت ارزیابی کنید و سریع‌تر تصمیم بگیرید.</span>
+
+                </div>
+                <div class="col-lg-3 col-6 tool">
+                    <!-- small box -->
+                    <a href="" target="_blank">
+                        <div class="small-box bg-info button_box box_style" style="background-color: #748D92 !important;">
+                            <div class="inner" style="height: 120px;">
+                                <h1 class="h1_style">
+                                    خانه چت هلدینگ</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="nav-icon fas ">
+                                    <img class="box" src="{% static 'media/shahd_logo.png' %}" alt="" width="75px" height="75px"
+                                         style="border-radius: 25%">
+                                </i>
+                            </div>
+                            {# <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> #}
+                        </div>
+                    </a>
+                    <span class="tooltiptext hidden_for_mobile">گفت‌وگو نوعی برهم‌کنش بین دو یا چند نفر و ارتباطی بداهه بین دو یا چند نفر از مردم در راستای رسوم است. تحلیل گفت‌وگو شاخه‌ای از جامعه‌شناسی است که به مطالعهٔ بافت و ساختار رفتارهای انسانی با نگاهی عمیق‌تر به رفتارهای گفت‌وگو می‌پردازد.</span>
+                </div>
+
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+
+{% block custom_js %}
+    <script>
+        $(document).ready(function () {
+
+            //Dataset
+            var subjects = {{data_name|safe}}
+            var data_present = {{data_present}}
+            var data_absent = {{data_absent}}
+
+            //-------------
+            //- DONUT CHART -
+            var attendanceDataCanvas = $('#attendanceData').get(0).getContext('2d')
+            var donutData = {
+                labels: [
+                    'Present', 'Absent'
+                ],
+                datasets: [
+                    {
+                        data: [{{percent_present}}, {{percent_absent}}],
+                        backgroundColor: ['#00a65a', '#f56954'],
+                    }
+                ]
+            }
+            var donutOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+            }
+            var attendanceData = new Chart(attendanceDataCanvas, {
+                type: 'doughnut',
+                data: donutData,
+                options: donutOptions
+            });
+
+            //attendanceStatistics
+//Bar Chart
+            var areaChartData = {
+                labels: subjects,
+                datasets: [
+                    {
+                        label: 'Present In Class',
+                        backgroundColor: 'rgba(60,141,188,0.9)',
+                        borderColor: 'rgba(60,141,188,0.8)',
+                        pointRadius: false,
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: 'rgba(60,141,188,1)',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(60,141,188,1)',
+                        data: data_present
+                    },
+
+                    {
+                        label: 'Absent In Class',
+                        backgroundColor: 'rgba(210, 214, 222, 1)',
+                        borderColor: 'rgba(210, 214, 222, 1)',
+                        pointRadius: false,
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
+                        pointHighlightStroke: 'rgba(220,220,220,1)',
+                        data: data_absent
+                    },
+                ]
+            }
+            var barChartCanvas = $('#attendanceStatistics').get(0).getContext('2d')
+            var barChartData = jQuery.extend(true, {}, areaChartData)
+            var temp = areaChartData.datasets[0]
+            barChartData.datasets[0] = temp
+            var barChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                datasetFill: false
+            }
+
+            var barChart = new Chart(barChartCanvas, {
+                type: 'bar',
+                data: barChartData,
+                options: barChartOptions
+            })
+
+
+        })
+
+    </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-messaging.js"></script>
+
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBarDWWHTfTMSrtc5Lj3Cdw5dEvjAkFwtM",
+            authDomain: "sms-with-django.firebaseapp.com",
+            databaseURL: "https://sms-with-django.firebaseio.com",
+            projectId: "sms-with-django",
+            storageBucket: "sms-with-django.appspot.com",
+            messagingSenderId: "945324593139",
+            appId: "1:945324593139:web:03fa99a8854bbd38420c86",
+            measurementId: "G-2F2RXTL9GT"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig)
+        const messaging = firebase.messaging();
+
+        function InitializeFireBaseMessaging() {
+            messaging
+                .requestPermission()
+                .then(function () {
+                    console.log("Notification Permission");
+                    return messaging.getToken();
+                })
+                .then(function (token) {
+                    console.log("Token : " + token);
+                    sendToServer(token);
+                })
+                .catch(function (reason) {
+                    console.log(reason)
+                })
+        }
+
+        messaging.onMessage(function (payload) {
+            const notificationOption = {
+                body: payload.notification.body,
+                icon: payload.notification.icon,
+
+            }
+            if (Notification.permission == 'granted') {
+                var notification = new Notification(payload.notification.title, notificationOption);
+                notification.onclick = function (event) {
+                    event.preventDefault();
+                    window.open(payload.notification.click_action, "_blank");
+                    notification.close();
+                }
+            }
+            console.log(payload);
+        });
+        messaging.onTokenRefresh(function () {
+            messaging.getToken()
+                .then(function (newToken) {
+                    console.log("New Token : " + newToken);
+                    sendToServer(newToken);
+
+                })
+                .catch(function (reason) {
+                    console.log(reason)
+                })
+        })
+
+        function sendToServer(token) {
+            $.ajax({
+                url: "{% url 'research_fcmtoken' %}",
+                type: 'POST',
+                data: {
+                    token: token,
+                }
+            }).done(function (response) {
+
+
+            }).fail(function (response) {
+            })
+
+        }
+
+        InitializeFireBaseMessaging();
+    </script>
+{% endblock custom_js %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

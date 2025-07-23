@@ -1,0 +1,403 @@
+<style>
+    .card-img-top {
+        object-fit: cover;
+        max-width: 100%;
+        height: auto;
+
+    }
+
+    .card-body {
+
+        height: 140px;
+        text-align: center;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+        justify-content: flex-end;
+
+    }
+
+    .card-title {
+
+        text-align: center;
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    .card {
+        width: 100%;
+        overflow: hidden;
+        word-wrap: break-word;
+        box-shadow: 0px 0px 5px #415a77;
+    }
+
+    .card-text {
+        font-size: 12px;
+        color: black;
+    }
+
+    .heading-1 {
+        text-align: center;
+
+    }
+
+
+
+    .btn-primary:hover {
+        background-color: #415a77;
+    }
+
+    .main-btn {
+        position: absolute;
+        left: 10%;
+        top: 27%;
+        display: block;
+        background: #2A6076;
+        color: #fff;
+        font-weight: bold;
+        font-size: 0.90rem;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: 500ms;
+    }
+
+
+    .ul-1 {
+        font-size: 20px;
+        color: #0c5460;
+        line-height: 30px;
+
+        li {
+            font-weight: bold;
+        }
+    }
+
+
+    .container-1 {
+        margin-top: 30px;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+
+        .intro {
+
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-flow: column wrap;
+            border-radius: 10px;
+
+            .logo {
+                width: 100%;
+                height: 150px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 4000;
+
+                img {
+                    object-fit: cover;
+                    width: 150px;
+                    height: 150px;
+
+                }
+
+            }
+
+            .head {
+                width: 100%;
+                height: 100px;
+                text-align: center;
+
+                hr {
+                    margin-top: 40px;
+                }
+
+
+                .animate__animated.animate__fadeInDown {
+                    --animate-duration: 2s;
+
+                }
+
+                h1 {
+                    padding-top: 20px;
+                    word-spacing: 3px;
+                }
+
+            }
+
+        }
+
+        .default-content {
+            width: 100%;
+            margin-top: 20px;
+            font-size: 20px;
+            line-height: 40px;
+            text-align: justify;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+
+        }
+    }
+
+    .right-side-news {
+        margin-top: 3px;
+        position: absolute;
+        top: 5%;
+        left: 3%;
+        height: 4.5%;
+        width: 80%;
+        border-radius: 10px;
+        display: flex;
+        flex-flow: row;
+        align-items: flex-end;
+        color: white;
+        gap: 15px;
+        background-color: #2A6076;
+
+        .companies {
+            position: absolute;
+            right: 45%;
+            margin-top: 30px;
+            width: 50%;
+            height: 100%;
+            font-size: 25px;
+
+
+            h3 {
+                font-weight: normal;
+                font-size: 20px;
+                width: 90%;
+            }
+
+        }
+
+        .news {
+            &:hover {
+                background-color: #518297;
+                border-radius: 10px;
+            }
+
+            width: 100%;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            transition: 500ms;
+
+            a {
+
+                text-align: center;
+                display: block;
+                text-decoration: none;
+                color: white;
+
+
+
+
+
+
+
+            }
+        }
+
+
+    }
+
+    .animate__animated.animate__fadeIn {
+        --animate-duration: 2s;
+
+    }
+
+    .animate__animated.animate__fadeInDown {
+        --animate-duration: 3s;
+
+    }
+
+    .animate__animated.animate__zoomIn {
+        --animate-duration: 1.5s;
+
+    }
+
+    .mf {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .heading {
+        text-align: center;
+        width: 100%;
+        margin-top: 30px;
+        position: relative;
+
+        img {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: -25%;
+            left: 67%;
+        }
+
+        .shafazhen-logo {
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            top: -5%;
+            left: 69%;
+        }
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+
+
+    .main-news {
+        width: 80%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+
+        .carousel {
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+        box-shadow: 0px 0px 15px;
+    }
+
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        border-radius: 20px;
+
+
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .main-news {
+        width: 80%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+
+        .carousel {
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+        box-shadow: 0px 0px 15px;
+    }
+
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        border-radius: 20px;
+
+
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+
+
+    }
+</style>
+
+
+<div class="container-fluid rounded-5 animate__animated animate__fadeIn animate__delay-1s ">
+    <div class="row  justify-content-center align-items-center mt-4 ">
+        <div
+            class="col-12 col-md-6 d-flex justify-content-center align-items-center  bg-white  align-items-center flex-column  w-75  rounded-5 ">
+
+            <div class="swiper myslider mt-4 rounded-4" style="max-width: 950px;">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../../static/media/public/img/speech-1.webp"
+                            class=" w-75 img-fluid object-fit-cover w-100 rounded-4" style="height: 400px;" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../../static/media/public/img/gas-3.webp"
+                            class="img-fluid object-fit-cover w-100 rounded-4" style="height: 400px;" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../../static/media/public/img/gas-industry.webp"
+                            class="img-fluid object-fit-cover w-100 rounded-4" style="height: 400px;" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../../static/media/public/img/gas-industry-1.webp"
+                            class="img-fluid object-fit-cover w-100 rounded-4" style="height: 400px;" />
+
+                    </div>
+                </div>
+            </div>
+                    <div style="margin-top:40px; font-weight: bold; font-size: 18px; color: #0c5460;width: 100%;text-align: right;">
+                تعداد بازدید: <span id="viewCount">0</span>
+            </div>
+
+            <h3 class="iron mt-5 w-100" style="color: #186600;text-align: right;">الزام مدیریت مصرف انرژی در تولید مجتمع
+                های پتروشیمی</h3>
+            <h3 class="iron mt-3" style="color: #186600; text-align: right;">معاون وزیر نفت و مدیر عامل شرکت ملی صنایع
+                پتروشیمی گفت: مجتمع
+                های
+                پتروشیمی ملزم به مدیریت مصرف انرژی در فرایند افزایش تولید از طریق تکمیل زنجیره ارزش هستند.</h3>
+            <P class="new-line" style="color: #0c5460; margin-top: 30px; font-size: 20px; text-align: justify;">
+                به گزارش نیپنا، مرتضی شاهمیرزایی معاون وزیر و مدیرعامل شرکت ملی صنایع پتروشیمی در جلسه کارگروه تخصصی
+                انرژی مجتمع های الفینی و پلیمری با اشاره به اهمیت مدیریت مصرف انرژی در فرآیند تولید، گفت: شاخص مصرف
+                انرژی در ایران زیاد مطلوب نیست و ما باید با بهینه سازی مبتنی بر عقلانیت و تکنولوژی و با استفاده از
+                توانایی های مراکز علمی و پژوهشی و دانش بنیان مصرف انرژی را به حداقل برسانیم.
+
+                وی در جهت مدیریت مصرف انرژی افزود:نقش مدیریت انرژی در این زمینه بسیار مهم است و باید به آسیب های
+                اقتصادی
+                و اجتماعی انتشار گازهای فلر توجه داشت.
+
+                وی تاکید بر اینکه ممکن است در آینده نزدیک گازهای فلر اهرمی برای تحت فشار قرار دادن کشور توسط غرب
+                باشد،
+                پس باید به صورت ویژه در این زمینه اقدامات موثری انجام داد.
+                مدیرعامل شرکت ملی صنایع پتروشیمی با تاکید بر اهمیت اشتراک گذاری دانش و باتوجه به اینکه مصرف بهینه و
+                اقتصادی منابع انرژی از گذشته در فرهنگ ما وجود داشته است، بیان کرد: باید عمیق تر و با در نظر داشتن
+                بهره
+                وری بیشتر از منابع انرژی به سوی استفاده بهینه از منابع موجود حرکت کنیم.
+
+                مدیرعامل شرکت ملی صنایع پتروشیمی با تاکید بر اهمیت اشتراک گذاری دانش و باتوجه به اینکه مصرف بهینه و
+                اقتصادی منابع انرژی از گذشته در فرهنگ ما وجود داشته است، بیان کرد: باید عمیق تر و با در نظر داشتن
+                بهره
+                وری بیشتر از منابع انرژی به سوی استفاده بهینه از منابع موجود حرکت کنیم.
+
+                مدیر عامل شرکت ملی صنایع پتروشیمی از راه‌اندازی واحد PDH پتروشیمی رجال به‌ عنوان نخستین PDH کشور تا
+                اوایل سال آینده خبر داد.
+            </P>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+</div>

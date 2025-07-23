@@ -1,0 +1,99 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+
+{% block content %}
+ <style>
+        .news_page {
+        }
+
+        .news_all_of_page {
+            background-color: white;
+            margin-top: 50px;
+            width: 60%;
+            margin: auto;
+            border: 5px solid #124E66;
+            border-radius: 3%;
+        }
+
+        .news_top_header {
+            background-color: #124E66;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .news_phragraph {
+            font-size: 20px;
+            line-height: 2.3;
+        }
+
+        .back_button {
+            color: white;
+            background-color: #2E3944;
+            border: 2px solid white;
+            padding: 8px 25px;
+            border-radius: 8%;
+            float: left;
+            margin-left: 15px;
+            display: inline-block;
+        }
+        .back_button:hover{
+            color: skyblue;
+            border: 2px solid skyblue;
+        }
+
+    </style>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card_holding_news news_page">
+                        <div class="card-header news_top_header">
+                            {% url 'all_news' as all_news %}
+                            <a href="{{ all_news }}" class="back_button">بازگشت</a>
+                            <h4 style="text-align: center;margin-right: 115px;">اخبار</h4>
+                        </div>
+                        <div class="card-body news_all_of_page">
+
+                            <img src="{% static 'media/news_image_ghand_khoy.jpg' %}" class="img-circle elevation-2"
+                                 style="width:70%;border-radius: 4%;margin-bottom: 30px;margin-right: 15%"
+                                 alt="User Image">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <h3 style="color:darkgreen;margin-bottom: 20px;">اخبار شرکت قند خوی واحد اداری</h3>
+                                <p class="news_phragraph" style="color:#0c5460;">واحد اداری
+                                    1- توزیع سبد کالا جهت رفاه پیمانکاران و پرسنل محترم
+
+                                    شرکت سهامی عام شهد در راستای کمک و مساعدت به همکاران محترم همه ساله در دو نوبت نسبت
+                                    به توزیع سبد کالا اقدام مینماید این سبد شامل برنج،مرغ،روغن و شکر میباشد اخیرا با
+                                    هماهنگی فروشگاه های زنجیره ای ترقی بصورت بن خرید عرضه میشود.
+
+                                    2- احداث فروشگاه در کارخانه قند خوی
+
+                                    شرکت سهامی عام شهد کارخانه قند خوی در جهت حمایت و تکریم از پیمانکاران چغندر قند و
+                                    کلیه کارکنان اقدام به احداث فروشگاه در جوار کارخانه اقدام میناید و برای احداث
+                                    ساختمان ان در سه طبقه خواهد بود نقشه آن تهیه شده و در مرحله احداث پروانه میباشد با
+                                    ساخت ساختمان فروشگاه کلیه پیمانکاران چغندر قند که نسبت به دریافت بن خرید اقدام
+                                    نمایند وهمچنین کارکنان محترم شرکت میتوانن مایحتاج خود را به صورت مساعده از فروشگاه
+                                    مذکور خرید نمایند
+
+                                    3- پیگیری پروانه ساخت انبار محصول جدید
+
+                                    با عنایت به اینکه شرکت سهامی عام سالیان سال است که از کنبود انبار محصول رنج میبرد با
+                                    تصویب هیات مدیره محترم در صدر احداث انبار محصول در کنار انبار فعلی میباشد این انبار
+                                    در ابعاد 30*100 با کلیه تاسسات احداث خواهدشد نقشه های انبار مذکور به بخشداری محترم
+                                    مرکزی خوی ارسال گردیده و در مرحله اخذ پروانه ساخت میباشد.
+
+                                    4- شرکت سهامی عام در زمینه خدمات عام المنفعه خیر خواهانه و بشر دوستانه پیشقدم بوده
+                                    بطوری که در سال 1402 مبلغ 3/330/000/000/000 ریال به ستاد دیه استان برای ازادی
+                                    زندانیان غیر عمد کمک کرده است این کمک از دید مسئولین محترم قوه قضائی پنهان نمانده و
+                                    مسئولین محترم قوه قضائی شهرستان خوی با اهدای لوح تقدیر از مدیران محترم کارخانه قند
+                                    خوی تقدیر نمودند.</p>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

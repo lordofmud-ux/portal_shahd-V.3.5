@@ -1,0 +1,3388 @@
+{% load static %}
+<style>
+
+    .menutopnav1 {
+        overflow: hidden;
+        background-color: #494E54;
+        position: relative;
+    }
+
+    .menutopnav1 #myLinks1 {
+        display: none;
+    }
+
+    .menutopnav1 a {
+        color: white !important;
+        padding: 14px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .menutopnav1 a.icon {
+        background: #343A40;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .menutopnav1 a:hover {
+        background-color: #7a828c;
+        color: black;
+    }
+
+    .menuactive1 {
+        background-color: #343A40;
+        color: white;
+    }
+
+
+    .menutopnav2 {
+        overflow: hidden;
+        background-color: #494E54;
+        position: relative;
+    }
+
+    .menutopnav2 #myLinks2 {
+        display: none;
+    }
+
+    .menutopnav2 a {
+        color: white !important;
+        padding: 14px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .menutopnav2 a.icon {
+        background: #343A40;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .menutopnav2 a:hover {
+        background-color: #7a828c;
+        color: black;
+    }
+
+    .menuactive2 {
+        background-color: #343A40;
+        color: white;
+    }
+
+
+    .menutopnav3 {
+        overflow: hidden;
+        background-color: #494E54;
+        position: relative;
+    }
+
+    .menutopnav3 #myLinks3 {
+        display: none;
+    }
+
+    .menutopnav3 a {
+        color: white !important;
+        padding: 14px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .menutopnav3 a.icon {
+        background: #343A40;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .menutopnav3 a:hover {
+        background-color: #7a828c;
+        color: black;
+    }
+
+    .menuactive3 {
+        background-color: #343A40;
+        color: white;
+    }
+
+
+    .menutopnav4 {
+        overflow: hidden;
+        background-color: #494E54;
+        position: relative;
+    }
+
+    .menutopnav4 #myLinks4 {
+        display: none;
+    }
+
+    .menutopnav4 a {
+        color: white !important;
+        padding: 14px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .menutopnav4 a.icon {
+        background: #343A40;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .menutopnav4 a:hover {
+        background-color: #7a828c;
+        color: black;
+    }
+
+    .menuactive4 {
+        background-color: #343A40;
+        color: white;
+    }
+
+
+    .menutopnav5 {
+        overflow: hidden;
+        background-color: #494E54;
+        position: relative;
+    }
+
+    .menutopnav5 #myLinks5 {
+        display: none;
+    }
+
+    .menutopnav5 a {
+        color: white !important;
+        padding: 14px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .menutopnav5 a.icon {
+        background: #343A40;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .menutopnav5 a:hover {
+        background-color: #7a828c;
+        color: black;
+    }
+
+    .menuactive5 {
+        background-color: #343A40;
+        color: white;
+    }
+
+    .company_and_name {
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    .font_class {
+        font-size: 15px;
+    }
+
+    .icon_image {
+        width: 25px;
+    }
+
+    p {
+        color: white;
+    }
+    
+
+</style>
+<aside class="main-sidebar sidebar-dark-info elevation-4" style="direction: rtl;background-color: #124E66;">
+    {% if request.user.user_type == '1' %}
+        <style>
+        .main-sidebar {
+        width: 300px !important;}
+        .main-sidebar .brand-link,
+        .main-sidebar .sidebar {
+        width: 300px !important;
+        }
+        .content-wrapper,
+        .main-footer,
+        .main-header {
+        margin-right: 300px !important;
+        }
+        .sidebar-collapse .main-sidebar {
+        width: 80px !important;
+        }
+
+        .sidebar-collapse .main-sidebar .brand-link,
+        .sidebar-collapse .main-sidebar .sidebar {
+         width: 80px !important;
+        }
+
+    </style>
+
+        </style>
+        <!-- Brand Logo -->
+        <a href="{% url 'admin_home' %}" class="brand-link">
+            <img src="{% static 'dist/img/admin.jpg' %} " alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3">
+            <span class="brand-text font-weight-light">Admin Panel</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex ">
+            <div class="image">
+                <img src="{{ request.user.profile_pic }}" class="img-circle elevation-2 object-fit-cover"  alt="User Image"
+                     style="width: 70px;height: 70px">
+            </div>
+            <div class="info  w-100 d-flex align-items-center me-4">
+                <a href="#" class="d-block text-decoration-none " style="cursor: default;font-size: 20px;">{{ user.first_name }}&nbsp;{{ user.last_name }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+        <li class="nav-item">
+            {% url 'admin_home' as admin_home %}
+            <a href="{{ admin_home }}" class="nav-link {% if admin_home == request.path %} active {% endif %} "
+               style="border: 1px outset gray;">
+                <i class="nav-icon fas fa-home"></i>
+                <p>
+                    صفحه اصلی
+
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            {% url 'admin_view_profile' as admin_view_profile %}
+            <a href="{{ admin_view_profile }}"
+               class="nav-link {% if admin_view_profile == request.path %} active {% endif %}">
+                <i class="nav-icon fas fa-address-card"></i>
+                <p>
+                    به روز رسانی پروفایل
+
+                </p>
+            </a>
+        </li>
+
+
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-bookmark"></i>
+                <p>
+                    <i class="fas fa-angle-right right"></i>
+
+                    سازمان
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    {% url 'add_organ' as add_organ %}
+                    <a href="{{ add_organ }}"
+                       class="nav-link  {% if add_organ == request.path %} active {% endif %}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            اضافه کردن سازمان
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'manage_organ' as manage_organ %}
+                    {% url 'edit_organ' organ_id as edit_organ %}
+                    <a href="{{ manage_organ }}"
+                       class="nav-link  {% if edit_organ == request.path or manage_organ == request.path %} active {% endif %}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            مدیریت سازمان
+
+                        </p>
+                    </a>
+                </li>
+
+
+            </ul>
+        </li>
+
+
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                    <i class="fas fa-angle-right right"></i>
+
+                    موضوع
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    {% url 'add_subject' as add_subject %}
+                    <a href="{{ add_subject }}"
+                       class="nav-link  {% if add_subject == request.path %} active {% endif %}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            اضافه کردن موضوع
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'manage_subject' as manage_subject %}
+                    {% url 'edit_subject' subject_id as edit_subject %}
+                    <a href="{{ manage_subject }}"
+                       class="nav-link  {% if edit_subject == request.path or manage_subject == request.path %} active {% endif %}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            مدیریت موضوع
+
+                        </p>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
+
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-clock"></i>
+                <p>
+                    <i class="fas fa-angle-right right"></i>
+                    جلسه
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                    {% url 'add_session' as add_session %}
+                    <a href="{{ add_session }}"
+                       class="nav-link  {% if add_session == request.path %} active {% endif %}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            افزودن جلسه
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'manage_session' as manage_session %}
+                    {% url 'edit_session' session_id as edit_session %}
+                    <a href="{{ manage_session }}"
+                       class="nav-link  {% if edit_session == request.path or manage_session == request.path %} active {% endif %}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            مدیریت جلسه
+
+                        </p>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
+
+        <li class="nav-item">
+            <a href="{{ admin_view_attendance }}"
+               class="nav-link  {% if admin_view_attendance == request.path %} active {% endif %}">
+                <i class="nav-icon fas fa-calendar-alt"></i>
+                <p>
+                    حضور و غیاب
+
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            {% url 'index' as index %}
+            <a href="{{ index }}" class="nav-link  {% if index == request.path %} active {% endif %}">
+                <i class="nav-icon fas fa-user-plus"></i>
+                <p>
+                    آپلود فایل
+
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            {% url 'new_method_creating_personnel' as new_method_creating_personnel %}
+            <a href="{{ new_method_creating_personnel }}"
+               class="nav-link {% if new_method_creating_personnel == request.path %} active {% endif %}">
+                <i class="nav-icon fas fa-user-plus"></i>
+                <p style="background-color: #2d698c;font-weight: bolder;padding: 8px;border-radius: 8%">
+                    ایجاد پرسنل به روش جدید
+
+                </p>
+            </a>
+        </li>
+        <div class="menutopnav1">
+            <a href="#home" class="menuactive1" style="text-align: center;">اضافه کردن پرسنل</a>
+            <div id="myLinks1">
+
+
+                <li class="nav-item">
+                    {% url 'add_staff' as add_staff %}
+                    <a href="{{ add_staff }}"
+                       class="nav-link {% if add_staff == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            اضافه کردن کارمندان
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'add_sugar' as add_sugar %}
+                    <a href="{{ add_sugar }}"
+                       class="nav-link  {% if add_sugar == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            اضافه کردن پرسنل قند ارومیه
+
+                        </p>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    {% url 'add_kh' as add_kh %}
+                    <a href="{{ add_kh }}" class="nav-link  {% if add_kh == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            اضافه کردن پرسنل خوی
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'add_person' as add_person %}
+                    <a href="{{ add_person }}"
+                       class="nav-link  {% if add_person == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            اضافه کردن پرسنل پرسون
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'add_holding' as add_holding %}
+                    <a href="{{ add_holding }}"
+                       class="nav-link  {% if add_holding == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            اضافه کردن پرسنل هلدینگ
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'add_piran' as add_piran %}
+                    <a href="{{ add_piran }}"
+                       class="nav-link  {% if add_piran == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            اضافه کردن پرسنل پیرانشهر
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'add_tomato' as add_tomato %}
+                    <a href="{{ add_tomato }}"
+                       class="nav-link  {% if add_tomato == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            اضافه کردن پرسنل گلفام
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'add_taraghi' as add_taraghi %}
+                    <a href="{{ add_taraghi }}"
+                       class="nav-link  {% if add_taraghi == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            اضافه کردن پرسنل ترقی
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'add_tootia' as add_tootia %}
+                    <a href="{{ add_tootia }}"
+                       class="nav-link  {% if add_tootia == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            اضافه کردن پرسنل توتیا
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'add_drug' as add_drug %}
+                    <a href="{{ add_drug }}"
+                       class="nav-link  {% if add_drug == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            اضافه کردن پرسنل گلفام دارو
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'add_gen' as add_gen %}
+                    <a href="{{ add_gen }}"
+                       class="nav-link  {% if add_gen == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            اضافه کردن پرسنل شفاژن
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'add_iron' as add_iron %}
+                    <a href="{{ add_iron }}"
+                       class="nav-link  {% if add_iron == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p style="font-size: 12px">
+                            اضافه کردن پرسنل ذوب آهن شمال غرب
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'add_ptro' as add_ptro %}
+                    <a href="{{ add_ptro }}"
+                       class="nav-link  {% if add_ptro == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            اضافه کردن پرسنل پتروشیمی
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+
+                    <a href="{% url 'agriculture_organization_software' as agriculture_organization_software %}"
+                       class="nav-link  {% if add_agriculture == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            اضافه کردن پرسنل بهزراعی
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'add_research' as add_research %}
+                    <a href="{{ add_research }}"
+                       class="nav-link  {% if add_research == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-user-plus"></i>
+                        <p>
+                            اضافه کردن پرسنل چغندر قند
+
+                        </p>
+                    </a>
+                </li>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction1()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="menutopnav2">
+            <a href="#home" class="menuactive2" style="text-align: center;">مدیریت پرسنل</a>
+            <div id="myLinks2">
+
+                <li class="nav-item">
+                    {% url 'manage_staff' as manage_staff %}
+                    {% url 'edit_staff' staff_id as edit_staff %}
+                    <a href="{{ manage_staff }}"
+                       class="nav-link {% if manage_staff == request.path or request.path == edit_staff %} active {% endif %}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            مدیریت پرسنل
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'manage_sugar' as manage_sugar %}
+                    {% url 'edit_sugar' sugar_id as edit_sugar %}
+
+                    <a href="{{ manage_sugar }}"
+                       class="nav-link  {% if edit_sugar == request.path or manage_sugar == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            مدیریت قند ارومیه
+
+                        </p>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    {% url 'manage_kh' as manage_kh %}
+                    {% url 'edit_kh' kh_id as edit_kh %}
+
+                    <a href="{{ manage_kh }}"
+                       class="nav-link  {% if edit_kh == request.path or manage_kh == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            مدیریت پرسنل خوی
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'manage_person' as manage_person %}
+                    {% url 'edit_person' person_id as edit_person %}
+
+                    <a href="{{ manage_person }}"
+                       class="nav-link  {% if edit_person == request.path or manage_person == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            مدیریت پرسنل پرسون
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'manage_holding' as manage_holding %}
+                    {% url 'edit_holding' holding_id as edit_holding %}
+
+                    <a href="{{ manage_holding }}"
+                       class="nav-link  {% if edit_holding == request.path or manage_holding == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            مدیریت پرسنل هلدینگ
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'manage_piran' as manage_piran %}
+                    {% url 'edit_piran' piran_id as edit_piran %}
+
+                    <a href="{{ manage_piran }}"
+                       class="nav-link  {% if edit_piran == request.path or manage_piran == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            مدیریت پرسنل پیرانشهر
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'manage_tomato' as manage_tomato %}
+                    {% url 'edit_tomato' tomato_id as edit_tomato %}
+
+                    <a href="{{ manage_tomato }}"
+                       class="nav-link  {% if edit_tomato == request.path or manage_tomato == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            مدیریت پرسنل گلفام
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'manage_taraghi' as manage_taraghi %}
+                    {% url 'edit_taraghi' taraghi_id as edit_taraghi %}
+
+                    <a href="{{ manage_taraghi }}"
+                       class="nav-link  {% if edit_taraghi == request.path or manage_taraghi == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            مدیریت پرسنل ترقی
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'manage_tootia' as manage_tootia %}
+                    {% url 'edit_tootia' tootia_id as edit_tootia %}
+
+                    <a href="{{ manage_tootia }}"
+                       class="nav-link  {% if edit_tootia == request.path or manage_tootia == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            مدیریت پرسنل توتیا
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'manage_drug' as manage_drug %}
+                    {% url 'edit_drug' drug_id as edit_drug %}
+
+                    <a href="{{ manage_drug }}"
+                       class="nav-link  {% if edit_drug == request.path or manage_drug == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            مدیریت پرسنل گلفام دارو
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'manage_gen' as manage_gen %}
+                    {% url 'edit_gen' gen_id as edit_gen %}
+
+                    <a href="{{ manage_gen }}"
+                       class="nav-link  {% if edit_gen == request.path or manage_gen == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            مدیریت پرسنل شفاژن
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'manage_iron' as manage_iron %}
+                    {% url 'edit_iron' iron_id as edit_iron %}
+
+                    <a href="{{ manage_iron }}"
+                       class="nav-link  {% if edit_iron == request.path or manage_iron == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p style="font-size: 12px">
+                            مدیریت پرسنل ذوب آهن شمال غرب
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'manage_ptro' as manage_ptro %}
+                    {% url 'edit_ptro' ptro_id as edit_ptro %}
+
+                    <a href="{{ manage_ptro }}"
+                       class="nav-link  {% if edit_ptro == request.path or manage_ptro == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            مدیریت پرسنل پتروشیمی
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'manage_agriculture' as manage_agriculture %}
+                    {% url 'edit_agriculture' agriculture_id as edit_agriculture %}
+
+                    <a href="{{ manage_agriculture }}"
+                       class="nav-link  {% if edit_v == request.path or manage_agriculture == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            مدیریت پرسنل بهزراعی
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'manage_research' as manage_research %}
+                    {% url 'edit_research' research_id as edit_research %}
+
+                    <a href="{{ manage_research }}"
+                       class="nav-link  {% if edit_research == request.path or manage_research == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            مدیریت پرسنل چغندر قند
+
+                        </p>
+                    </a>
+                </li>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction2()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="menutopnav3">
+            <a href="#home" class="menuactive3" style="text-align: center;">اطلاعیه به پرسنل</a>
+            <div id="myLinks3">
+
+
+                <li class="nav-item">
+                    {% url 'admin_notify_sugar' as admin_notify_sugar %}
+                    <a href="{{ admin_notify_sugar }}"
+                       class="nav-link {% if admin_notify_sugar == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-bullhorn"></i>
+                        <p>
+                            اطلاعیه به پرسنل قند ارومیه
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'admin_notify_kh' as admin_notify_kh %}
+                    <a href="{{ admin_notify_kh }}"
+                       class="nav-link {% if admin_notify_kh == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-bullhorn"></i>
+                        <p>
+                            اطلاعیه به پرسنل خوی
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'admin_notify_person' as admin_notify_person %}
+                    <a href="{{ admin_notify_person }}"
+                       class="nav-link {% if admin_notify_person == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-bullhorn"></i>
+                        <p>
+                            اطلاعیه به پرسنل هلدینگ
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'admin_notify_holding' as admin_notify_holding %}
+                    <a href="{{ admin_notify_holding }}"
+                       class="nav-link {% if admin_notify_holding == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-bullhorn"></i>
+                        <p>
+                            اطلاعیه به پرسنل هلدینگ
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'admin_notify_piran' as admin_notify_piran %}
+                    <a href="{{ admin_notify_piran }}"
+                       class="nav-link {% if admin_notify_piran == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-bullhorn"></i>
+                        <p>
+                            اطلاعیه به پرسنل پیرانشهر
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'admin_notify_tomato' as admin_notify_tomato %}
+                    <a href="{{ admin_notify_tomato }}"
+                       class="nav-link {% if admin_notify_tomato == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-bullhorn"></i>
+                        <p>
+                            اطلاعیه به پرسنل گلفام
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'admin_notify_taraghi' as admin_notify_taraghi %}
+                    <a href="{{ admin_notify_taraghi }}"
+                       class="nav-link {% if admin_notify_taraghi == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-bullhorn"></i>
+                        <p>
+                            اطلاعیه به پرسنل ترقی
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'admin_notify_tootia' as admin_notify_tootia %}
+                    <a href="{{ admin_notify_tootia }}"
+                       class="nav-link {% if admin_notify_tootia == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-bullhorn"></i>
+                        <p>
+                            اطلاعیه به پرسنل توتیا
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'admin_notify_drug' as admin_notify_drug %}
+                    <a href="{{ admin_notify_drug }}"
+                       class="nav-link {% if admin_notify_drug == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-bullhorn"></i>
+                        <p>
+                            اطلاعیه به پرسنل گلفام دارو
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'admin_notify_gen' as admin_notify_gen %}
+                    <a href="{{ admin_notify_gen }}"
+                       class="nav-link {% if admin_notify_gen == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-bullhorn"></i>
+                        <p>
+                            اطلاعیه به پرسنل شفاژن
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'admin_notify_iron' as admin_notify_iron %}
+                    <a href="{{ admin_notify_iron }}"
+                       class="nav-link {% if admin_notify_iron == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-bullhorn"></i>
+                        <p style="font-size: 12px">
+                            اطلاعیه به پرسنل ذوب آهن شمال غرب
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'admin_notify_ptro' as admin_notify_ptro %}
+                    <a href="{{ admin_notify_ptro }}"
+                       class="nav-link {% if admin_notify_ptro == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-bullhorn"></i>
+                        <p>
+                            اطلاعیه به پرسنل پتروشیمی
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'admin_notify_agriculture' as admin_notify_agriculture %}
+                    <a href="{{ admin_notify_agriculture }}"
+                       class="nav-link {% if admin_notify_agriculture == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-bullhorn"></i>
+                        <p>
+                            اطلاعیه به پرسنل بهزراعی
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'admin_notify_research' as admin_notify_research %}
+                    <a href="{{ admin_notify_research }}"
+                       class="nav-link {% if admin_notify_research == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-bullhorn"></i>
+                        <p>
+                            اطلاعیه به پرسنل چغندر قند
+
+                        </p>
+                    </a>
+                </li>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction3()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+
+        <!--
+        نا مشخص
+        <li class="nav-item">
+            {% url 'admin_view_attendance' as admin_view_attendance %}
+        -->
+
+        <div class="menutopnav4">
+            <a href="#home" class="menuactive4" style="text-align: center;">بازخورد پرسنل</a>
+            <div id="myLinks4">
+
+                <li class="nav-item">
+                    {% url 'staff_feedback_message' as staff_feedback_message %}
+
+                    <a href="{{ staff_feedback_message }}"
+                       class="nav-link   {% if staff_feedback_message == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-comment"></i>
+                        <p>
+                            بازخورد پرسنل
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'sugar_feedback_message' as sugar_feedback_message %}
+
+                    <a href="{{ sugar_feedback_message }}"
+                       class="nav-link  {% if sugar_feedback_message == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-comment-alt"></i>
+                        <p>
+                            بازخورد پرسنل قند ارومیه
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'kh_feedback_message' as kh_feedback_message %}
+
+                    <a href="{{ kh_feedback_message }}"
+                       class="nav-link  {% if kh_feedback_message == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-comment-alt"></i>
+                        <p>
+                            بازخورد پرسنل پرسنل خوی
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'person_feedback_message' as person_feedback_message %}
+
+                    <a href="{{ person_feedback_message }}"
+                       class="nav-link  {% if person_feedback_message == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-comment-alt"></i>
+                        <p>
+                            برگزاری بازخورد شخصی
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'holding_feedback_message' as holding_feedback_message %}
+
+                    <a href="{{ holding_feedback_message }}"
+                       class="nav-link  {% if holding_feedback_message == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-comment-alt"></i>
+                        <p>
+                            برگزاری بازخورد شخصی
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'piran_feedback_message' as piran_feedback_message %}
+
+                    <a href="{{ piran_feedback_message }}"
+                       class="nav-link  {% if piran_feedback_message == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-comment-alt"></i>
+                        <p>
+                            بازخورد پرسنل پیرانشهر
+
+                        </p>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    {% url 'tomato_feedback_message' as tomato_feedback_message %}
+
+                    <a href="{{ tomato_feedback_message }}"
+                       class="nav-link  {% if tomato_feedback_message == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-comment-alt"></i>
+                        <p>
+                            بازخورد پرسنل گلفام
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'taraghi_feedback_message' as taraghi_feedback_message %}
+
+                    <a href="{{ taraghi_feedback_message }}"
+                       class="nav-link  {% if taraghi_feedback_message == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-comment-alt"></i>
+                        <p>
+                            بازخورد پرسنل ترقی
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'tootia_feedback_message' as tootia_feedback_message %}
+
+                    <a href="{{ tootia_feedback_message }}"
+                       class="nav-link  {% if tootia_feedback_message == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-comment-alt"></i>
+                        <p>
+                            بازخورد پرسنل توتیا
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'drug_feedback_message' as drug_feedback_message %}
+
+                    <a href="{{ drug_feedback_message }}"
+                       class="nav-link  {% if drug_feedback_message == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-comment-alt"></i>
+                        <p>
+                            بازخورد پرسنل گلفام دارو
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'gen_feedback_message' as gen_feedback_message %}
+
+                    <a href="{{ gen_feedback_message }}"
+                       class="nav-link  {% if gen_feedback_message == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-comment-alt"></i>
+                        <p>
+                            بازخورد پرسنل شفاژن
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'iron_feedback_message' as iron_feedback_message %}
+
+                    <a href="{{ iron_feedback_message }}"
+                       class="nav-link  {% if iron_feedback_message == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-comment-alt"></i>
+                        <p style="font-size: 12px">
+                            بازخورد پرسنل ذوب آهن شمال غرب
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'ptro_feedback_message' as ptro_feedback_message %}
+
+                    <a href="{{ ptro_feedback_message }}"
+                       class="nav-link  {% if ptro_feedback_message == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-comment-alt"></i>
+                        <p>
+                            بازخورد پرسنل پتروشیمی
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'agriculture_feedback_message' as agriculture_feedback_message %}
+
+                    <a href="{{ agriculture_feedback_message }}"
+                       class="nav-link  {% if agriculture_feedback_message == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-comment-alt"></i>
+                        <p>
+                            بازخورد پرسنل بهزراعی
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'research_feedback_message' as research_feedback_message %}
+
+                    <a href="{{ research_feedback_message }}"
+                       class="nav-link  {% if research_feedback_message == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-comment-alt"></i>
+                        <p>
+                            بازخورد پرسنل چغندر قند
+
+                        </p>
+                    </a>
+                </li>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction4()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+
+        <div class="menutopnav5">
+            <a href="#home" class="menuactive5" style="text-align: center;">درخواست پرسنل</a>
+            <div id="myLinks5">
+
+                <li class="nav-item">
+                    {% url 'view_staff_leave' as view_staff_leave %}
+
+                    <a href="{{ view_staff_leave }}"
+                       class="nav-link  {% if view_staff_leave == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-check-double"></i>
+                        <p>
+                            درخواست پرسنل
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'view_sugar_leave' as view_sugar_leave %}
+
+                    <a href="{% url 'view_sugar_leave' %}"
+                       class="nav-link  {% if view_sugar_leave == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-check-double"></i>
+                        <p>
+                            درخواست پرسنل قند ارومیه
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'view_kh_leave' as view_kh_leave %}
+
+                    <a href="{% url 'view_kh_leave' %}"
+                       class="nav-link  {% if view_kh_leave == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-check-double"></i>
+                        <p>
+                            درخواست پرسنل خوی
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'view_person_leave' as view_person_leave %}
+
+                    <a href="{% url 'view_person_leave' %}"
+                       class="nav-link  {% if view_person_leave == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-check-double"></i>
+                        <p>
+                            درخواست پرسنل هلدینگ
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'view_holding_leave' as view_holding_leave %}
+
+                    <a href="{% url 'view_holding_leave' %}"
+                       class="nav-link  {% if view_holding_leave == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-check-double"></i>
+                        <p>
+                            درخواست پرسنل هلدینگ
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'view_piran_leave' as view_piran_leave %}
+
+                    <a href="{% url 'view_piran_leave' %}"
+                       class="nav-link  {% if view_piran_leave == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-check-double"></i>
+                        <p>
+                            درخواست پرسنل پیرانشهر
+
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    {% url 'view_tomato_leave' as view_tomato_leave %}
+
+                    <a href="{% url 'view_tomato_leave' %}"
+                       class="nav-link  {% if view_tomato_leave == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-check-double"></i>
+                        <p>
+                            درخواست پرسنل گلفام
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'view_taraghi_leave' as view_taraghi_leave %}
+
+                    <a href="{% url 'view_taraghi_leave' %}"
+                       class="nav-link  {% if view_taraghi_leave == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-check-double"></i>
+                        <p>
+                            درخواست پرسنل ترقی
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'view_tootia_leave' as view_tootia_leave %}
+
+                    <a href="{% url 'view_tootia_leave' %}"
+                       class="nav-link  {% if view_tootia_leave == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-check-double"></i>
+                        <p>
+                            درخواست پرسنل توتیا
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'view_drug_leave' as view_drug_leave %}
+
+                    <a href="{% url 'view_drug_leave' %}"
+                       class="nav-link  {% if view_drug_leave == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-check-double"></i>
+                        <p>
+                            درخواست پرسنل گلفام دارو
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'view_gen_leave' as view_gen_leave %}
+
+                    <a href="{% url 'view_gen_leave' %}"
+                       class="nav-link  {% if view_gen_leave == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-check-double"></i>
+                        <p>
+                            درخواست پرسنل شفاژن
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'view_iron_leave' as view_iron_leave %}
+
+                    <a href="{% url 'view_iron_leave' %}"
+                       class="nav-link  {% if view_iron_leave == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-check-double"></i>
+                        <p style="font-size: 12px">
+                            درخواست پرسنل ذوب آهن شمال غرب
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'view_ptro_leave' as view_ptro_leave %}
+
+                    <a href="{% url 'view_ptro_leave' %}"
+                       class="nav-link  {% if view_ptro_leave == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-check-double"></i>
+                        <p>
+                            درخواست پرسنل پتروشیمی
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'view_agriculture_leave' as view_agriculture_leave %}
+
+                    <a href="{% url 'view_agriculture_leave' %}"
+                       class="nav-link  {% if view_agriculture_leave == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-check-double"></i>
+                        <p>
+                            درخواست پرسنل بهزراعی
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% url 'view_research_leave' as view_research_leave %}
+
+                    <a href="{% url 'view_research_leave' %}"
+                       class="nav-link  {% if view_research_leave == request.path %} active {% endif %}">
+                        <i class="nav-icon fas fa-check-double"></i>
+                        <p>
+                            درخواست پرسنل چغندر قند
+
+                        </p>
+                    </a>
+                </li>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction5()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+
+    {% elif request.user.user_type == '2' %}
+        <!-- Brand Logo -->
+        <a href="#" class="brand-link">
+            <img src="{% static 'dist/img/personel.png' %} " alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">پنل پرسنل</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.profile_pic }}" class="img-circle elevation-2" alt="User Image"
+                     style="width: 50px;height: 50px">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">{{ user }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+            data-accordion="false">
+
+        <li class="nav-item">
+            {% url 'staff_home' as staff_home %}
+            <a href="{{ staff_home }}"
+               class="nav-link {% if staff_home == request.path %} active {% endif %}">
+                <i class="nav-icon fas fa-home"></i>
+                <p>
+                    صفحه اصلی
+
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'staff_view_profile' as staff_view_profile %}
+            <a href="{{ staff_view_profile }}"
+               class="nav-link {% if staff_view_profile == request.path %} active {% endif %}">
+                <i class="nav-icon fas fa-address-card"></i>
+                <p>
+                    به روز رسانی پروفایل
+
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'staff_add_result' as staff_add_result %}
+            <a href="{{ staff_add_result }}"
+               class="nav-link {% if staff_add_result == request.path %} active {% endif %}">
+                <i class="nav-icon fas fa-poll"></i>
+                <p>
+                    اضافه کردن نتیجه
+
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            {% url 'edit_sugar_result' as edit_sugar_result %}
+            <a href="{{ edit_sugar_result }}"
+               class="nav-link {% if edit_sugar_result == request.path %} active {% endif %}">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                    ویرایش نتیجه
+
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            {% url 'staff_take_attendance' as staff_take_attendance %}
+            <a href="{{ staff_take_attendance }}"
+               class="nav-link {% if staff_take_attendance == request.path %} active {% endif %}">
+                <i class="nav-icon fas fa-calendar-alt"></i>
+                <p>
+                    حضور پیدا کنید
+
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            {% url 'staff_update_attendance' as staff_update_attendance %}
+            <a href="{{ staff_update_attendance }}"
+               class="nav-link {% if staff_update_attendance == request.path %} active {% endif %}">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                    مشاهده به روز رسانی حضور و غیاب
+
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            {% url 'staff_view_notification' as staff_view_notification %}
+            <a href="{{ staff_view_notification }}"
+               class="nav-link {% if staff_view_notification == request.path %} active {% endif %}">
+                <i class="nav-icon fas fa-bell"></i>
+                <p>
+                    مشاهده اعلان ها
+
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'staff_apply_leave' as staff_apply_leave %}
+            <a href="{{ staff_apply_leave }}"
+               class="nav-link {% if staff_apply_leave == request.path %} active {% endif %}">
+                <i class="nav-icon fas fa-check"></i>
+                <p>
+                    درخواست مرخصی
+
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'staff_feedback' as staff_feedback %}
+            <a href="{{ staff_feedback }}"
+               class="nav-link {% if staff_feedback == request.path %} active {% endif %}">
+                <i class="nav-icon fas fa-comment-alt"></i>
+                <p>
+                    بازخورد
+
+                </p>
+            </a>
+        </li>
+
+
+    {% elif request.user.user_type == '3' %}
+        <!-- Brand Logo -->
+        <a href="" class="brand-link">
+
+            <img src="{% static 'dist/img/ghand_orumiye.png' %} " alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">پنل قند ارومیه</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.profile_pic }}" class="img-circle elevation-2"
+                     alt="User Image" style="width: 50px;height: 50px">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">{{ user }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+            data-accordion="false">
+
+
+        <li class="nav-item">
+            {% url 'sugar_home' as sugar_home %}
+            <a href="{{ sugar_home }}"
+               class="nav-link {% if sugar_home == request.path %} active {% endif %}">
+
+                <img src="{% static 'media/home_icon.png' %}" class="icon_image" alt="">
+
+                <p class="font_class">
+                    خانه
+
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'manage_sugar_change_password_picture' as manage_sugar_change_password_picture %}
+            <a href="{{ manage_sugar_change_password_picture }}"
+               class="nav-link {% if manage_sugar_change_password_picture == request.path %} active {% endif %}">
+                <img src="{% static 'media/update_profile_icon.png' %}"
+                     class="icon_image" alt="">
+
+                <p class="font_class">پروفایل</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'sugar_organization_software' as sugar_organization_software %}
+            <a href="{{ sugar_organization_software }}"
+               class="nav-link {% if sugar_organization_software == request.path %} active {% endif %}">
+                <img src="{% static 'media/software_icon.png' %}" class="icon_image"
+                     alt="">
+                <p class="font_class">
+                    نرم افزارهای سازمانی
+
+                </p>
+            </a>
+        </li>
+
+        {% include "main_app/joint_sidebar.html" with user=user %}
+
+
+        <li class="nav-item">
+            {% url 'sugar_apply_leave' as sugar_apply_leave %}
+            <a href="{{ sugar_apply_leave }}"
+               class="nav-link {% if sugar_apply_leave == request.path %} active {% endif %}">
+                <img src="{% static 'media/request_logo.png' %}" class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    در خواست به مدیریت
+
+                </p>
+            </a>
+        </li>
+        <!--
+        <li class="nav-item">
+            {% url 'sugar_view_attendance' as sugar_view_attendance %}
+            <a href="{{ sugar_view_attendance }}"
+               class="nav-link {% if sugar_view_attendance == request.path %} active {% endif %}">
+                <img src="{% static 'media/presence_absence_logo.png' %}" class="icon_image" alt="">
+
+                <p class="font_class">حضور غیاب</p>
+            </a>
+        </li>
+        -->
+        <li class="nav-item">
+            {% url 'sugar_view_notification' as sugar_view_notification %}
+            <a href="{{ sugar_view_notification }}"
+               class="nav-link {% if sugar_view_notification == request.path %} active {% endif %}">
+                <img src="{% static 'media/announcement_logo.png' %}" class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    دیدن اعلان ها
+
+                </p>
+            </a>
+        </li>
+
+
+    {% elif request.user.user_type == '4' %}
+
+
+        <a href="" class="brand-link">
+
+            <img src="{% static 'dist/img/ghand_khoy.png' %} " alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">پنل پرسنل خوی</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img style="width: 50px;height: 50px"
+                     src="{{ request.user.profile_pic }}"
+                     class="img-circle elevation-2"
+                     alt="User Image" style="width: 50px;height: 50px">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">{{ user }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview"
+            role="menu"
+            data-accordion="false">
+
+
+        <li class="nav-item">
+            {% url 'kh_home' as kh_home %}
+            <a href="{{ kh_home }}"
+               class="nav-link {% if kh_home == request.path %} active {% endif %}">
+
+                <img src="{% static 'media/home_icon.png' %}"
+                     class="icon_image" alt="">
+
+                <p class="font_class">
+                    خانه
+
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'manage_kh_change_password' as manage_kh_change_password %}
+            <a href="{{ manage_kh_change_password }}"
+               class="nav-link {% if manage_kh_change_password == request.path %} active {% endif %}">
+                <img src="{% static 'media/user.png' %}"
+                     class="icon_image" alt="">
+
+                <p class="font_class">پروفایل</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'kh_organization_software' as kh_organization_software %}
+            <a href="{{ kh_organization_software }}"
+               class="nav-link {% if kh_organization_software == request.path %} active {% endif %}">
+                <img src="{% static 'media/software_icon.png' %}"
+                     class="icon_image" alt="">
+                <p class="font_class">
+                    نرم افزارهای سازمانی
+
+                </p>
+            </a>
+        </li>
+        {% include "main_app/joint_sidebar.html" with user=user %}
+
+        <li class="nav-item">
+            {% url 'kh_apply_leave' as kh_apply_leave %}
+            <a href="{{ kh_apply_leave }}"
+               class="nav-link {% if kh_apply_leave == request.path %} active {% endif %}">
+                <img src="{% static 'media/request_logo.png' %}"
+                     class="icon_image" alt="">
+
+                <p class="font_class">
+                    در خواست به مدیریت
+
+                </p>
+            </a>
+        </li>
+        <!--
+        <li class="nav-item">
+            {% url 'kh_view_attendance' as kh_view_attendance %}
+            <a href="{{ kh_view_attendance }}"
+               class="nav-link {% if kh_view_attendance == request.path %} active {% endif %}">
+                <img src="{% static 'media/presence_absence_logo.png' %}" class="icon_image" alt="">
+
+                <p class="font_class">حضور غیاب</p>
+            </a>
+        </li>
+        -->
+        <li class="nav-item">
+            {% url 'kh_view_notification' as kh_view_notification %}
+            <a href="{{ kh_view_notification }}"
+               class="nav-link {% if kh_view_notification == request.path %} active {% endif %}">
+                <img src="{% static 'media/announcement_logo.png' %}"
+                     class="icon_image" alt="">
+
+                <p class="font_class">
+                    دیدن اعلان ها
+
+                </p>
+            </a>
+        </li>
+
+    {% elif request.user.user_type == '20' %}
+
+        <a href="" class="brand-link">
+            <img src="{% static 'dist/img/shahd.png' %} "
+                 alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light"><p
+                    style="font-size: 12px;font-weight: bold;padding-top: 5px">هلدینگ توسعه صنایع شهد آذربایجان </p></span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.profile_pic }}"
+                     class="img-circle elevation-2"
+                     alt="User Image" style="width: 50px;height: 50px">
+            </div>
+            <div class="info">
+                <a href="#"
+                   class="d-block">{{ user.first_name }} {{ user.last_name }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview" role="menu"
+            data-accordion="false">
+
+        <li class="nav-item">
+            {% url 'person_home' as person_home %}
+            <a href="{{ person_home }}"
+               class="nav-link {% if person_home == request.path %} active {% endif %}">
+                <img src="{% static 'media/home_icon.png' %}"
+                     class="icon_image" alt="">
+                <p class="font_class">
+                    خانه
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'manage_person_change_password' as manage_person_change_password %}
+            <a href="{{ manage_person_change_password }}"
+               class="nav-link {% if manage_person_change_password == request.path %} active {% endif %}">
+                <img src="{% static 'media/update_profile_icon.png' %}"
+                     class="icon_image" alt="">
+                <p class="font_class">پروفایل</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'person_organization_software' as person_organization_software %}
+            <a href="{{ person_organization_software }}"
+               class="nav-link {% if person_organization_software == request.path %} active {% endif %}">
+                <img src="{% static 'media/software_icon.png' %}"
+                     class="icon_image" alt="">
+                <p class="font_class">
+                    نرم افزارهای سازمانی
+                </p>
+            </a>
+        </li>
+
+        {% include "main_app/joint_sidebar.html" with user=user %}
+
+        <li class="nav-item">
+            {% url 'person_apply_leave' as person_apply_leave %}
+            <a href="{{ person_apply_leave }}"
+               class="nav-link {% if person_apply_leave == request.path %} active {% endif %}">
+                <img src="{% static 'media/request_logo.png' %}"
+                     class="icon_image" alt="">
+                <p class="font_class">
+                    در خواست به مدیریت
+                </p>
+            </a>
+        </li>
+
+        <!--
+        <li class="nav-item">
+            {% url 'person_view_attendance' as person_view_attendance %}
+            <a href="{{ person_view_attendance }}"
+               class="nav-link {% if person_view_attendance == request.path %} active {% endif %}">
+                <img src="{% static 'media/presence_absence_logo.png' %}" class="icon_image" alt="">
+                <p class="font_class">حضور غیاب</p>
+            </a>
+        </li>
+        -->
+        <li class="nav-item">
+            {% url 'person_view_notification' as person_view_notification %}
+            <a href="{{ person_view_notification }}"
+               class="nav-link {% if person_view_notification == request.path %} active {% endif %}">
+                <img src="{% static 'media/announcement_logo.png' %}"
+                     class="icon_image" alt="">
+                <p class="font_class">
+                    دیدن اعلان ها
+                </p>
+            </a>
+        </li>
+
+    {% elif request.user.user_type == '5' %}
+
+        <a href="" class="brand-link">
+            <img src="{% static 'dist/img/shahd.png' %} "
+                 alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light"><p
+                    style="font-size: 12px;font-weight: bold;padding-top: 5px">هلدینگ توسعه صنایع شهد آذربایجان </p></span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.profile_pic }}"
+                     class="img-circle elevation-2"
+                     alt="User Image"
+                     style="width: 50px;height: 50px">
+            </div>
+            <div class="info">
+                <a href="#"
+                   class="d-block">{{ user.first_name }} {{ user.last_name }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview" role="menu"
+            data-accordion="false">
+
+        <li class="nav-item">
+            {% url 'holding_home' as holding_home %}
+            <a href="{{ holding_home }}"
+               class="nav-link {% if holding_home == request.path %} active {% endif %}">
+                <img src="{% static 'media/home_icon.png' %}"
+                     class="icon_image" alt="">
+                <p class="font_class">
+                    خانه
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'manage_holding_change_password' as manage_holding_change_password %}
+            <a href="{{ manage_holding_change_password }}"
+               class="nav-link {% if manage_holding_change_password == request.path %} active {% endif %}">
+                <img src="{% static 'media/update_profile_icon.png' %}"
+                     class="icon_image" alt="">
+                <p class="font_class"> 
+                    پروفایل</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'holding_organization_software' as holding_organization_software %}
+            <a href="{{ holding_organization_software }}"
+               class="nav-link {% if holding_organization_software == request.path %} active {% endif %}">
+                <img src="{% static 'media/software_icon.png' %}"
+                     class="icon_image" alt="">
+                <p class="font_class">
+                    نرم افزارهای سازمانی
+                </p>
+            </a>
+        </li>
+
+        {% include "main_app/joint_sidebar.html" with user=user %}
+
+        <li class="nav-item">
+            {% url 'holding_apply_leave' as holding_apply_leave %}
+            <a href="{{ holding_apply_leave }}"
+               class="nav-link {% if holding_apply_leave == request.path %} active {% endif %}">
+                <img src="{% static 'media/request_logo.png' %}"
+                     class="icon_image" alt="">
+                <p class="font_class">
+                    در خواست به مدیریت
+                </p>
+            </a>
+        </li>
+
+        <!--
+        <li class="nav-item">
+            {% url 'holding_view_attendance' as holding_view_attendance %}
+            <a href="{{ holding_view_attendance }}"
+               class="nav-link {% if holding_view_attendance == request.path %} active {% endif %}">
+                <img src="{% static 'media/presence_absence_logo.png' %}" class="icon_image" alt="">
+                <p class="font_class">حضور غیاب</p>
+            </a>
+        </li>
+        -->
+        <li class="nav-item">
+            {% url 'holding_view_notification' as holding_view_notification %}
+            <a href="{{ holding_view_notification }}"
+               class="nav-link {% if holding_view_notification == request.path %} active {% endif %}">
+                <img src="{% static 'media/announcement_logo.png' %}"
+                     class="icon_image" alt="">
+                <p class="font_class">
+                    دیدن اعلان ها
+                </p>
+            </a>
+        </li>
+
+
+    {% elif request.user.user_type == '6' %}
+
+        <a href="" class="brand-link">
+            <img src="{% static 'dist/img/piranshahr.png' %} "
+                 alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">پنل شخصی پیرانشهر</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.profile_pic }}"
+                     class="img-circle elevation-2"
+                     alt="User Image"
+                     style="width: 50px;height: 50px;">
+            </div>
+            <div class="info">
+                <a href="#"
+                   class="d-block">{{ user }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview"
+            role="menu"
+            data-accordion="false">
+
+
+        <li class="nav-item">
+            {% url 'piran_home' as piran_home %}
+            <a href="{{ piran_home }}"
+               class="nav-link {% if piran_home == request.path %} active {% endif %}">
+
+                <img src="{% static 'media/home_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    خانه
+
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'manage_piran_change_password' as manage_piran_change_password %}
+            <a href="{{ manage_piran_change_password }}"
+               class="nav-link {% if manage_piran_change_password_picture == request.path %} active {% endif %}">
+                <img src="{% static 'media/update_profile_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    بروزرسانی
+                    پروفایل</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'piran_organization_software' as piran_organization_software %}
+            <a href="{{ piran_organization_software }}"
+               class="nav-link {% if piran_organization_software == request.path %} active {% endif %}">
+                <img src="{% static 'media/software_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+                <p class="font_class">
+                    نرم افزارهای سازمانی
+
+                </p>
+            </a>
+        </li>
+
+        {% include "main_app/joint_sidebar.html" with user=user %}
+
+        <li class="nav-item">
+            {% url 'piran_apply_leave' as piran_apply_leave %}
+            <a href="{{ piran_apply_leave }}"
+               class="nav-link {% if piran_apply_leave == request.path %} active {% endif %}">
+                <img src="{% static 'media/request_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    در خواست به مدیریت
+
+                </p>
+            </a>
+        </li>
+        <!--
+        <li class="nav-item">
+            {% url 'piran_view_attendance' as piran_view_attendance %}
+            <a href="{{ piran_view_attendance }}"
+               class="nav-link {% if piran_view_attendance == request.path %} active {% endif %}">
+                <img src="{% static 'media/presence_absence_logo.png' %}" class="icon_image" alt="">
+
+                <p class="font_class">حضور غیاب</p>
+            </a>
+        </li>
+        -->
+        <li class="nav-item">
+            {% url 'piran_view_notification' as piran_view_notification %}
+            <a href="{{ piran_view_notification }}"
+               class="nav-link {% if piran_view_notification == request.path %} active {% endif %}">
+                <img src="{% static 'media/announcement_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    دیدن اعلان ها
+
+                </p>
+            </a>
+        </li>
+
+
+    {% elif request.user.user_type == '7' %}
+
+        <a href=""
+           class="brand-link">
+            <img src="{% static 'dist/img/golfam.png' %} "
+                 alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">پنل گلفام</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.profile_pic }}"
+                     class="img-circle elevation-2"
+                     alt="User Image"
+                     style="width: 50px;height: 50px">
+            </div>
+            <div class="info">
+                <a href="#"
+                   class="d-block">{{ user }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview"
+            role="menu"
+            data-accordion="false">
+
+        <li class="nav-item">
+            {% url 'tomato_home' as tomato_home %}
+            <a href="{{ tomato_home }}"
+               class="nav-link {% if tomato_home == request.path %} active {% endif %}">
+
+                <img src="{% static 'media/home_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    خانه
+
+                </p>
+            </a>
+        </li>
+        {% if user.device_panel == True %}
+            <li class="nav-item">
+
+                <a href={% url 'device_panel' %}
+                   class="nav-link {% if device_panel == request.path %} active {% endif %}">
+
+                    <img src="{% static 'media/device_icon.png' %}"
+                         class="icon_image"
+                         alt="">
+                            پنل مدیریت کالا
+                    <p class="font_class">
+                        {{ request.user.devide_panel }}
+
+                    </p>
+                </a>
+            </li>
+        {% endif %}
+
+
+
+
+        <li class="nav-item">
+            {% url 'manage_tomato_change_password_picture' as manage_tomato_change_password_picture %}
+            <a href="{{ manage_tomato_change_password_picture }}"
+               class="nav-link {% if manage_tomato_change_password_picture == request.path %} active {% endif %}">
+                <img src="{% static 'media/update_profile_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    بروزرسانی
+                    پروفایل</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'tomato_organization_software' as tomato_organization_software %}
+            <a href="{{ tomato_organization_software }}"
+               class="nav-link {% if tomato_organization_software == request.path %} active {% endif %}">
+                <img src="{% static 'media/software_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+                <p class="font_class">
+                    نرم افزارهای
+                    سازمانی
+
+                </p>
+            </a>
+        </li>
+
+        {% include "main_app/joint_sidebar.html" with user=user %}
+
+        <li class="nav-item">
+            {% url 'tomato_apply_leave' as tomato_apply_leave %}
+            <a href="{{ tomato_apply_leave }}"
+               class="nav-link {% if tomato_apply_leave == request.path %} active {% endif %}">
+                <img src="{% static 'media/request_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    در خواست به
+                    مدیریت
+
+                </p>
+            </a>
+        </li>
+        <!--
+        <li class="nav-item">
+            {% url 'tomato_view_attendance' as tomato_view_attendance %}
+            <a href="{{ tomato_view_attendance }}"
+               class="nav-link {% if tomato_view_attendance == request.path %} active {% endif %}">
+                <img src="{% static 'media/presence_absence_logo.png' %}" class="icon_image" alt="">
+
+                <p class="font_class">حضور غیاب</p>
+            </a>
+        </li>
+        -->
+        <li class="nav-item">
+            {% url 'tomato_view_notification' as tomato_view_notification %}
+            <a href="{{ tomato_view_notification }}"
+               class="nav-link {% if tomato_view_notification == request.path %} active {% endif %}">
+                <img src="{% static 'media/announcement_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    دیدن اعلان ها
+
+                </p>
+            </a>
+        </li>
+
+    {% elif request.user.user_type == '8' %}
+
+        <a href=""
+           class="brand-link">
+
+            <img src="{% static 'dist/img/taraghi.png' %} "
+                 alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">پنل شخصی ترقی</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.profile_pic }}"
+                     class="img-circle elevation-2"
+                     alt="User Image"
+                     style="width: 50px;height: 50px">
+            </div>
+            <div class="info">
+                <a href="#"
+                   class="d-block">{{ user }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview"
+            role="menu"
+            data-accordion="false">
+
+
+        <li class="nav-item">
+            {% url 'taraghi_home' as taraghi_home %}
+            <a href="{{ taraghi_home }}"
+               class="nav-link {% if taraghi_home == request.path %} active {% endif %}">
+
+                <img src="{% static 'media/home_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    خانه
+
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'manage_taraghi_change_password_picture' as manage_taraghi_change_password_picture %}
+            <a href="{{ manage_taraghi_change_password_picture }}"
+               class="nav-link {% if manage_taraghi_change_password_picture == request.path %} active {% endif %}">
+                <img src="{% static 'media/update_profile_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    بروزرسانی
+                    پروفایل</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'taraghi_organization_software' as taraghi_organization_software %}
+            <a href="{{ taraghi_organization_software }}"
+               class="nav-link {% if taraghi_organization_software == request.path %} active {% endif %}">
+                <img src="{% static 'media/software_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+                <p class="font_class">
+                    نرم افزارهای
+                    سازمانی
+
+                </p>
+            </a>
+        </li>
+
+        {% include "main_app/joint_sidebar.html" with user=user %}
+
+        <li class="nav-item">
+            {% url 'taraghi_apply_leave' as taraghi_apply_leave %}
+            <a href="{{ taraghi_apply_leave }}"
+               class="nav-link {% if taraghi_apply_leave == request.path %} active {% endif %}">
+                <img src="{% static 'media/request_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    در خواست به
+                    مدیریت
+
+                </p>
+            </a>
+        </li>
+        <!--
+        <li class="nav-item">
+            {% url 'taraghi_view_attendance' as taraghi_view_attendance %}
+            <a href="{{ taraghi_view_attendance }}"
+               class="nav-link {% if taraghi_view_attendance == request.path %} active {% endif %}">
+                <img src="{% static 'media/presence_absence_logo.png' %}" class="icon_image" alt="">
+
+                <p class="font_class">حضور غیاب</p>
+            </a>
+        </li>
+        -->
+        <li class="nav-item">
+            {% url 'taraghi_view_notification' as taraghi_view_notification %}
+            <a href="{{ taraghi_view_notification }}"
+               class="nav-link {% if taraghi_view_notification == request.path %} active {% endif %}">
+                <img src="{% static 'media/announcement_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    دیدن اعلان ها
+
+                </p>
+            </a>
+        </li>
+
+    {% elif request.user.user_type == '9' %}
+
+
+        <a href=""
+           class="brand-link">
+
+            <img src="{% static 'dist/img/tootia.png' %} "
+                 alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">پنل شخصی توتیا</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.profile_pic }}"
+                     class="img-circle elevation-2"
+                     alt="User Image"
+                     style="width: 50px;height: 50px">
+            </div>
+            <div class="info">
+                <a href="#"
+                   class="d-block">{{ user }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview"
+            role="menu"
+            data-accordion="false">
+
+        <li class="nav-item">
+            {% url 'tootia_home' as tootia_home %}
+            <a href="{{ tootia_home }}"
+               class="nav-link {% if tootia_home == request.path %} active {% endif %}">
+
+                <img src="{% static 'media/home_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    خانه
+
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'manage_tootia_change_password_picture' as manage_tootia_change_password_picture %}
+            <a href="{{ manage_tootia_change_password_picture }}"
+               class="nav-link {% if manage_tootia_change_password_picture == request.path %} active {% endif %}">
+                <img src="{% static 'media/update_profile_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    بروزرسانی
+                    پروفایل</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'tootia_organization_software' as tootia_organization_software %}
+            <a href="{{ tootia_organization_software }}"
+               class="nav-link {% if tootia_organization_software == request.path %} active {% endif %}">
+                <img src="{% static 'media/software_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+                <p class="font_class">
+                    نرم افزارهای
+                    سازمانی
+
+                </p>
+            </a>
+        </li>
+
+        {% include "main_app/joint_sidebar.html" with user=user %}
+
+        <li class="nav-item">
+            <a href="{% url 'tootia_apply_leave' as tootia_apply_leave %}"
+               class="nav-link {% if tootia_apply_leave == request.path %} active {% endif %}">
+                <img src="{% static 'media/request_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    در خواست به
+                    مدیریت
+
+                </p>
+            </a>
+        </li>
+        <!--
+        <li class="nav-item">
+            {% url 'tootia_view_attendance' as tootia_view_attendance %}
+            <a href="{{ tootia_view_attendance }}"
+               class="nav-link {% if tootia_view_attendance == request.path %} active {% endif %}">
+                <img src="{% static 'media/presence_absence_logo.png' %}" class="icon_image" alt="">
+
+                <p class="font_class">حضور غیاب</p>
+            </a>
+        </li>
+        -->
+        <li class="nav-item">
+            {% url 'tootia_view_notification' as tootia_view_notification %}
+            <a href="{{ tootia_view_notification }}"
+               class="nav-link {% if tootia_view_notification == request.path %} active {% endif %}">
+                <img src="{% static 'media/announcement_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    دیدن اعلان ها
+                </p>
+            </a>
+        </li>
+
+
+    {% elif request.user.user_type == '10' %}
+
+
+        <a href=""
+           class="brand-link">
+
+            <img src="{% static 'dist/img/golfam_daru.png' %} "
+                 alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">پنل شخصی گلفام دارو</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.profile_pic }}"
+                     class="img-circle elevation-2"
+                     alt="User Image"
+                     style="width: 50px;height: 50px">
+            </div>
+            <div class="info">
+                <a href="#"
+                   class="d-block">{{ user }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview"
+            role="menu"
+            data-accordion="false">
+
+        <li class="nav-item">
+
+            <a href="{% url 'drug_home' as drug_home %}"
+               class="nav-link {% if drug_home == request.path %} active {% endif %}">
+
+                <img src="{% static 'media/home_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    خانه
+
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'manage_drug_change_password_picture' as manage_drug_change_password_picture %}
+            <a href="{{ manage_drug_change_password_picture }}"
+               class="nav-link {% if manage_drug_change_password_picture == request.path %} active {% endif %}">
+                <img src="{% static 'media/update_profile_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    بروزرسانی
+                    پروفایل</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="{% url 'drug_organization_software' as drug_organization_software %}"
+               class="nav-link {% if drug_organization_software == request.path %} active {% endif %}">
+                <img src="{% static 'media/software_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+                <p class="font_class">
+                    نرم افزارهای
+                    سازمانی
+
+                </p>
+            </a>
+        </li>
+
+        {% include "main_app/joint_sidebar.html" with user=user %}
+
+        <li class="nav-item">
+            {% url 'drug_apply_leave' as drug_apply_leave %}
+            <a href="{{ drug_apply_leave }}"
+               class="nav-link {% if drug_apply_leave == request.path %} active {% endif %}">
+                <img src="{% static 'media/request_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    در خواست به
+                    مدیریت
+
+                </p>
+            </a>
+        </li>
+        <!--
+        <li class="nav-item">
+            {% url 'drug_view_attendance' as drug_view_attendance %}
+            <a href="{{ drug_view_attendance }}"
+               class="nav-link {% if drug_view_attendance == request.path %} active {% endif %}">
+                <img src="{% static 'media/presence_absence_logo.png' %}" class="icon_image" alt="">
+
+                <p class="font_class">حضور غیاب</p>
+            </a>
+        </li>
+        -->
+        <li class="nav-item">
+            {% url 'drug_view_notification' as drug_view_notification %}
+            <a href="{{ drug_view_notification }}"
+               class="nav-link {% if drug_view_notification == request.path %} active {% endif %}">
+                <img src="{% static 'media/announcement_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    دیدن اعلان ها
+
+                </p>
+            </a>
+        </li>
+
+    {% elif request.user.user_type == '11' %}
+
+        <a href=""
+           class="brand-link">
+
+            <img src="{% static 'dist/img/shafazhen.png' %} "
+                 alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">پنل شخصی شفاژن</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.profile_pic }}"
+                     class="img-circle elevation-2"
+                     alt="User Image"
+                     style="width: 50px;height: 50px">
+            </div>
+            <div class="info">
+                <a href="#"
+                   class="d-block">{{ user }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview"
+            role="menu"
+            data-accordion="false">
+
+        <li class="nav-item">
+            {% url 'gen_home' as gen_home %}
+            <a href="{{ gen_home }}"
+               class="nav-link {% if gen_home == request.path %} active {% endif %}">
+
+                <img src="{% static 'media/home_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    خانه
+
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'manage_gen_change_password_picture' as manage_gen_change_password_picture %}
+            <a href="{{ manage_gen_change_password_picture }}"
+               class="nav-link {% if manage_gen_change_password_picture == request.path %} active {% endif %}">
+                <img src="{% static 'media/update_profile_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    بروزرسانی
+                    پروفایل</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+
+            <a href="{% url 'gen_organization_software' as gen_organization_software %}"
+               class="nav-link {% if gen_organization_software == request.path %} active {% endif %}">
+                <img src="{% static 'media/software_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+                <p class="font_class">
+                    نرم افزارهای
+                    سازمانی
+
+                </p>
+            </a>
+        </li>
+
+        {% include "main_app/joint_sidebar.html" with user=user %}
+
+        <li class="nav-item">
+            {% url 'gen_apply_leave' as gen_apply_leave %}
+            <a href="{{ gen_apply_leave }}"
+               class="nav-link {% if gen_apply_leave == request.path %} active {% endif %}">
+                <img src="{% static 'media/request_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    در خواست به
+                    مدیریت
+
+                </p>
+            </a>
+        </li>
+
+        <!--
+        <li class="nav-item">
+            {% url 'gen_view_attendance' as gen_view_attendance %}
+            <a href="{{ gen_view_attendance }}"
+               class="nav-link {% if gen_view_attendance == request.path %} active {% endif %}">
+                <img src="{% static 'media/presence_absence_logo.png' %}" class="icon_image" alt="">
+
+                <p class="font_class">حضور غیاب</p>
+            </a>
+        </li>
+        -->
+        <li class="nav-item">
+            {% url 'gen_view_notification' as gen_view_notification %}
+            <a href="{{ gen_view_notification }}"
+               class="nav-link {% if gen_view_notification == request.path %} active {% endif %}">
+                <img src="{% static 'media/announcement_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    دیدن اعلان ها
+
+                </p>
+            </a>
+        </li>
+
+    {% elif request.user.user_type == '12' %}
+
+        <a href=""
+           class="brand-link">
+            <img src="{% static 'dist/img/zobahan.png' %} "
+                 alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">پنل شخصی ذوب آهن شمال غرب</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.profile_pic }}"
+                     class="img-circle elevation-2"
+                     alt="User Image"
+                     style="width: 50px;height: 50px">
+            </div>
+            <div class="info">
+                <a href="#"
+                   class="d-block">{{ user }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview"
+            role="menu"
+            data-accordion="false">
+
+        <li class="nav-item">
+
+            <a href="{% url 'iron_home' as iron_home %}"
+               class="nav-link {% if iron_home == request.path %} active {% endif %}">
+
+                <img src="{% static 'media/home_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    خانه
+
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'manage_iron_change_password_picture' as manage_iron_change_password_picture %}
+            <a href="{{ manage_iron_change_password_picture }}"
+               class="nav-link {% if manage_iron_change_password_picture == request.path %} active {% endif %}">
+                <img src="{% static 'media/update_profile_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    بروزرسانی
+                    پروفایل</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'iron_home' as iron_home %}
+            <a href="{{ iron_home }}"
+               class="nav-link {% if iron_home == request.path %} active {% endif %}">
+                <img src="{% static 'media/software_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+                <p class="font_class">
+                    نرم افزارهای
+                    سازمانی
+
+                </p>
+            </a>
+        </li>
+
+        {% include "main_app/joint_sidebar.html" with user=user %}
+
+        <li class="nav-item">
+            {% url 'iron_apply_leave' as iron_apply_leave %}
+            <a href="{{ iron_apply_leave }}"
+               class="nav-link {% if iron_apply_leave == request.path %} active {% endif %}">
+                <img src="{% static 'media/request_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    در خواست به
+                    مدیریت
+
+                </p>
+            </a>
+        </li>
+
+        <!--
+        <li class="nav-item">
+            {% url 'iron_view_attendance' as iron_view_attendance %}
+            <a href="{{ iron_view_attendance }}"
+               class="nav-link {% if iron_view_attendance == request.path %} active {% endif %}">
+                <img src="{% static 'media/presence_absence_logo.png' %}" class="icon_image" alt="">
+
+                <p class="font_class">حضور غیاب</p>
+            </a>
+        </li>
+        -->
+        <li class="nav-item">
+            {% url 'iron_view_notification' as iron_view_notification %}
+            <a href="{{ iron_view_notification }}"
+               class="nav-link {% if iron_view_notification == request.path %} active {% endif %}">
+                <img src="{% static 'media/announcement_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    دیدن اعلان ها
+
+                </p>
+            </a>
+        </li>
+
+
+    {% elif request.user.user_type == '13' %}
+
+
+        <a href=""
+           class="brand-link">
+
+            <img src="{% static 'dist/img/petroshimi.jpg' %} "
+                 alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">پنل شخصی پتروشیمی</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.profile_pic }}"
+                     class="img-circle elevation-2"
+                     alt="User Image"
+                     style="width: 50px;height: 50px">
+            </div>
+            <div class="info">
+                <a href="#"
+                   class="d-block">{{ user }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview"
+            role="menu"
+            data-accordion="false">
+        <li class="nav-item">
+
+            <a href="{% url 'ptro_home' as ptro_home %}"
+               class="nav-link {% if ptro_home == request.path %} active {% endif %}">
+
+                <img src="{% static 'media/home_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    خانه
+
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'manage_ptro_change_password_picture' as manage_ptro_change_password_picture %}
+            <a href="{{ manage_ptro_change_password_picture }}"
+               class="nav-link {% if manage_ptro_change_password_picture == request.path %} active {% endif %}">
+                <img src="{% static 'media/update_profile_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    بروزرسانی
+                    پروفایل</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'ptro_home' as ptro_home %}
+            <a href="{{ ptro_home }}"
+               class="nav-link {% if ptro_home == request.path %} active {% endif %}">
+                <img src="{% static 'media/software_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+                <p class="font_class">
+                    نرم افزارهای
+                    سازمانی
+
+                </p>
+            </a>
+        </li>
+
+        {% include "main_app/joint_sidebar.html" with user=user %}
+
+        <li class="nav-item">
+            {% url 'ptro_apply_leave' as ptro_apply_leave %}
+            <a href="{{ ptro_apply_leave }}"
+               class="nav-link {% if ptro_apply_leave == request.path %} active {% endif %}">
+                <img src="{% static 'media/request_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    در خواست به
+                    مدیریت
+
+                </p>
+            </a>
+        </li>
+        <!--
+        <li class="nav-item">
+            {% url 'ptro_view_attendance' as ptro_view_attendance %}
+            <a href="{{ ptro_view_attendance }}"
+               class="nav-link {% if ptro_view_attendance == request.path %} active {% endif %}">
+                <img src="{% static 'media/presence_absence_logo.png' %}" class="icon_image" alt="">
+
+                <p class="font_class">حضور غیاب</p>
+            </a>
+        </li>
+        -->
+        <li class="nav-item">
+            {% url 'ptro_view_notification' as ptro_view_notification %}
+            <a href="{{ ptro_view_notification }}"
+               class="nav-link {% if ptro_view_notification == request.path %} active {% endif %}">
+                <img src="{% static 'media/announcement_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    دیدن اعلان ها
+
+                </p>
+            </a>
+        </li>
+
+
+    {% elif request.user.user_type == '14' %}
+
+
+        <a href=""
+           class="brand-link">
+
+            <img src="{% static 'dist/img/behzerae.png' %} "
+                 alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">پنل شخصی بهزراعی</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.profile_pic }}"
+                     class="img-circle elevation-2"
+                     alt="User Image"
+                     style="width: 50px;height: 50px">
+            </div>
+            <div class="info">
+                <a href="#"
+                   class="d-block">{{ user }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview"
+            role="menu"
+            data-accordion="false">
+
+        <li class="nav-item">
+
+            <a href="{% url 'agriculture_home' as agriculture_home %}"
+               class="nav-link {% if agriculture_home == request.path %} active {% endif %}">
+
+                <img src="{% static 'media/home_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    خانه
+
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'manage_agriculture_change_password_picture' as manage_agriculture_change_password_picture %}
+            <a href="{{ manage_agriculture_change_password_picture }}"
+               class="nav-link {% if manage_agriculture_change_password_picture == request.path %} active {% endif %}">
+                <img src="{% static 'media/update_profile_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    بروزرسانی
+                    پروفایل</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'agriculture_home' as agriculture_home %}
+            <a href="{{ agriculture_home }}"
+               class="nav-link {% if agriculture_home == request.path %} active {% endif %}">
+                <img src="{% static 'media/software_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+                <p class="font_class">
+                    نرم افزارهای
+                    سازمانی
+
+                </p>
+            </a>
+        </li>
+
+        {% include "main_app/joint_sidebar.html" with user=user %}
+
+        <li class="nav-item">
+            {% url 'agriculture_apply_leave' as agriculture_apply_leave %}
+            <a href="{{ agriculture_apply_leave }}"
+               class="nav-link {% if agriculture_apply_leave == request.path %} active {% endif %}">
+                <img src="{% static 'media/request_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    در خواست به
+                    مدیریت
+
+                </p>
+            </a>
+        </li>
+        <!--
+        <li class="nav-item">
+            {% url 'agriculture_view_attendance' as agriculture_view_attendance %}
+            <a href="{{ agriculture_view_attendance }}"
+               class="nav-link {% if agriculture_view_attendance == request.path %} active {% endif %}">
+                <img src="{% static 'media/presence_absence_logo.png' %}" class="icon_image" alt="">
+
+                <p class="font_class">حضور غیاب</p>
+            </a>
+        </li>
+        -->
+        <li class="nav-item">
+            {% url 'agriculture_view_notification' as agriculture_view_notification %}
+            <a href="{{ agriculture_view_notification }}"
+               class="nav-link {% if agriculture_view_notification == request.path %} active {% endif %}">
+                <img src="{% static 'media/announcement_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    دیدن اعلان ها
+
+                </p>
+            </a>
+        </li>
+
+    {% elif request.user.user_type == '15' %}
+
+
+        <a href=""
+           class="brand-link">
+
+            <img src="{% static 'dist/img/choghondare_ghand.png' %} "
+                 alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">پنل شخصی چغندر قند</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.profile_pic }}"
+                     class="img-circle elevation-2"
+                     alt="User Image"
+                     style="width: 50px;height: 50px">
+            </div>
+            <div class="info">
+                <a href="#"
+                   class="d-block">{{ user }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview"
+            role="menu"
+            data-accordion="false">
+
+        <li class="nav-item">
+
+            <a href="{% url 'research_home' as research_home %}"
+               class="nav-link {% if research_home == request.path %} active {% endif %}">
+
+                <img src="{% static 'media/home_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    خانه
+
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'manage_research_change_password_picture' as manage_research_change_password_picture %}
+            <a href="{{ manage_research_change_password_picture }}"
+               class="nav-link {% if manage_research_change_password_picture == request.path %} active {% endif %}">
+                <img src="{% static 'media/update_profile_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    بروزرسانی
+                    پروفایل</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+
+            <a href="{% url 'research_organization_software' as research_organization_software %}"
+               class="nav-link {% if research_organization_software == request.path %} active {% endif %}">
+                <img src="{% static 'media/software_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+                <p class="font_class">
+                    نرم افزارهای
+                    سازمانی
+
+                </p>
+            </a>
+        </li>
+
+        {% include "main_app/joint_sidebar.html" with user=user %}
+
+        <li class="nav-item">
+            {% url 'research_apply_leave' as research_apply_leave %}
+            <a href="{{ research_apply_leave }}"
+               class="nav-link {% if research_apply_leave == request.path %} active {% endif %}">
+                <img src="{% static 'media/request_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    در خواست به
+                    مدیریت
+
+                </p>
+            </a>
+        </li>
+        <!--
+        <li class="nav-item">
+            {% url 'research_view_attendance' as research_view_attendance %}
+            <a href="{{ research_view_attendance }}"
+               class="nav-link {% if research_view_attendance == request.path %} active {% endif %}">
+                <img src="{% static 'media/presence_absence_logo.png' %}" class="icon_image" alt="">
+
+                <p class="font_class">حضور غیاب</p>
+            </a>
+        </li>
+        -->
+        <li class="nav-item">
+            {% url 'research_view_notification' as research_view_notification %}
+            <a href="{{ research_view_notification }}"
+               class="nav-link {% if research_view_notification == request.path %} active {% endif %}">
+                <img src="{% static 'media/announcement_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    دیدن اعلان ها
+
+                </p>
+            </a>
+        </li>
+
+
+
+    {% else %}
+        <!-- Brand Logo -->
+        <a href=""
+           class="brand-link">
+
+            <img src="{% static 'dist/img/ghand_orumiye.png' %} "
+                 alt="AdminLTE Logo"
+                 class="brand-image img-circle elevation-3"
+                 style="opacity: .8">
+            <span class="brand-text font-weight-light">پنل قند ارومیه</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ request.user.profile_pic }}"
+                     class="img-circle elevation-2"
+                     alt="User Image"
+                     style="width: 50px;height: 50px">
+            </div>
+            <div class="info">
+                <a href="#"
+                   class="d-block">{{ user }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview"
+            role="menu"
+            data-accordion="false">
+
+        <li class="nav-item">
+            {% url 'sugar_home' as sugar_home %}
+            <a href="{{ sugar_home }}"
+               class="nav-link {% if sugar_home == request.path %} active {% endif %}">
+
+                <img src="{% static 'media/home_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    خانه
+
+                </p>
+            </a>
+        </li>
+
+
+        <li class="nav-item">
+            {% url 'manage_sugar_change_password' as manage_sugar_change_password %}
+            <a href="{{ manage_sugar_change_password }}"
+               class="nav-link {% if manage_sugar_change_password == request.path %} active {% endif %}">
+                <img src="{% static 'media/update_profile_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    بروزرسانی
+                    پروفایل</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'sugar_home' as sugar_home %}
+            <a href="{{ sugar_home }}"
+               class="nav-link {% if sugar_home == request.path %} active {% endif %}">
+                <img src="{% static 'media/software_icon.png' %}"
+                     class="icon_image"
+                     alt="">
+                <p class="font_class">
+                    نرم افزارهای
+                    سازمانی
+
+                </p>
+            </a>
+        </li>
+
+        {% include "main_app/joint_sidebar.html" with user=user %}
+
+        <li class="nav-item">
+            {% url 'sugar_apply_leave' as sugar_apply_leave %}
+            <a href="{{ sugar_apply_leave }}"
+               class="nav-link {% if sugar_apply_leave == request.path %} active {% endif %}">
+                <img src="{% static 'media/request_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    در خواست به
+                    مدیریت
+
+                </p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'sugar_view_attendance' as sugar_view_attendance %}
+            <a href="{{ sugar_view_attendance }}"
+               class="nav-link {% if sugar_view_attendance == request.path %} active {% endif %}">
+                <img src="{% static 'media/presence_absence_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    حضور غیاب</p>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            {% url 'sugar_view_notification' as sugar_view_notification %}
+            <a href="{{ sugar_view_notification }}"
+               class="nav-link {% if sugar_view_notification == request.path %} active {% endif %}">
+                <img src="{% static 'media/announcement_logo.png' %}"
+                     class="icon_image"
+                     alt="">
+
+                <p class="font_class">
+                    دیدن اعلان ها
+
+                </p>
+            </a>
+        </li>
+
+    {% endif %}
+
+
+    <li class="nav-item">
+        <a href="{% url 'user_logout' %}"
+           onclick="return confirm('Your session would be terminated.\n\nProceed?')"
+           class="nav-link"
+           style="border: 1px outset gray">
+            <i class="nav-icon fas fa-power-off"></i>
+            <p>
+                خروج از سیستم
+            </p>
+        </a>
+    </li>
+    </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>
+
+<script>
+    function myFunction1() {
+        var x = document.getElementById("myLinks1");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
+    function myFunction2() {
+        var x = document.getElementById("myLinks2");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
+    function myFunction3() {
+        var x = document.getElementById("myLinks3");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
+    function myFunction4() {
+        var x = document.getElementById("myLinks4");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
+    function myFunction5() {
+        var x = document.getElementById("myLinks5");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>

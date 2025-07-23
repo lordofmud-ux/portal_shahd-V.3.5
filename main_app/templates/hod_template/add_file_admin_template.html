@@ -1,0 +1,42 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+
+
+{% block content %}
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center align-items-center ">
+                <div class="col-md-4 mb-5 w-100" >
+                    <div class="card" style="background-color: #FBFBFB">
+                        <div class="card-header">
+                            <h4 style="text-align: center">آپلود فیش حقوقی</h4>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body w-100 d-flex flex-column justify-content-center align-items-center text-center" style="width: 100%;margin: auto">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead class="thead-dark">
+
+
+                                <form method="POST" class="post-form" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% for field in form %}
+                                        <div class="form-group d-flex flex-column" style="width: 250px;">
+                                            {{ field.errors }}
+                                            {{ field.label_tag }}<br>
+                                            {{ field }}
+                                        </div>
+                                    {% endfor %}
+                                    <button type="submit" class="save btn btn-default mt-5"
+                                            style="background-color: green;color: white;width: 282px;">Save
+                                    </button>
+                                </form>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

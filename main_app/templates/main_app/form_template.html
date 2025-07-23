@@ -1,0 +1,50 @@
+<form role="form" method="POST" enctype="multipart/form-data">
+
+    <div class="card-body">
+
+        <form method="POST" class="post-form">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.errors }}
+                    {{ field.label_tag }}
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+
+
+        <!--
+        {% csrf_token %}
+            {{ field.errors }}
+            {{ form.label_tag }}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Save</button>
+
+
+
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.errors }}
+                {{ field.label_tag }}
+                {{ field }}
+            </div>
+        {% endfor %}
+
+
+    </div>
+
+
+    <div class="card-footer">
+        <button type="submit" class="btn btn-success btn-block">
+            {% if button_text %}
+                {{ button_text }}
+            {% else %}
+                Submit
+            {% endif %}
+
+        </button>
+    </div>
+    -->
+</form>

@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .font_class {
+            font-size: 15px;
+        }
+
+        .icon_image {
+            width: 25px;
+        }
+
+    </style>
+</head>
+<body>
+
+<li class="nav-item">
+    {% url 'user_traffic_control' as user_traffic_control %}
+    <a href="{{ user_traffic_control }}"
+       class="nav-link {% if user_traffic_control == request.path %} active {% endif %}">
+        <img src="{% static 'media/control_traffic_icon.png' %}" class="icon_image" alt="">
+        <p class="font_class">
+            کنترل تردد
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    {% url 'all_user_download_file' as all_user_download_file %}
+    <a href="{{ all_user_download_file }}"
+       class="nav-link {% if all_user_download_file == request.path %} active {% endif %}">
+        <img src="{% static 'media/pay_slip_icon.png' %}" class="icon_image" alt="">
+
+        <p class="font_class">
+            فیش حقوقی
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="http://192.168.11.50"
+       class="nav-link {% if all_in_progress_1 == request.path %} active {% endif %}"  target="_blank">
+        <img src="{% static 'media/office_icon.png' %}" class="icon_image" alt="">
+
+        <p class="font_class">
+            اتوماسیون اداری(فراگستر)
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    {% url 'all_in_progress_2' as all_in_progress_2 %}
+    <a href="{{ all_in_progress_2 }}"
+       class="nav-link {% if all_in_progress_2 == request.path %} active {% endif %}">
+        <img src="{% static 'media/chat_icon.png' %}" class="icon_image" alt="">
+
+        <p class="font_class">
+            چت سازمانی
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    {% url 'all_websites' as all_websites %}
+    <a href="{{ all_websites }}"
+       class="nav-link {% if all_websites == request.path %} active {% endif %}">
+        <img src="{% static 'media/website_icon.png' %}" class="icon_image" alt="">
+
+        <p class="font_class">
+            وب سایت ها
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    {% url 'all_news' as all_news %}
+    <a href="{{ all_news }}"
+       class="nav-link {% if all_news == request.path %} active {% endif %}">
+        <img src="{% static 'media/news_icon.png' %}" class="icon_image" alt="">
+
+        <p class="font_class">
+            اخبار
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    {% url 'social_media' as social_media %}
+    <a href="{{ social_media }}"
+       class="nav-link {% if social_media == request.path %} active {% endif %}">
+        <img src="{% static 'media/social-media-logo.png' %}" class="icon_image" alt="">
+
+        <p class="font_class">
+            صفحات اجتماعی شرکت ها
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    {% url 'related_organizations' as related_organizations %}
+    <a href="{{ related_organizations }}"
+       class="nav-link {% if related_organizations == request.path %} active {% endif %}">
+        <img src="{% static 'media/introduction_logo.png' %}" src="../../static/media/introduction_logo.png"
+             class="icon_image" alt="">
+
+        <p class="font_class">
+            معرفی همکاران سازمان
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    {% url 'companies_phone_numbers' as companies_phone_numbers %}
+    <a href="{{ companies_phone_numbers }}"
+       class="nav-link {% if companies_phone_numbers == request.path %} active {% endif %}">
+        <img src="{% static 'media/internal_list_logo.png' %}" class="icon_image" alt="">
+
+        <p class="font_class">
+            لیست داخلی ها
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    {% url 'organizational_chart' as organizational_chart %}
+    <a href="{{ organizational_chart }}"
+       class="nav-link {% if organizational_chart == request.path %} active {% endif %}">
+        <img src="{% static 'media/organicational_chart_logo.png' %}" class="icon_image" alt="">
+
+        <p class="font_class">
+            چارت سازمانی
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    {% url 'all_in_progress_6' as all_in_progress_6 %}
+    <a href="{{ all_in_progress_6 }}"
+       class="nav-link {% if all_in_progress_6 == request.path %} active {% endif %}">
+        <img src="{% static 'media/instructions_logo.png' %}" class="icon_image" alt="">
+
+        <p class="font_class">
+            دستورالعمل ها و آیین نامه ها
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    {% url 'all_in_progress_7' as all_in_progress_7 %}
+    <a href="{{ all_in_progress_7 }}"
+       class="nav-link {% if all_in_progress_7 == request.path %} active {% endif %}">
+        <img src="{% static 'media/message-icon.png' %}" class="icon_image" alt="">
+
+        <p class="font_class">
+            ارسال پیام
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    {% url 'all_in_progress_8' as all_in_progress_8 %}
+    <a href="{{ all_in_progress_8 }}"
+       class="nav-link {% if all_in_progress_8 == request.path %} active {% endif %}">
+        <img src="{% static 'media/survey_logo.png' %}" class="icon_image" alt="">
+
+        <p class="font_class">
+            نظرسنجی
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    {% url 'all_in_progress_9' as all_in_progress_9 %}
+    <a href="{{ all_in_progress_9 }}"
+       class="nav-link {% if all_in_progress_9 == request.path %} active {% endif %}">
+        <img src="{% static 'media/opinion_logo.png' %}" class="icon_image" alt="">
+
+        <p class="font_class">
+            پیشنهادات و انتقادات
+        </p>
+    </a>
+</li>
+</body>
+</html>
