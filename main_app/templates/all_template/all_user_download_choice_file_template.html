@@ -3,7 +3,9 @@
 {% block page_title %}{{ page_title }}{% endblock page_title %}
 {% block content %}
     <style>
+       
         <!--
+       
         .tool {
             position: relative;
             display: inline-block;
@@ -101,13 +103,11 @@
             }
         }
 
-        .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+       .container {
+        margin: 0 auto;
+        padding: 20px;
         }
+
 
         table {
             width: 100%;
@@ -164,19 +164,15 @@
         }
 
         .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+        margin: 0 auto;
+        padding: 20px;
         }
 
         .table_style {
-            width: 100%;
-            height: 700px;
-            overflow-x: scroll;
-            overflow-y: scroll;
-            white-space: nowrap;
+        overflow-x: auto;
+        overflow-y: auto;
+        max-width: 100%;
+        direction: rtl;
         }
 
         a.full-link {
@@ -195,14 +191,16 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="container table_style">
-
+                <div class="container table_style d-flex justify-content-between align-items-center flex-column">
+                    <div class="titel mt-2 w-100" >
                     <h5 style="color: white;text-align: center">شما می توانید در این صفحه فیش های حقوقی خود را بر اساس
                         تاریخ مورد نظر
                         دانلود نمایید</h5>
-                    <table>
-                        <tbody>
-                        <tr>
+                        </div>
+                        <div class="table_style w-75 ">
+                             <table class="mt-5">
+                            <tbody>
+                            <tr>
                             <th>شرکت</th>
                             <th>نام</th>
                             <th>نام خانوادگی</th>
@@ -227,6 +225,7 @@
                         {% endfor %}
                         </tbody>
                     </table>
+                    </div>
                 </div>
             </div>
         </div>
