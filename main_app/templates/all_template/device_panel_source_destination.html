@@ -4,6 +4,18 @@
 {% block page_title %}{{ page_title }}{% endblock page_title %}
 
 {% block content %}
+
+<style>
+     th[scope="col"] {
+            font-size: 14px;
+            font-weight: bold;
+            min-width: 12rem;
+            vertical-align: middle;
+        
+        }
+</style>
+
+
 <link rel="stylesheet" href="{% static 'css/device_panel_create.css' %}">
 
 <section class="content">
@@ -41,15 +53,15 @@
                             <table class="table table-bordered table-hover text-center table-valign-middle">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th>نام و نام خانوادگی مبدا</th>
-                                        <th>ایمیل مبدا</th>
-                                        <th>نام و نام خانوادگی مقصد</th>
-                                        <th>ایمیل مقصد</th>
-                                        <th>نام کالا</th>
-                                        <th>شماره کالا</th>
-                                        <th>تاریخ انتقال کالا</th>
-                                        <th>قیمت کالا در زمان انتقال</th>
-                                        <th>لینک دانلود</th>
+                                        <th scope="col">نام و نام خانوادگی مبدا</th>
+                                        <th scope="col">ایمیل مبدا</th>
+                                        <th scope="col">نام و نام خانوادگی مقصد</th>
+                                        <th scope="col">ایمیل مقصد</th>
+                                        <th scope="col">نام کالا</th>
+                                        <th scope="col">شماره کالا</th>
+                                        <th scope="col">تاریخ انتقال کالا</th>
+                                        <th scope="col">قیمت کالا در زمان انتقال</th>
+                                        <th scope="col">لینک دانلود</th>
                                     </tr>
                                 </thead>
                                 <tbody>
