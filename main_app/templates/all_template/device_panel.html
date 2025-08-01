@@ -8,19 +8,17 @@
             background-color: #2A6076;
         }
 
-          th[scope="col"] {
+        th[scope="col"] {
             font-size: 14px;
             font-weight: bold;
             min-width: 9rem;
             vertical-align: middle;
-            
-          }
-    
-        tbody tr:hover {
-            background-color: rgba(46, 57, 68, 0.6) !important;
-            background-color: rgba(46, 57, 68, 0.6) !important;
+        
         }
-      
+       
+
+    
+       
 
         .div-a-href {
             margin-bottom: 15px;
@@ -54,6 +52,7 @@
         }
         }
 
+       
      
        
     </style>
@@ -69,8 +68,8 @@
                         <a href="{% url 'device_panel_source_destination' %}" class="a-href">پنل مبدا و مقصد کالا</a>
                     </div>
                     <div class="table-responsive">
-                        <table class="table table-bordered text-center table-striped table-hover table-primary">
-                        <tbody>
+                        <table class="table table-bordered text-center table-hover table-valign-middle">
+                        <thead class="thead-dark">
                         <tr>
                             <th scope="col">نام</th>
                             <th scope="col">شرکت</th>
@@ -161,12 +160,11 @@
                                     <td class="td-class"></td>
                                 {% endif %}
 
-
-                                {% if device.signature != none %}
-                                    <td class="td-class">
-                                        <img src="" alt="امضا" style="max-width: 100px; max-height: 50px;">
-                                    </td>
-                                {% elif device.signature == none %}
+                                {% if device.signature %}
+                                <td class="td-class">
+                                    <img src="{{ device.signature.url }}" alt="امضا" style="max-width: 100px; max-height: 50px;">
+                                </td>
+                                {% else %}
                                     <td class="td-class"></td>
                                 {% endif %}
 
@@ -206,7 +204,7 @@
                                 {% endif %}
 
                                 <td class="td-class">
-                                <a href="{% url 'export_single_device_excel' device.id %}" class="btn btn-md btn-outline-primary">دانلود</a>
+                                <a href="{% url 'export_single_device_excel' device.id %}" class="btn btn-md btn-outline-primary w-100">دانلود</a>
                                 </td>
                             </tr>
                         {% endfor %}

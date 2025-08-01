@@ -1,47 +1,80 @@
 {% extends 'main_app/base.html' %}
 {% load static %}
+
 {% block page_title %}{{ page_title }}{% endblock page_title %}
 
 {% block content %}
-    <link rel="stylesheet" href="{% static "css/device_panel_create.css" %}">
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <a class="return-a-href" href="{% url 'device_panel' %}">صفحه قبل</a>
-                
-                    <div class="card" style="background-color: #FBFBFB">
+<link rel="stylesheet" href="{% static 'css/device_panel_create.css' %}">
 
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <a class="return-a-href" href="{% url 'device_panel' %}">صفحه قبل</a>
+
+                <div class="card" style="background-color: #FBFBFB">
+                    <div class="card-header">
+                        <h4 class="text-center">فرم انتقال کالا</h4>
+                    </div>
+
+                    <div class="card-body" style="width: 70%; margin: auto;">
+                        <form method="POST" enctype="multipart/form-data" class="post-form">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="form-group">
+                                    {{ field.label_tag }}
+                                    {{ field }}
+                                    <div class="text-danger small">{{ field.errors }}</div>
+                                </div>
+                            {% endfor %}
+                            <button type="submit" class="btn btn-success">ذخیره و ثبت</button>
+                        </form>
+                    </div>
+                </div>
+
+                {% if transfers %}
+                    <div class="card mt-4">
                         <div class="card-header">
-                            <h4 style="text-align: center">فرم انتقال کالا</h4>
+                            <h5 class="text-center">لیست انتقال‌های ثبت‌ شده</h5>
                         </div>
-
-                        <!-- /.card-header -->
-                        <div class="ddd card-body" style="width: 70%;margin: auto" ;>
-                            <table id="example2" class="table table-bordered table-hover">
+                        <div class="card-body table-responsive overflow-x-auto">
+                            <table class="table table-bordered table-hover text-center table-valign-middle">
                                 <thead class="thead-dark">
-
-
-                                <form method="POST" class="two-column-form post-form" enctype="multipart/form-data">
-                                    {% csrf_token %}
-                                    {% for field in form %}
-                                        <div class="form-row form-group">
-                                            <div class="error">
-                                                {{ field.errors }}
-                                            </div>
-                                            {{ field.label_tag }}
-                                            {{ field }}
-                                        </div>
-                                    {% endfor %}
-                                    <button type="submit" class="submit_button save btn btn-default">ذخیره و ثبت
-                                    </button>
-                                </form>
+                                    <tr>
+                                        <th>نام و نام خانوادگی مبدا</th>
+                                        <th>ایمیل مبدا</th>
+                                        <th>نام و نام خانوادگی مقصد</th>
+                                        <th>ایمیل مقصد</th>
+                                        <th>نام کالا</th>
+                                        <th>شماره کالا</th>
+                                        <th>تاریخ انتقال کالا</th>
+                                        <th>قیمت کالا در زمان انتقال</th>
+                                        <th>لینک دانلود</th>
+                                    </tr>
                                 </thead>
+                                <tbody>
+                                    {% for transfer in transfers %}
+                                        <tr>
+                                            <td>{{ transfer.source_person_first_name }} {{ transfer.source_person_last_name }}</td>
+                                            <td>{{ transfer.source_person_email }}</td>
+                                            <td>{{ transfer.destination_person_first_name }} {{ transfer.destination_person_last_name }}</td>
+                                            <td>{{ transfer.destination_person_email }}</td>
+                                            <td>{{ transfer.device_name }}</td>
+                                            <td>{{ transfer.device_number }}</td>
+                                            <td>{{ transfer.datetime|date:"Y/m/d" }}</td>
+                                            <td>{{ transfer.transfer_time_price }}</td>
+                                        </tr>
+                                    {% empty %}
+                                        <tr><td colspan="5">هیچ انتقالی ثبت نشده است.</td></tr>
+                                    {% endfor %}
+                                </tbody>
                             </table>
                         </div>
                     </div>
-                </div>
+                {% endif %}
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
 {% endblock content %}

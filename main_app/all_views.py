@@ -9,6 +9,7 @@ from django.shortcuts import (HttpResponseRedirect, get_object_or_404,
                               redirect, render)
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
+from django.urls import reverse_lazy
 
 import main_app
 from main_app.models import CustomUser
@@ -961,12 +962,18 @@ class DevicePanelCreate(CreateView):
     model = Device
     template_name = 'all_template/device_panel_create.html'
     form_class = DeviceForm
+    success_url = reverse_lazy('device_panel')
 
 
 class DevicePanelSourceDestination(CreateView):
     model = DeviceTransfer
     template_name = 'all_template/device_panel_source_destination.html'
     form_class = DeviceTransferForm
-    
+
     def get_success_url(self):
-        return reverse_lazy('device_panel')  
+        return reverse_lazy('device_panel_source_destination.html')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['transfers'] = DeviceTransfer.objects.all().order_by('-id')
+        return context
