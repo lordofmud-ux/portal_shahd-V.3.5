@@ -1729,6 +1729,17 @@
                 </p>
             </a>
         </li>
+        
+        {% if user.device_panel == True  %}
+        <li class="nav-item">
+            <a href="{% url 'device_panel' %}"
+                class="nav-link {% if request.path == '/device/panel/' %} active {% endif %}">
+                    <img src="{% static 'media/device_icon.png' %}" class="icon_image" alt="">
+                    پنل مدیریت کالا
+                    <p class="font_class">{{ request.user.device_panel }}</p>
+                </a>
+            </li>
+        {% endif %}
 
     {% elif request.user.user_type == '20' %}
 
@@ -2107,27 +2118,17 @@
                 </p>
             </a>
         </li>
-        {% if user.device_panel == True %}
-            <li class="nav-item">
-
-                <a href={% url 'device_panel' %}
-                   class="nav-link {% if device_panel == request.path %} active {% endif %}">
-
-                    <img src="{% static 'media/device_icon.png' %}"
-                         class="icon_image"
-                         alt="">
-                            پنل مدیریت کالا
-                    <p class="font_class">
-                        {{ request.user.devide_panel }}
-
-                    </p>
+        
+        {% if request.user.device_panel %}
+        <li class="nav-item">
+            <a href="{% url 'device_panel' %}"
+                class="nav-link {% if request.path == '/device/panel/' %} active {% endif %}">
+                    <img src="{% static 'media/device_icon.png' %}" class="icon_image" alt="">
+                    پنل مدیریت کالا
+                    <p class="font_class">{{ request.user.device_panel }}</p>
                 </a>
             </li>
         {% endif %}
-
-
-
-
         <li class="nav-item">
             {% url 'manage_tomato_change_password_picture' as manage_tomato_change_password_picture %}
             <a href="{{ manage_tomato_change_password_picture }}"

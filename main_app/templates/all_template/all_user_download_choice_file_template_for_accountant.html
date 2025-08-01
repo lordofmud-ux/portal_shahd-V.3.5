@@ -1,412 +1,101 @@
 {% extends 'main_app/base.html' %}
 {% load static %}
 {% block page_title %}{{ page_title }}{% endblock page_title %}
+
 {% block content %}
-    <style>
-        <!--
-        .tool {
-            position: relative;
-            display: inline-block;
-        }
+<section class="content">
+    <div class="container my-5" style="max-width: 700px; position: relative;">
 
-        -->
-        .tooltiptext {
-            visibility: hidden;
-            width: 240px;
-            background-color: white;
-            color: black;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px 0;
+        <a href="{% url 'user_index' %}" class="btn btn-outline-primary mb-4 w-100 shadow-sm fw-semibold" style="font-size: 1.1rem;">
+            آپلود فیش حقوقی
+        </a>
+        <ul id="full-name-suggestions" style="display:none; border:1px solid #ccc; position:absolute; background:#fff; max-height:150px; overflow-y:auto; list-style:none; padding:0; margin:0; width: 100%; z-index: 1000;"></ul>
 
-            /* Position the tooltip */
-            position: absolute;
-            z-index: 1;
+        <div class="mb-4 position-relative">
+            <label for="employee-name" class="form-label fw-semibold">نام و نام خانوادگی</label>
+            <input type="text" id="employee-name" class="form-control" placeholder="نام و نام خانوادگی را وارد کنید" autocomplete="off">
+            <ul id="suggestions" style="border: 1px solid #ccc; max-height: 150px; overflow-y: auto; display: none; position: absolute; background: white; width: 100%; z-index: 1000; list-style: none; padding: 0; margin-top: 0.25rem; border-radius: 4px;"></ul>
+        </div>
 
-            display: block;
-            margin-right: 50px;
-            margin-top: -50px;
-            opacity: 80%;
-            font-size: 10px;
-        }
+        <div class="card shadow-sm">
+            <div class="card-body bg-light">
+                <h5 class="card-title text-center mb-4 text-primary fw-bold">
+                    دانلود فیش‌های حقوقی بر اساس تاریخ مورد نظر
+                </h5>
 
-        .tool:hover .tooltiptext {
-            visibility: visible;
-        }
-
-
-        .content .container-fluid .col-lg-4 {
-            position: relative;
-            display: inline-block;
-            border-bottom: 1px dotted darkgray;
-        }
-
-        .col-lg-4 .tooltiptext {
-            visibility: hidden;
-            width: 240px;
-            background-color: darkgray;
-            color: black;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px 0;
-            font-weight: bold;
-
-            /* Position the tooltip */
-            position: absolute;
-            z-index: 1;
-
-            display: block;
-            margin-right: 125px;
-            margin-top: -150px;
-            opacity: 80%;
-        }
-
-        .col-lg-4:hover .tooltiptext {
-            visibility: visible;
-        }
-
-        @media only screen and (max-width: 800px) {
-            /* For tablets: */
-            .tooltiptext {
-                width: 50px;
-                display: none;
-            }
-
-            .tool {
-                width: 50px;
-            }
-
-            .button_box {
-                width: 100% !important;
-            }
-        }
-
-        .rotated:hover {
-            transition-delay: 1s;
-            transform: rotate(30deg);
-        }
-
-
-        .box:hover {
-            animation-name: rotate;
-            animation-duration: 0.7s;
-        }
-
-        @keyframes rotate {
-            0% {
-                transform: rotate(0);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
-
-        table {
-            margin-right: auto;
-            margin-left: auto;
-            width: 80%;
-            border-collapse: collapse;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-
-        th,
-        td {
-            padding: 15px;
-            background-color: rgba(45, 169, 194, 0.8);
-            color: #fff;
-            text-align: center;
-        }
-
-        th {
-            text-align: center;
-        }
-
-        thead th {
-            background-color: dodgerblue;
-        }
-
-        tbody tr:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-
-        tbody td {
-            position: relative;
-        }
-
-        tbody td:hover:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: -9999px;
-            bottom: -9999px;
-            background-color: rgba(255, 255, 255, 0.2);
-            z-index: -1;
-        }
-
-        .row {
-            margin: auto;
-        }
-
-        .a_href {
-            color: white;
-            font-size: 25px;
-
-        }
-
-        .upload_file {
-            color: white;
-            border: 2px solid white;
-            border-radius: 10px;
-            padding: 15px;
-            margin-right: 135px;
-            font-size: 50%;
-        }
-
-        .upload_file:hover {
-            background-color: #2D92A9;
-            color: white;
-
-        }
-    </style>
-
-
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-
-                <a class="upload_file" href="{% url 'user_index' %}">
-                    <h3>آپلود فیش حقوقی</h3>
-                </a>
-                <div class="container">
-                    <h5 style="color: white;margin-right: auto;margin-left: auto;width: 80%;text-align: center">شما می
-                        توانید در این صفحه فیش های حقوقی خود را بر اساس تاریخ مورد نظر
-                        دانلود نمایید</h5>
-                    <table>
-                        <tbody>
-                        <tr>
-                            <!--<th>شرکت</th>-->
-                            <!--<th>ایمیل</th>-->
-                            <!--<th>تاریخ میلادی</th>-->
-                            <th>نام فایل</th>
-                            <th>موضوع</th>
-                            <th>تاریخ شمسی</th>
-                            <th>دکمه دانلود فایل</th>
-                        </tr>
-                        {% for student_file in student_files %}
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover align-middle mb-0" style="background-color: #007BFF; color: white; border-radius: 8px; overflow: hidden;">
+                        <thead class="table-dark">
                             <tr>
-                                <!--student_file.company }}</td>-->
-                                <!--student_file.email-->
-                                <!--student_file.date-->
-                                <td>{{ student_file.file_name }}</td>
-                                <td>{{ student_file.subject }}</td>
-                                <td>{{ student_file.jalali_date }}</td>
-                                <td>
-                                    <a class="a_href" href="{{ student_file.file.url }}"
-                                       style="font-size: 20px" download>دانلود</a>
-                                </td>
+                                <th scope="col">نام فایل</th>
+                                <th scope="col">موضوع</th>
+                                <th scope="col">تاریخ شمسی</th>
+                                <th scope="col">دانلود</th>
                             </tr>
-                        {% endfor %}
+                        </thead>
+                        <tbody>
+                            {% for student_file in student_files %}
+                                <tr>
+                                    <td>{{ student_file.file_name }}</td>
+                                    <td>{{ student_file.subject }}</td>
+                                    <td>{{ student_file.jalali_date }}</td>
+                                    <td>
+                                        <a href="{{ student_file.file.url }}" download class="btn btn-success btn-sm shadow-sm fw-semibold">
+                                            دانلود
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% empty %}
+                                <tr>
+                                    <td colspan="4" class="text-center text-white fst-italic">فیش حقوقی برای نمایش وجود ندارد.</td>
+                                </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
+
             </div>
         </div>
-    </section>
+
+    </div>
+</section>
 {% endblock content %}
 
 {% block custom_js %}
-    <script>
-        $(document).ready(function () {
+<script>
+const input = document.getElementById('full-name-input');
+const suggestions = document.getElementById('suggestions');
 
-            //Dataset
-            var subjects = {{data_name|safe}}
-            var data_present = {{data_present}}
-            var data_absent = {{data_absent}}
+input.addEventListener('input', function() {
+    const val = this.value.trim();
+    if (val.length < 2) {
+        suggestions.style.display = 'none';
+        suggestions.innerHTML = '';
+        return;
+    }
 
-            //-------------
-            //- DONUT CHART -
-            var attendanceDataCanvas = $('#attendanceData').get(0).getContext('2d')
-            var donutData = {
-                labels: [
-                    'Present', 'Absent'
-                ],
-                datasets: [
-                    {
-                        data: [{{percent_present}}, {{percent_absent}}],
-                        backgroundColor: ['#00a65a', '#f56954'],
-                    }
-                ]
+    fetch(`/autocomplete-custom-user/?term=${encodeURIComponent(val)}`)
+        .then(res => res.json())
+        .then(data => {
+            suggestions.innerHTML = '';
+            if (data.length === 0) {
+                suggestions.style.display = 'none';
+                return;
             }
-            var donutOptions = {
-                maintainAspectRatio: false,
-                responsive: true,
-            }
-            var attendanceData = new Chart(attendanceDataCanvas, {
-                type: 'doughnut',
-                data: donutData,
-                options: donutOptions
+            data.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                li.style.cursor = 'pointer';
+                li.addEventListener('click', () => {
+                    input.value = item;
+                    suggestions.style.display = 'none';
+                    suggestions.innerHTML = '';
+                });
+                suggestions.appendChild(li);
             });
-
-            //attendanceStatistics
-//Bar Chart
-            var areaChartData = {
-                labels: subjects,
-                datasets: [
-                    {
-                        label: 'Present In Class',
-                        backgroundColor: 'rgba(60,141,188,0.9)',
-                        borderColor: 'rgba(60,141,188,0.8)',
-                        pointRadius: false,
-                        pointColor: '#3b8bba',
-                        pointStrokeColor: 'rgba(60,141,188,1)',
-                        pointHighlightFill: '#fff',
-                        pointHighlightStroke: 'rgba(60,141,188,1)',
-                        data: data_present
-                    },
-
-                    {
-                        label: 'Absent In Class',
-                        backgroundColor: 'rgba(210, 214, 222, 1)',
-                        borderColor: 'rgba(210, 214, 222, 1)',
-                        pointRadius: false,
-                        pointColor: 'rgba(210, 214, 222, 1)',
-                        pointStrokeColor: '#c1c7d1',
-                        pointHighlightFill: '#fff',
-                        pointHighlightStroke: 'rgba(220,220,220,1)',
-                        data: data_absent
-                    },
-                ]
-            }
-            var barChartCanvas = $('#attendanceStatistics').get(0).getContext('2d')
-            var barChartData = jQuery.extend(true, {}, areaChartData)
-            var temp = areaChartData.datasets[0]
-            barChartData.datasets[0] = temp
-            var barChartOptions = {
-                responsive: true,
-                maintainAspectRatio: false,
-                datasetFill: false
-            }
-
-            var barChart = new Chart(barChartCanvas, {
-                type: 'bar',
-                data: barChartData,
-                options: barChartOptions
-            })
-
-
-        })
-
-    </script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-messaging.js"></script>
-
-
-    <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var firebaseConfig = {
-            apiKey: "AIzaSyBarDWWHTfTMSrtc5Lj3Cdw5dEvjAkFwtM",
-            authDomain: "sms-with-django.firebaseapp.com",
-            databaseURL: "https://sms-with-django.firebaseio.com",
-            projectId: "sms-with-django",
-            storageBucket: "sms-with-django.appspot.com",
-            messagingSenderId: "945324593139",
-            appId: "1:945324593139:web:03fa99a8854bbd38420c86",
-            measurementId: "G-2F2RXTL9GT"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig)
-        const messaging = firebase.messaging();
-
-        function InitializeFireBaseMessaging() {
-            messaging
-                .requestPermission()
-                .then(function () {
-                    console.log("Notification Permission");
-                    return messaging.getToken();
-                })
-                .then(function (token) {
-                    console.log("Token : " + token);
-                    sendToServer(token);
-                })
-                .catch(function (reason) {
-                    console.log(reason)
-                })
-        }
-
-        messaging.onMessage(function (payload) {
-            const notificationOption = {
-                body: payload.notification.body,
-                icon: payload.notification.icon,
-
-            }
-            if (Notification.permission == 'granted') {
-                var notification = new Notification(payload.notification.title, notificationOption);
-                notification.onclick = function (event) {
-                    event.preventDefault();
-                    window.open(payload.notification.click_action, "_blank");
-                    notification.close();
-                }
-            }
-            console.log(payload);
+            suggestions.style.display = 'block';
         });
-        messaging.onTokenRefresh(function () {
-            messaging.getToken()
-                .then(function (newToken) {
-                    console.log("New Token : " + newToken);
-                    sendToServer(newToken);
-
-                })
-                .catch(function (reason) {
-                    console.log(reason)
-                })
-        })
-
-        function sendToServer(token) {
-            $.ajax({
-                url: "{% url 'all_fcmtoken' %}",
-                type: 'POST',
-                data: {
-                    token: token,
-                }
-            }).done(function (response) {
-
-
-            }).fail(function (response) {
-            })
-
-        }
-
-        InitializeFireBaseMessaging();
-    </script>
+});
+</script>
 
 {% endblock custom_js %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-

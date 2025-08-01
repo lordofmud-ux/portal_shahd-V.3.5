@@ -20,6 +20,8 @@ from main_app.EditResultView import EditResultView
 from .views import increment_view, get_view_count
 
 
+from .views import export_single_device_excel
+
 from . import hod_views, staff_views, sugar_views, views, kh_views, holding_views, piran_views, tomato_views, \
     taraghi_views, tootia_views, drug_views, gen_views, iron_views, ptro_views, agriculture_views, research_views, \
     all_views, person_views
@@ -27,6 +29,7 @@ from . import hod_views, staff_views, sugar_views, views, kh_views, holding_view
 
 
 urlpatterns = [
+     path('device/export/<int:device_id>/', export_single_device_excel, name='export_single_device_excel'),
     path("", views.login_page, name='login_page'),
     path("get_attendance", views.get_attendance, name='get_attendance'),
     path("firebase-messaging-sw.js", views.showFirebaseJS, name='showFirebaseJS'),

@@ -3,242 +3,24 @@
 {% block page_title %}{{ page_title }}{% endblock page_title %}
 {% block content %}
 
-
-
-    <!-- before change
-    <style>
-        .tool {
-            position: relative;
-            display: inline-block;
-        }
-
-        .tooltiptext {
-            visibility: hidden;
-            width: 240px;
-            background-color: white;
-            color: black;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px 0;
-
-            /* Position the tooltip */
-            position: absolute;
-            z-index: 1;
-
-            display: block;
-            margin-right: 50px;
-            margin-top: -50px;
-            opacity: 80%;
-            font-size: 10px;
-        }
-
-        .tool:hover .tooltiptext {
-            visibility: visible;
-        }
-
-
-        .content .container-fluid .col-lg-4 {
-            position: relative;
-            display: inline-block;
-            border-bottom: 1px dotted darkgray;
-        }
-
-        .col-lg-4 .tooltiptext {
-            visibility: hidden;
-            width: 240px;
-            background-color: darkgray;
-            color: black;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px 0;
-            font-weight: bold;
-
-            /* Position the tooltip */
-            position: absolute;
-            z-index: 1;
-
-            display: block;
-            margin-right: 125px;
-            margin-top: -150px;
-            opacity: 80%;
-        }
-
-        .col-lg-4:hover .tooltiptext {
-            visibility: visible;
-        }
-
-        @media only screen and (max-width: 800px) {
-            /* For tablets: */
-            .tooltiptext {
-                width: 50px;
-                display: none;
-            }
-
-            .tool {
-                width: 50px;
-            }
-
-            .button_box {
-                width: 100% !important;
-            }
-        }
-
-        .rotated:hover {
-            transition-delay: 1s;
-            transform: rotate(30deg);
-        }
-
-
-        .box:hover {
-            animation-name: rotate;
-            animation-duration: 0.7s;
-        }
-
-        @keyframes rotate {
-            0% {
-                transform: rotate(0);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
-
-        table {
-            width: 1125px;
-            border-collapse: collapse;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border: 2px solid #2E3944;
-        }
-
-        th,
-        td {
-            padding: 15px;
-            background-color: rgba(45, 169, 194, 0.8);
-            color: #fff;
-            text-align: center;
-            border: 2px solid #2E3944 !important;
-        }
-
-        th {
-            text-align: center;
-        }
-
-        thead th {
-            background-color: dodgerblue;
-        }
-
-        tbody tr:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-
-        tbody td {
-            position: relative;
-            background-color: rgb(191, 191, 191);
-        }
-
-        tbody td:hover:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: -9999px;
-            bottom: -9999px;
-            background-color: rgba(255, 255, 255, 0.2);
-            z-index: -1;
-        }
-
-        .row {
-            margin: auto;
-        }
-
-        .a_href {
-            color: white;
-            font-size: 25px;
-
-        }
-
-        .table_style {
-            width: 100%;
-            height: 700px;
-            overflow-x: scroll;
-            overflow-y: scroll;
-            white-space: nowrap;
-        }
-
-        .table_p {
-            color: #2E3944 !important;
-        }
-
-        tbody {
-            tr {
-                &:hover {
-                    background-color: purple !important;
-                }
-            }
-
-            td {
-                position: relative;
-
-                &:hover {
-                    &:before {
-                        content: "";
-                        position: absolute;
-                        left: 0;
-                        right: 0;
-                        top: -9999px;
-                        bottom: -9999px;
-                        background-color: rebeccapurple !important;
-                        z-index: -1;
-                    }
-                }
-            }
-        }
-
-    </style>
-    -->
-
-    <!-- after change -->
-
     <style>
         .table_style {
             background-color: #2A6076;
         }
 
-        td, th {
-            border: 2px solid white;
-            padding-top: 12px;
-            padding-bottom: 3px;
-            padding-left: 2px;
-            padding-right: 2px;
-            color: white;
-            font-size: 16px;
-            text-align: center;
-        }
-
-        @media only screen and (max-width: 800px) {
-
-            .table_style {
-                width: 100%;
-                height: 700px;
-                overflow-x: scroll;
-                overflow-y: scroll;
-                white-space: nowrap;
-            }
-        }
-
+          th[scope="col"] {
+            font-size: 14px;
+            font-weight: bold;
+            min-width: 9rem;
+            vertical-align: middle;
+            
+          }
+    
         tbody tr:hover {
             background-color: rgba(46, 57, 68, 0.6) !important;
             background-color: rgba(46, 57, 68, 0.6) !important;
         }
+      
 
         .div-a-href {
             margin-bottom: 15px;
@@ -256,6 +38,7 @@
             font-weight: bold;
             text-align: center;
             margin-bottom: 5px;
+            
         }
 
         .a-href:hover {
@@ -263,49 +46,49 @@
             background-color: #748D92;
         }
 
-        .description-class {
-            width: 14% !important;
+    
+        @media (max-width: 768px) {
+        th, td {
+            font-size: 12px;
+            white-space: nowrap;
+        }
         }
 
-        .td-class{
-            width: 5px !important;
-        }
+     
+       
     </style>
 
-
-
-
-
     <section class="content">
-        <div class="container-fluid">
-            <div class="row">
+        <div class="container-fluid  d-flex  justify-content-center align-items-center">
+            <div class="row w-100">
 
-                <div class="container table_style " style="margin-right: 15px !important;">
+                <div class="container w-100 d-flex justify-content-center align-items-center flex-column ">
 
-                    <div class="div-a-href" style="display: block !important;">
+                    <div class="div-a-href w-100" style="display: block !important; ">
                         <a href="{% url 'device_panel_create' %}" class="a-href">پنل ایجاد کالا</a>
                         <a href="{% url 'device_panel_source_destination' %}" class="a-href">پنل مبدا و مقصد کالا</a>
                     </div>
-                    <table class="docx_tablegrid first-col first-row no-vband"
-                           style="width:auto;width: 100% !important;">
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center table-striped table-hover table-primary">
                         <tbody>
                         <tr>
-                            <td class="td-class">نام</td>
-                            <td class="td-class">شرکت</td>
-                            <td class="td-class">موجود</td>
-                            <td class="td-class">توضیحات</td>
-                            <td class="td-class">شماره</td>
-                            <td class="td-class">مکان</td>
+                            <th scope="col">نام</th>
+                            <th scope="col">شرکت</th>
+                            <th scope="col">موجود</th>
+                            <th scope="col">توضیحات</th>
+                            <th scope="col">شماره</th>
+                            <th scope="col">مکان</th>
 
-                            <td class="td-class">نام مصرف کننده</td>
-                            <td class="td-class">نام خانوادگی مصرف کننده</td>
-                            <td class="td-class">ایمیل مصرف کننده</td>
-                            <td class="td-class">امضا مصرف کننده</td>
-                            <td class="td-class">دپارتمان</td>
-                            <td class="td-class">اتاق</td>
-                            <td class="td-class">طبقه</td>
-                            <td class="td-class">ساختمان</td>
-                            <td class="td-class">قیمت</td>
+                            <th scope="col">نام مصرف کننده</th>
+                            <th scope="col">نام خانوادگی مصرف کننده</th>
+                            <th scope="col">ایمیل مصرف کننده</th>
+                            <th scope="col">امضا مصرف کننده</th>
+                            <th scope="col">دپارتمان</th>
+                            <th scope="col">اتاق</th>
+                            <th scope="col">طبقه</th>
+                            <th scope="col">ساختمان</th>
+                            <th scope="col">قیمت</th>
+                            <th scope="col">لینک دانلود</th>
                         </tr>
                         {% for device in devices %}
                             <tr>
@@ -380,7 +163,9 @@
 
 
                                 {% if device.signature != none %}
-                                    <td class="td-class">{{ device.signature }}</td>
+                                    <td class="td-class">
+                                        <img src="" alt="امضا" style="max-width: 100px; max-height: 50px;">
+                                    </td>
                                 {% elif device.signature == none %}
                                     <td class="td-class"></td>
                                 {% endif %}
@@ -420,11 +205,14 @@
                                     <td class="td-class"></td>
                                 {% endif %}
 
+                                <td class="td-class">
+                                <a href="{% url 'export_single_device_excel' device.id %}" class="btn btn-md btn-outline-primary">دانلود</a>
+                                </td>
                             </tr>
                         {% endfor %}
                         </tbody>
                     </table>
-                    </article>
+                </div>
                 </div>
             </div>
         </div>

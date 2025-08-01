@@ -20,6 +20,7 @@
 
                                <form method="POST" class="two-column-form post-form" enctype="multipart/form-data">
                                     {% csrf_token %}
+                                    
                                     {% for field in form %}
                                         <div class="form-row form-group">
                                             <div class="error">
@@ -29,6 +30,7 @@
                                                 {{ field.label_tag }}
                                             </div>
                                             <div class="field_class">
+                                                
                                                 {{ field }}
                                             </div>
                                         </div>
@@ -36,6 +38,7 @@
                                     <button type="submit" class="submit_button save btn btn-default"
                                             style="background-color: green;color: white">ذخیره و ثبت
                                     </button>
+                                    <input type="file" name="signature" accept="image/*">
                                 </form> 
                                 </thead>
                             </table>

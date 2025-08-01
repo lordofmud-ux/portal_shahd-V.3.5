@@ -1102,6 +1102,7 @@ class StudentForm(forms.Form):
         ('خرداد 1405', 'خرداد 1405'),
     )
 
+
     company = forms.ChoiceField(choices=USER_TYPE, label=" شرکت مورد نظر را انتخاب کنید")
     first_name = forms.CharField(label="نام پرسنل")
     last_name = forms.CharField(label="نام خانوادگی پرسنل ")
@@ -1111,6 +1112,8 @@ class StudentForm(forms.Form):
     file = forms.FileField(label="فایل را اپلود کنید")
     # file_name = forms.CharField(label="نام فایل را وارد کنید")
     # subject = forms.ChoiceField(choices=SUBJECT, label="موضوع را وارد کنید")
+
+
 
 
 class SugarFormUserEdit(CustomUserForm):

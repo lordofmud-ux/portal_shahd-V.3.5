@@ -126,6 +126,7 @@
             <!-- /.content-header -->
 
             <!-- Main content -->
+             
 
             <section class="content ">
                 <div class="container-fluid">
@@ -200,6 +201,7 @@
 
 
     <script>
+
         function myFunction() {
             var element1 = document.getElementById("myDIV1");
             var element2 = document.getElementById("myDIV2");
@@ -289,6 +291,37 @@
             document.querySelectorAll(".cards-section").forEach(s => s.style.display = "flex");
             document.getElementById("content").scrollIntoView({ behavior: "smooth" });
         }
+        $(document).ready(function () {
+      $('.nav-link').on('click', function (e) {
+          var link = $(this).attr('href');
+
+          // فقط روی لینک‌های داخلی اعمال بشه
+          if (link && !link.startsWith('http') && !link.startsWith('#')) {
+              e.preventDefault();
+              $('#main-content').fadeOut(200, function () {
+                  window.location.href = link;
+              });
+          }
+      });
+  });
+    </script>
+    <script>
+      $(document).ready(function () {
+    $('.nav-link').on('click', function (e) {
+      var link = $(this).attr('href');
+
+      // جلوگیری از کلیک روی لینک‌های خالی یا خارجی
+      if (!link || link.startsWith('#') || link.startsWith('http')) return;
+
+      e.preventDefault();
+
+      // محو کردن محتوا و ریدایرکت
+      $('#main-content').fadeOut(200);
+      setTimeout(function () {
+        window.location.href = link;
+      }, 250); // ریدایرکت بعد از fadeOut
+    });
+  });
     </script>
 
 

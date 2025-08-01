@@ -20,14 +20,85 @@ from django.contrib.auth import login
 from main_app.models import Flag, UserLog
 from django.views.decorators.http import require_POST, require_GET
 from .models import NewsViewCount
+from django.db.models import Value, CharField
+from django.db.models.functions import Concat
+from .models import CustomUser
+from .models import Device
+import openpyxl
+from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 
 
 # Create your views here.
 
+def export_single_device_excel(request, device_id):
+    device = Device.objects.get(id=device_id)
 
-def set_password(self, raw_password):
-    self.password = make_password(raw_password)
-    self._password = raw_password
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.title = "Device Data"
+    
+    #column width
+    column_widths = [10, 10, 15, 40, 10, 10, 20, 20, 30, 10, 10, 5, 10, 20]
+    for i, width in enumerate(column_widths, 1):
+        ws.column_dimensions[openpyxl.utils.get_column_letter(i)].width = width
+
+    headers = [
+        "نام", "شرکت", "موجود", "توضیحات", "شماره", "مکان",
+        "نام مصرف کننده", "نام خانوادگی مصرف کننده", "ایمیل مصرف کننده",
+        "دپارتمان", "اتاق", "طبقه", "ساختمان", "قیمت"
+    ]
+    ws.append(headers)
+
+    ws.append([
+        device.name,
+        device.company,
+        "موجود" if device.exist else "ناموجود",
+        device.description,
+        device.number,
+        device.place,
+        device.user_firstname,
+        device.user_lastname,
+        device.user_email,
+        device.department,
+        device.room,
+        device.floor,
+        device.building_name,
+        device.price,
+    ])
+
+    #styles
+    header_font = Font(bold=True, color="FFFFFF")
+    header_fill = PatternFill(start_color="2A6076", end_color="2A6076", fill_type="solid")
+    center_alignment = Alignment(horizontal="center", vertical="center")
+    thin_border = Border(
+        left=Side(style='thin'),
+        right=Side(style='thin'),
+        top=Side(style='thin'),
+        bottom=Side(style='thin')
+    )
+
+    for col_num in range(1, len(headers) + 1):
+        cell = ws.cell(row=1, column=col_num)
+        cell.font = header_font
+        cell.fill = header_fill
+        cell.alignment = center_alignment
+        cell.border = thin_border
+
+    for col_num in range(1, len(headers) + 1):
+        cell = ws.cell(row=2, column=col_num)
+        cell.alignment = center_alignment
+        cell.border = thin_border
+
+    response = HttpResponse(
+        content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    )
+    filename = f"device_{device.id}.xlsx"
+    response['Content-Disposition'] = f'attachment; filename={filename}'
+
+    wb.save(response)
+    return response
+
+
 
 
 def test(request):

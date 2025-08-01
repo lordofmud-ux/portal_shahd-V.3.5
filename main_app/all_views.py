@@ -967,3 +967,6 @@ class DevicePanelSourceDestination(CreateView):
     model = DeviceTransfer
     template_name = 'all_template/device_panel_source_destination.html'
     form_class = DeviceTransferForm
+    
+    def get_success_url(self):
+        return reverse_lazy('device_panel')  
