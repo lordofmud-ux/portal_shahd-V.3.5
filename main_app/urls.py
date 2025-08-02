@@ -20,6 +20,10 @@ from main_app.EditResultView import EditResultView
 from .views import increment_view, get_view_count
 
 
+from .views import autocomplete_name
+
+from .views import autocomplete_last_name
+
 from .views import export_single_device_excel
 
 from . import hod_views, staff_views, sugar_views, views, kh_views, holding_views, piran_views, tomato_views, \
@@ -29,6 +33,8 @@ from . import hod_views, staff_views, sugar_views, views, kh_views, holding_view
 
 
 urlpatterns = [
+     path('autocomplete_last_name/', autocomplete_last_name, name='autocomplete_last_name'),
+     path('autocomplete-name/', autocomplete_name, name='autocomplete_name'),
      path('device/export/<int:device_id>/', export_single_device_excel, name='export_single_device_excel'),
     path("", views.login_page, name='login_page'),
     path("get_attendance", views.get_attendance, name='get_attendance'),

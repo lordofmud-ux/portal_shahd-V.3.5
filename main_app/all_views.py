@@ -879,7 +879,7 @@ def user_index(request):
                 flat=True)
             email = ', '.join(str(value) for value in email_query_set)
             email = str(email)
-
+            
 
 
             JALALI_DATE = (

@@ -24,11 +24,24 @@ from django.db.models import Value, CharField
 from django.db.models.functions import Concat
 from .models import CustomUser
 from .models import Device
-import openpyxl
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-
 
 # Create your views here.
+
+def autocomplete_name(request):
+    if 'term' in request.GET:
+        qs = CustomUser.objects.filter(first_name__icontains=request.GET.get('term'))
+        names = list(qs.values_list('first_name', flat=True).distinct())
+        return JsonResponse(names, safe=False)
+    return JsonResponse([], safe=False)
+
+
+def autocomplete_last_name(request):
+    if 'term' in request.GET:
+        qs = CustomUser.objects.filter(last_name__icontains=request.GET.get('term'))
+        last_names = list(qs.values_list('last_name', flat=True).distinct())
+        return JsonResponse(last_names, safe=False)
+    return JsonResponse([], safe=False)
+
 
 def export_single_device_excel(request, device_id):
     device = Device.objects.get(id=device_id)
