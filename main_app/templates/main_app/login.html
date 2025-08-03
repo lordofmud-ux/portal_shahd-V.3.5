@@ -93,7 +93,7 @@
             margin-top: 20px;
             margin-bottom: 40px;
             a{
-                font-size: 25px;
+                font-size: 20px;
                 font-weight: bolder;
             }
         }
@@ -119,8 +119,8 @@
     </style>
 </head>
 <body class="hold-transition login-page background_color">
-
-<div class="login-box w-25">
+<div class="container  d-flex justify-content-center align-items-center">
+    <div class="col-12 col-lg-7  col-xl-6 login-box ">
 
    
     <!-- /.login-logo -->
@@ -140,7 +140,7 @@
             {% endif %}
             <form action="doLogin/" method="post">
                  <div class="login-logo login_text">
-                    <a href=""><b>درگاه سازمانی هلدینگ توسعه صنایع شهد آذربایجان</b></a>
+                    <a href="" class="fs-4 fs-md-3 fs-lg-2">درگاه سازمانی هلدینگ توسعه صنایع شهد آذربایجان</a>
                    </div>
                 {% csrf_token %}
                 <div class="input-group mb-3">
@@ -184,6 +184,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 <marquee direction=right scrollamount=9>
 
